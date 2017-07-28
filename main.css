@@ -1,0 +1,22 @@
+
+a { 
+  text-decoration: none !important;
+}
+body { 
+	padding-top: 70px; 
+}
+
+
+.navbar {
+  margin-bottom: 0;
+}
+.panel {
+  margin: 0;
+}
+
+#panel-body-notice {
+  float: left;
+}
+#panel-body-more {
+  float: right;
+}

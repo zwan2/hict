@@ -1,0 +1,130 @@
+<?
+    include 'main.html';
+    include 'function.php';
+?>
+<div class="container">
+  <div class="page-header">
+      <h1>예약 리스트</h1>
+  </div>  
+
+  
+
+  <table class="table">
+    <tr> 
+      <th>#</th>
+    	<th>날짜</th>
+      <th>예약자</th>
+    	
+    	<th>상태</th>
+
+    </tr>
+    <tr>
+      <td>3</td>
+    	<td> <a href="#" data-toggle="modal" data-target="#myModal"> 2017.00.00.(금) 09:00 ~ 10:00 </a> </td>
+      <td>ㅇㅇㅇ</td>
+    	
+    	<td><p class="text-success">승인</p></td>
+
+    </tr>
+    <tr>
+      <td>2</td>
+    	<td> <a href="#" data-toggle="modal" data-target="#myModal"> 2017.00.00.(금) 09:00 ~ 10:00 </a> </td>
+    	<td>ㅇㅇㅇ</td>
+      
+    	<td><p class="text-muted">승인 대기</p></td>
+
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td> <a href="#" data-toggle="modal" data-target="#myModal"> 2017.00.00.(금) 09:00 ~ 10:00 </a> </td>
+      <td>ㅇㅇㅇ</td>
+      
+      <td><p class="text-danger">승인 거절</p></td>
+ 
+    </tr>    
+  </table>
+
+
+  <nav>
+    <ul class="pagination">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+ <!-- Modal1 -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="modalTitle">상세 예약 정보</h4>
+        </div>
+
+        <!--MODAL-->
+        <div class="modal-body" id="modalBody">
+          <h4 class="modal-title">시간</h4>
+          <p>07-03 13:00 ~ 07-03 14:00</p>
+          <br/>
+          <h4 class="modal-title">총 인원</h4>
+          <p>이재완 포함 5명</p>
+          <br/>
+          <h4 class="modal-title">용도</h4>
+          <p>스터디</p>
+          <br/>
+          <h4 class="modal-title">장비</h4>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="" checked disabled>
+              VR
+            </label>
+            <label>
+              <input type="checkbox" value="" disabled>
+              3D 프린터
+            </label>  
+            <label>
+              <input type="checkbox" value="" disabled>
+              TV
+            </label>      
+              <label>
+              <input type="checkbox" value="" disabled>
+              카메라
+            </label>
+            <label>
+              <input type="checkbox" value="" checked disabled>
+              프린터
+            </label>
+            <label>
+              <input type="checkbox" value="" checked disabled>
+              삼성 기어
+            </label>
+            <label>
+              <input type="checkbox" value="" disabled>
+              삼성 360
+            </label>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">뒤로</button>
+          <button type="button" class="btn btn-primary">바로 예약</button>
+        </div>
+      </div>
+    </div>
+  </div>

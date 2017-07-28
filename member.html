@@ -1,0 +1,89 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+	<script src="//code.jquery.com/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
+
+	<title>휴먼ICT 실습실</title>
+
+
+</head>
+<body>
+	<div class="container">
+		
+		<div class="page-header">
+		  <h1>휴먼ICT 실습실 예약페이지</h1>
+		</div>
+		
+		<div id="input">
+			<form class="form-horizontal">
+				<div class="form-group">
+					<div class="col-xs-10">
+					<button class="btn btn-default" type="button" onclick="location.href='login.html'">뒤로</button>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-10">
+						<label for="student_number"> 학번</label>
+						<input type="number" class="form-control" id="student_number" placeholder="숫자 9자리" min=100000000 max="99999999">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-xs-10">
+						<label for="password">비밀번호</label>
+						<input type="password" class="form-control" id="password" placeholder="영문, 숫자 혼용 8-20자리" maxlength="20">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-xs-10">
+						<label for="password2">비밀번호 확인</label>
+						<input type="password" class="form-control" id="password2" maxlength="20">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-xs-10">
+						<label for="name">이름</label>
+						<input type="name" class="form-control" id="name" maxlength="20">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-xs-10">
+						<label for="major">원전공</label>
+						<input type="major" class="form-control" id="major" maxlength="20">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-xs-10">
+						<label for="email">E-mail</label>
+						<input type="email" class="form-control" id="email" placeholder="비밀번호 찾기에 사용됩니다." maxlength="30">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-xs-10">
+						<label for="tel">연락처</label>
+						<input type="tel" class="form-control" id="tel" maxlength="20">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-xs-10">
+						<button class="btn btn-default" type="button">회원가입 요청</button>
+					</div>
+				</div>
+				
+			</form>		
+
+		</div>
+
+	</div>
+</body>
