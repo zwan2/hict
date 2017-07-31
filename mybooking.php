@@ -1,4 +1,4 @@
-<?
+<?php
     include 'main.html';
     include 'function.php';
 ?>
