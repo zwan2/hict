@@ -1,4 +1,4 @@
-<?
+<?php
     include 'main.html';
     include 'function.php';
 ?>
@@ -168,3 +168,6 @@
     </div>
   </div>
 </div>
+
+</body>
+</html>

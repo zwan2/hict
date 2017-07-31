@@ -1,34 +1,47 @@
-<?
+<?php
     include 'main.html';
     include 'function.php';
 ?>
 
 
 <div class="container">
+
   <!-- 공지사항 패널 -->  
   <div class="panel panel-default"> 
     <div class="panel-body">
         <div id="panel-body-notice">
           <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-          <a href="notice2.html">공지사항</a>
+          <a href="notice2.php">공지사항</a>
         </div>
         <div id="panel-body-more">
-        <a href="notice.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true">
+        <a href="notice.php"><span class="glyphicon glyphicon-menu-right" aria-hidden="true">
         </span></a>
         </div>
     </div>
   </div><!--panel-->
   <br/>
 
+
   <!-- 예약하기 버튼-->
   <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#booking">
     예약하기
   </button>
   <br/>
-  <!--full calendar 호출-->
-  <? include 'calendar2.html'; ?>
 
+
+  <!-- full calendar 호출 -->
+  <!-- jquery는 main.html에 삽입 -->
+  <div id="calendar">
+	  <link rel='stylesheet' href='fullcalendar-3.4.0/fullcalendar.css'/>
+	  <script src='fullcalendar-3.4.0/lib/moment.min.js'></script>
+	  <script src='fullcalendar-3.4.0/fullcalendar.js'></script>
+	  <script src='fullcalendar-3.4.0/locale/ko.js'></script>
+	  <script type="text/javascript" src="calendar.js"></script>
+	  <div id='calendar'></div>
+  </div>
 </div>
+
+
 
 
 
@@ -237,7 +250,7 @@
 
 
 
-
-
+</body>
+</html>
 
 

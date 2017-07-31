@@ -1,4 +1,4 @@
-<?
+<?php
     include 'main.html';
     include 'function.php';
 ?>
@@ -37,7 +37,8 @@
         <td><span class="glyphicon glyphicon-remove" aria-hidden="true" onclick="confirm('정말 삭제하시겠습니까?');"></span></td>
       </tr>
   </table>
-
-
   
 </div>
+
+</body>
+</html>
