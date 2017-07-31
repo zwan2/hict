@@ -1,6 +1,6 @@
 <?php
     include 'main.html';
-    include 'function.php';
+    echo $_SESSION['member_code'];
 ?>
 
 

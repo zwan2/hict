@@ -1,6 +1,5 @@
 <?php
     include 'main.html';
-    include 'function.php';
 ?>
 <div class="container">
   <div class="panel panel-default">

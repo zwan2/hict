@@ -1,3 +1,10 @@
+<?php 
+if(!isset($_SESSION)) { 
+  session_start(); 
+}
+include 'function.php';
+ensure_logged_in();
+?>
 <!DOCTYPE HTML> 
 <html> 
 <head>
@@ -53,7 +60,7 @@
               <li><a href="mybooking.php">내 예약</a></li>
               <li><a href="accountset.php">계정 설정</a></li>
               <li class="divider"></li>
-              <li><a href="login.html">로그아웃</a></li>
+              <li><a href="logout.php">로그아웃</a></li>
             </ul>
           </li>
 
