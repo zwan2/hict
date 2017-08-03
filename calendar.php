@@ -61,47 +61,44 @@
           <h4 class="modal-title">시간</h4>
           <div class="row">  
             <div class="col-xs-2">
-              <p>시작</p> 
+              <p>예약일</p> 
             </div>
-            <div class="col-xs-6">
-              <input type="date" value="<?=$default_date?>" name="start_date" class="form-control">   
-            </div>
-
-            <div class="col-xs-4">
-              <select name="start_time" class="form-control">
-                <? 
-                  for ($i=9;$i<22;$i++) {
-                    ?><option><?echo "$i : 00"?></option><?
-                    ?><option><?echo "$i : 30"?></option><?
-                }?>              
-              </select>
-            </div>
-
+            <div class="col-xs-8">
+              <input type="date" value="<?=$default_date?>" name="booking_date" class="form-control">   
+            </div>            
           </div>
 
           <br/>
           <div class="row">
             <div class="col-xs-2">
-              <p>종료</p> 
+              <p>시작 / 종료</p> 
             </div>  
-            <div class="col-xs-6">
-              <input type="date" value="<?=$default_date?>" name="end_date"  class="form-control">
+  
+            <div class="col-xs-4">
+              <select name="start_time" class="form-control">
+                <option>09:00</option>
+                <option>09:30</option>
+                <? 
+                for ($i=10;$i<22;$i++) {
+                  ?><option><?echo "$i:00"?></option><?
+                  ?><option><?echo "$i:30"?></option><?
+                }?>              
+              </select>
             </div>
+  
             <div class="col-xs-4">
               <select name="end_time" class="form-control" >
-                <option>9 : 30</option>
+                <option>09:30</option>
                 <? 
                   for ($i=10;$i<22;$i++) {
-                    ?><option><?echo "$i : 00"?></option><?
-                    ?><option><?echo "$i : 30"?></option><?
+                    ?><option><?echo "$i:00"?></option><?
+                    ?><option><?echo "$i:30"?></option><?
                 }?>
                 <option>22 : 00</option>              
               </select>
             </div>
           </div>
           <br/>
-
-
 
 
           <h4 class="modal-title">총 인원</h4>
@@ -113,60 +110,61 @@
           <h4 class="modal-title">용도</h4>
           <div class="radio">
             <label>
-              <input type="radio" name="use" value="1" checked>
+              <input type="radio" name="purpose" value="1" checked>
               스터디
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="use" value="2">
+              <input type="radio" name="purpose" value="2">
               비교과
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="use" value="3">
+              <input type="radio" name="purpose" value="3">
               영화 감상
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="use" value="4">
+              <input type="radio" name="purpose" value="4">
             기타
             </label>
           </div>
 
          
-
-
           <h4 class="modal-title">장비</h4>
           <div class="checkbox">
             <label>
-              <input type="checkbox" name="tool" value="1">
+              <input type="hidden" name="tool[]" value="">
+            </label>
+            <label>
+              <input type="checkbox" name="tool[]" value="1">
               VR
             </label>
             <label>
-              <input type="checkbox" name="tool" value="2">
+              <input type="checkbox" name="tool[]" value="2">
               3D 프린터
             </label>  
             <label>
-              <input type="checkbox" name="tool" value="3">
+              <input type="checkbox" name="tool[]" value="3">
               TV
             </label>      
               <label>
-              <input type="checkbox" name="tool" value="4">
+              <input type="checkbox" name="tool[]" value="4">
               카메라
             </label>
             <label>
-              <input type="checkbox" name="tool" value="5">
+              <input type="checkbox" name="tool[]" value="5">
               프린터
             </label>
             <label>
-              <input type="checkbox" name="tool" value="6">
+              <input type="checkbox" name="tool[]" value="6">
               삼성 기어
             </label>
               <label>
-              <input type="checkbox" name="tool" value="7">
+              <input type="checkbox" name="tool[]" value="7">
               삼성 360
             </label>
           </div>
@@ -178,7 +176,7 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">뒤로</button>
-          <button type="submit" class="btn btn-primary">예약</button>
+          <button type="submit"  onclick="confirm('실습실 예약을 하시겠습니까?');" class="btn btn-primary">예약</button>
         </div>
       </form>
 

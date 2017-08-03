@@ -1,13 +1,26 @@
 <?php
+$db = new mysqli("localhost", "root", "autoset", "hict");
+
 $booking_date = $_POST['booking_date'];
 $start_time = $_POST['start_time'];
-$end_date = $_POST['end_date'];
 $end_time = $_POST['end_time'];
 $total_number = $_POST['total_number'];
-$use = $_POST['use'];
-$tool = $_POST['tool'];
+$purpose = $_POST['purpose'];
+$tool = implode(",", $_POST['tool']);
 $extra = $_POST['extra'];
 
+$start_time = $booking_date." $start_time".":00";
+$end_time = $booking_date." $end_time".":00";
 
+
+$query = "INSERT INTO booking(start_time, end_time, total_number, purpose, tool, extra) VALUES ('$start_time', '$end_time', '$total_number', '$purpose', '$tool', '$extra');";
+
+if($result = $db->query($query)) {
+	
+	echo"<script>alert('예약 완료! 내 예약을 확인하세요.'); location.href='calendar.php';</script>";
+}
+else {
+	echo"에러가 발생했습니다. 관리자에게 문의하십시오.";
+}
 
 ?>

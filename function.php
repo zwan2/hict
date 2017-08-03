@@ -6,12 +6,10 @@ if(mysqli_connect_errno()) {
 }
 
 
-
 function ensure_logged_in() {
     if(!isset($_SESSION['member_code'])) {
         echo"<script>alert('로그인하세요.'); location.href='login.html';</script>";
     }
 }
-
 
 ?>
