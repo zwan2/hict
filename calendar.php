@@ -1,5 +1,6 @@
 <?php
     include 'main.html';
+    include 'calendar2.php';
     echo $_SESSION['member_code'];
 ?>
 
@@ -54,20 +55,20 @@
         <h4 class="modal-title" id="myModalLabel">예약하기</h4>
       </div>
 
-      <div class="modal-body">
-        <form>
+
+      <form method="post" action="booking.php" onSubmit="booking_check();" name="booking" class="form-horizontal">
+        <div class="modal-body">
           <h4 class="modal-title">시간</h4>
-          
           <div class="row">  
             <div class="col-xs-2">
               <p>시작</p> 
             </div>
             <div class="col-xs-6">
-              <input type="date" class="form-control">   
+              <input type="date" value="<?=$default_date?>" name="start_date" class="form-control">   
             </div>
 
             <div class="col-xs-4">
-              <select class="form-control">
+              <select name="start_time" class="form-control">
                 <? 
                   for ($i=9;$i<22;$i++) {
                     ?><option><?echo "$i : 00"?></option><?
@@ -84,10 +85,10 @@
               <p>종료</p> 
             </div>  
             <div class="col-xs-6">
-              <input type="date" class="form-control">
+              <input type="date" value="<?=$default_date?>" name="end_date"  class="form-control">
             </div>
             <div class="col-xs-4">
-              <select class="form-control">
+              <select name="end_time" class="form-control" >
                 <option>9 : 30</option>
                 <? 
                   for ($i=10;$i<22;$i++) {
@@ -105,32 +106,32 @@
 
           <h4 class="modal-title">총 인원</h4>
           <div class="col-xs-3">
-            <input type="number" class="form-control" id="total_number" min=1 max="100">
+            <input type="number" class="form-control" name="total_number" value="1" min=1 max="100">
           </div>
           <br/><br/>
 
           <h4 class="modal-title">용도</h4>
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+              <input type="radio" name="use" value="1" checked>
               스터디
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+              <input type="radio" name="use" value="2">
               비교과
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+              <input type="radio" name="use" value="3">
               영화 감상
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios4" value="option3">
+              <input type="radio" name="use" value="4">
             기타
             </label>
           </div>
@@ -141,46 +142,46 @@
           <h4 class="modal-title">장비</h4>
           <div class="checkbox">
             <label>
-              <input type="checkbox" value="">
+              <input type="checkbox" name="tool" value="1">
               VR
             </label>
             <label>
-              <input type="checkbox" value="">
+              <input type="checkbox" name="tool" value="2">
               3D 프린터
             </label>  
             <label>
-              <input type="checkbox" value="">
+              <input type="checkbox" name="tool" value="3">
               TV
             </label>      
               <label>
-              <input type="checkbox" value="">
+              <input type="checkbox" name="tool" value="4">
               카메라
             </label>
             <label>
-              <input type="checkbox" value="">
+              <input type="checkbox" name="tool" value="5">
               프린터
             </label>
             <label>
-              <input type="checkbox" value="">
+              <input type="checkbox" name="tool" value="6">
               삼성 기어
             </label>
               <label>
-              <input type="checkbox" value="">
+              <input type="checkbox" name="tool" value="7">
               삼성 360
             </label>
           </div>
+          <br/>
+
           <h4 class="modal-title">기타 사항</h4>
-          <input type="text" class="form-control" maxlength="50">
-        </form>
-      </div>
+          <input type="text" name="extra" class="form-control" placeholder="활동 목적, 내용 등 기입이 필요하다면 이곳을 활용하세요." maxlength="50">
+        </div><!--modal-body-->
 
-      
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">뒤로</button>
+          <button type="submit" class="btn btn-primary">예약</button>
+        </div>
+      </form>
 
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">뒤로</button>
-        <button type="button" class="btn btn-primary">예약</button>
-      </div>
     </div>
   </div>
 </div> 
@@ -254,3 +255,14 @@
 </html>
 
 
+
+<script type="text/javascript">
+function booking_check(){
+  var form = document.booking;
+  var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+
+
+ 
+  
+}
+</script>

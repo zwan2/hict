@@ -20,7 +20,7 @@
 		</div>
 		
 		<div id="input">
-			<form method="post" action="member.php" class="form-horizontal">
+			<form method="post" action="member.php" onSubmit="member_check();" name="member" class="form-horizontal">
 				<div class="form-group">
 					<div class="col-xs-10">
 					<button class="btn btn-default" type="button" onclick="location.href='login.html'">뒤로</button>
@@ -50,30 +50,27 @@
 				<div class="form-group">
 					<div class="col-xs-10">
 						<label for="name">이름</label>
-						<input type="name" class="form-control" name="name" maxlength="20">
+						<input type="name" class="form-control" name="name" maxlength="20" placeholder="이름">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-xs-10">
-						<label for="major">원전공</label>
-						<input type="major" class="form-control" name="major" maxlength="20">
+						<label for="email">(선택) E-mail</label>
+						<input type="email" class="form-control" name="email" placeholder="E-mail을 입력하세요" maxlength="30">
+						<span id="helpBlock" class="help-block">비밀번호 찾기에 사용됩니다.</span>
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-xs-10">
-						<label for="email">E-mail</label>
-						<input type="email" class="form-control" name="email" placeholder="비밀번호 찾기에 사용됩니다." maxlength="30">
+						<label for="tel">(선택) 연락처</label>
+						<input type="tel" class="form-control" name="tel" maxlength="20" placeholder="연락처">
+						<span id="helpBlock" class="help-block">관리자와의 비상 연락에 사용됩니다.</span>
 					</div>
 				</div>
 
-				<div class="form-group">
-					<div class="col-xs-10">
-						<label for="tel">연락처</label>
-						<input type="tel" class="form-control" name="tel" maxlength="20">
-					</div>
-				</div>
+				<input type="hidden" name="admin_code" value ="0"> 
 
 				<div class="form-group">
 					<div class="col-xs-10">
@@ -88,3 +85,26 @@
 
 	</div>
 </body>
+</html>
+
+<script type="text/javascript">
+function member_check(){
+	var form = document.member;
+	var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+
+
+	//전부 입력했는지 검사
+	if(form.student_number.value=="" || form.password.value=="" || form.password2.value=="" || form.name.value=="") {
+		alert("필수 사항을 입력하지 않았습니다.");
+		window.history.back();
+	}
+	//비밀번호, 비밀번호 확인 일치
+	else if(form.password.value != form.password2.value) {
+		alert("비밀번호가 일치하지 않습니다.");
+		window.history.back();
+	}
+
+
+	
+}
+</script>
