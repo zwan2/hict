@@ -42,40 +42,12 @@ $(document).ready(function() {
 		slotLabelFormat: 'H',
 		timeFormat: 'H:mm',
 
-		
 		minTime: '09:00:00',
 		maxTime: '22:00:00',
 
 
 
-		events: [
-			
-			
-			{
-				id: 999,
-				title: 'Repeating Event',
-				start: new Date(y, m, d-3, 16, 0),
-				allDay: false
-			},
-			{
-				id: 999,
-				title: 'Repeating Event',
-				start: new Date(y, m, d+4, 16, 0),
-				allDay: false
-			},
-			{
-				title: 'Meeting',
-				start: new Date(y, m, d, 10, 30),
-				allDay: false
-			},
-			{
-				title: 'Lunch',
-				start: new Date(y, m, d, 12, 0),
-				end: new Date(y, m, d, 14, 0),
-				allDay: false
-			},
-			
-		],
+		events: 'events_load.php',
 
 		eventClick: function(event, jsEvent, view) {
 			//$('#modalTitle').html(event.title);

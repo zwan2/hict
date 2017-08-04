@@ -12,4 +12,8 @@ function ensure_logged_in() {
     }
 }
 
+function events_modal() {
+	global $db;
+	
+}
 ?>

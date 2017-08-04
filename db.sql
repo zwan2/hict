@@ -22,12 +22,15 @@ CREATE TABLE fail_check (
 );
 
 CREATE TABLE booking (
+	booking_id int UNSIGNED NOT NULL AUTO_INCREMENT,
+	name char(20),
 	start_time datetime,
 	end_time datetime,
 	total_number tinyint,
 	purpose tinyint,
 	tool char(30),
-	extra text
+	extra text,
+	PRIMARY KEY (booking_id)
 );
 
 INSERT INTO member (student_number, password, name, email, tel, admin_code, member_code) VALUES ('111111111', '11','11','11', '11','11','1');

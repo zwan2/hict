@@ -1,6 +1,7 @@
 <?php
 $db = new mysqli("localhost", "root", "autoset", "hict");
 
+$name = $_POST['name'];
 $booking_date = $_POST['booking_date'];
 $start_time = $_POST['start_time'];
 $end_time = $_POST['end_time'];
@@ -13,7 +14,7 @@ $start_time = $booking_date." $start_time".":00";
 $end_time = $booking_date." $end_time".":00";
 
 
-$query = "INSERT INTO booking(start_time, end_time, total_number, purpose, tool, extra) VALUES ('$start_time', '$end_time', '$total_number', '$purpose', '$tool', '$extra');";
+$query = "INSERT INTO booking(name, start_time, end_time, total_number, purpose, tool, extra) VALUES ('$name', '$start_time', '$end_time', '$total_number', '$purpose', '$tool', '$extra');";
 
 if($result = $db->query($query)) {
 	

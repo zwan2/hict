@@ -1,7 +1,8 @@
 <?php
     include 'main.html';
     include 'calendar2.php';
-    echo $_SESSION['member_code'];
+    echo $_SESSION['name'];
+
 ?>
 
 
@@ -58,6 +59,9 @@
 
       <form method="post" action="booking.php" onSubmit="booking_check();" name="booking" class="form-horizontal">
         <div class="modal-body">
+          <!--이름 data-->
+          <input type="hidden" name="name" value="<?=$_SESSION['name']?>">
+
           <h4 class="modal-title">시간</h4>
           <div class="row">  
             <div class="col-xs-2">

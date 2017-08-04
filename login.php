@@ -19,7 +19,7 @@ if(login()) {
 else {
 	fail_lock();
 	fail_count();
-	//echo"<script>alert('로그인에 실패하였습니다. 다시 입력하세요.'); location.href='login.html';</script>";
+	echo"<script>alert('로그인에 실패하였습니다. 다시 입력하세요.'); location.href='login.html';</script>";
 }
 
 
@@ -35,13 +35,14 @@ function login() {
 	$student_number = $_POST['student_number'];
 	$password = $_POST['password'];
 	
-	$query = "SELECT admin_code, member_code FROM member WHERE student_number = $student_number AND password = $password";
+	$query = "SELECT admin_code, member_code, name FROM member WHERE student_number = $student_number AND password = $password";
 		
 	if($result = $db->query($query)) {
 		//로그인 성공
 		if($row = $result->fetch_assoc()) {
 			$_SESSION['admin_code'] = $row['admin_code'];
 			$_SESSION['member_code'] = $row['member_code'];
+			$_SESSION['name'] = $row['name'];
 			return TRUE;
 		}
 		//로그인 실패
