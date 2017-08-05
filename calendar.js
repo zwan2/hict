@@ -21,7 +21,8 @@ $(document).ready(function() {
 			listWeek: {
 				buttonText: '목록'
 			}
-		},			
+		},
+		noEventsMessage: "예약 없음",			
 
 		defaultView: 'agendaWeek',
 		
@@ -47,15 +48,18 @@ $(document).ready(function() {
 
 
 
-		events: 'events_load.php',
+		events: '/events_load.php',
 
 		eventClick: function(event, jsEvent, view) {
-			//$('#modalTitle').html(event.title);
-            $('#modal_start').html(event.start);
-            
-            $('#modal_body').html(event.description);
-            
-            
+			$('#start').html(moment(event.start).format('MMM Do H:mm'));
+			$('#end').html(moment(event.end).format('H:mm'));
+			$('#name').html(event.title);
+			$('#total_number').html(event.total_number);
+
+			$('#purpose').html(event.purpose);
+			$('#tool').html(event.tool);
+			$('#extra').html(event.extra);
+
             $('#detail_data').modal();
 		}	
 	});

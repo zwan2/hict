@@ -14,6 +14,12 @@ if($result = $db->query($query)) {
 		$event['title'] = $row['name'];
 		$event['start'] = $row['start_time'];
 		$event['end'] = $row['end_time'];
+		$event['total_number'] = $row['total_number'];
+		$event['purpose'] = $row['purpose'];
+		$event['tool'] = $row['tool'];
+		$event['extra'] = $row['extra'];
+
+
 		$event['allDay'] = false;
 
 		array_push($events, $event);
