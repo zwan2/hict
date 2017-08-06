@@ -1,52 +1,81 @@
 <?php
     include 'main.html';
 ?>
-<div class="container">
-  <div class="panel panel-default">
-    <div class="panel-heading">예약 리스트</div>
 
-  
+
+<!-- 상세 예약 정보 modal -->
+<div id="detail_data" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 id="modal-title" class="modal-title">상세 예약 정보</h4>
+      </div>
+
+      <!--ajax 기반 비동기 호출-->
+      <div id="dynamic-content" class="modal-body">
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">뒤로</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 상태변경(대기, 승인, 취소) modal -->
+<div class="modal fade bs-example-modal-sm" id="message">
+  <div class="modal-dialog modal-sm"> 
+    <div class="modal-content">
+
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modalTitle">승인 여부</h4>
+      </div>
+
+      <form method="post" action="bookinglist_change.php" name="bookinglist_message" class="form-horizontal">
+        <!--ajax 기반 비동기 호출-->
+        <div id="sdynamic-content" class="modal-body">
+        </div>
+
+
+         <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" onclick="return confirm('예약 상태를 변경하시겠습니까?');">확인</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">뒤로</button>  
+        </div>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="container">
+ <div class="panel panel-default">
+    <div class="panel-heading">예약 리스트</div>
 
     <table class="table">
       <tr> 
         <th>#</th>
-      	<th>날짜</th>
+        <th>날짜</th>
         <th>예약자</th>
-      	
-      	<th>상태</th>
-
-      </tr>
-      <tr>
-        <td>3</td>
-      	<td> <a href="#" data-toggle="modal" data-target="#detail_data"> 2017.00.00.(금) 09:00 ~ 10:00 </a> </td>
-        <td>ㅇㅇㅇ</td>
-      	
-      	<td><u data-toggle="modal" data-target="#change">승인</u></td>
-
-      </tr>
-      <tr>
-        <td>2</td>
-      	<td> <a href="#" data-toggle="modal" data-target="#detail_data"> 2017.00.00.(금) 09:00 ~ 10:00 </a> </td>
-      	<td>ㅇㅇㅇ</td>
         
-      	<td><u data-toggle="modal" data-target="#change">대기</u></td>
-
+        <th>상태</th>
       </tr>
-
-      <tr>
-        <td>1</td>
-        <td> <a href="#" data-toggle="modal" data-target="#detail_data"> 2017.00.00.(금) 09:00 ~ 10:00 </a> </td>
-        <td>ㅇㅇㅇ</td>
-        
-        <td><u data-toggle="modal" data-target="#change">거절</u></td>
-   
-      </tr>    
+      <?=bookinglist()?>
     </table>
+  </div>  
+
 
 
   
-
-    </div>
 
   <nav>
     <ul class="pagination">
@@ -71,102 +100,67 @@
 </div>
 
 
- <!-- 상세 예약 정보 modal -->
-  <div class="modal fade" id="detail_data" tabindex="-1" role="dialog" aria-labelledby="detail_dataLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="modalTitle">상세 예약 정보</h4>
-        </div>
-
-        <!--MODAL-->
-        <div class="modal-body" id="modalBody">
-          <h4 class="modal-title">시간</h4>
-          <p>07-03 13:00 ~ 07-03 14:00</p>
-          <br/>
-          <h4 class="modal-title">총 인원</h4>
-          <p>이재완 포함 5명</p>
-          <br/>
-          <h4 class="modal-title">용도</h4>
-          <p>스터디</p>
-          <br/>
-          <h4 class="modal-title">장비</h4>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="" checked disabled>
-              VR
-            </label>
-            <label>
-              <input type="checkbox" value="" disabled>
-              3D 프린터
-            </label>  
-            <label>
-              <input type="checkbox" value="" disabled>
-              TV
-            </label>      
-              <label>
-              <input type="checkbox" value="" disabled>
-              카메라
-            </label>
-            <label>
-              <input type="checkbox" value="" checked disabled>
-              프린터
-            </label>
-            <label>
-              <input type="checkbox" value="" checked disabled>
-              삼성 기어
-            </label>
-            <label>
-              <input type="checkbox" value="" disabled>
-              삼성 360
-            </label>
-          </div>
-        </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">뒤로</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-<!-- 상태변경(대기, 승인, 취소) modal -->
-<div class="modal fade bs-example-modal-sm" id="change" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-
-
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="modalTitle">승인 여부</h4>
-      </div>
-
-
-      <div class="modal-body">
-        <h4 class="modal-title">승인 여부</h4>
-        <label class="radio-inline">
-          <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 승인
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 거절
-        </label>
-        <br/><br/>
-
-        <h4 class="modal-title">전달 사항(선택)</h4>
-        <input type="text" class="form-control">
-
-      </div>
-
-       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">확인</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">뒤로</button>  
-      </div>
-      
-    </div>
-  </div>
-</div>
 
 </body>
 </html>
+
+
+
+<script>$(document).ready(function(){
+$(document).ready(function(){
+    //날짜 modal
+    $(document).on('click', '#modal_toggle', function(e){
+  
+     e.preventDefault();
+  
+     var booking_id = $(this).data('id'); // get id of clicked row
+  
+     $('#dynamic-content').html(''); // leave this div blank
+  
+     $.ajax({
+          url: 'getmybooking.php',
+          type: 'POST',
+          data: 'id='+booking_id,
+          dataType: 'html'
+     })
+     .done(function(data){
+          console.log(data); 
+          $('#dynamic-content').html(''); // blank before load.
+          $('#dynamic-content').html(data); // load here
+     })
+     .fail(function(){
+          $('#dynamic-content').html('Something went wrong, Please try again...');
+     });
+
+    });
+
+
+    //승인, 거절 message modal
+    $(document).on('click', '#smodal_toggle', function(e){
+  
+     e.preventDefault();
+  
+     var booking_id = $(this).data('id'); // get id of clicked row
+  
+     $('#sdynamic-content').html(''); // leave this div blank
+  
+     $.ajax({
+          url: 'bookinglist_message.php',
+          type: 'POST',
+          data: 'id='+booking_id,
+          dataType: 'html'
+     })
+     .done(function(data){
+          console.log(data); 
+          $('#sdynamic-content').html(''); // blank before load.
+          $('#sdynamic-content').html(data); // load here
+     })
+     .fail(function(){
+          $('#sdynamic-content').html('Something went wrong, Please try again...');
+     });
+
+    });
+
+
+})});
+</script>

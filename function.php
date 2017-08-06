@@ -5,6 +5,10 @@ if(mysqli_connect_errno()) {
 	mysqli_connect_error();
 }
 
+function dom($day) {
+	$dom = array("일","월","화","수","목","금","토");
+	return $dom[date('w',strtotime($day))];
+}
 
 function ensure_logged_in() {
     if(!isset($_SESSION['student_number'])) {
@@ -26,12 +30,15 @@ function mybooking() {
 			//#
 			echo "<td> $num </td>";
 			$num--;
-
+			
 			//날짜
-			$start_time = date("Y-m-d G:i", strtotime($row['start_time']));
+			$start_day = date("Y-m-d", strtotime($row['start_time']));
+			$dom = dom($row['start_time']);
+			$start_time = date("G:i", strtotime($row['start_time']));
 			$end_time = date("G:i", strtotime($row['end_time']));
+			
 			$booking_id = $row['booking_id'];
-			echo "<td> <a data-toggle=\"modal\" data-target=\"#detail_data\" data-id = $booking_id id = \"modal_toggle\"> $start_time - $end_time </a> </td>";
+			echo "<td> <a data-toggle=\"modal\" data-target=\"#detail_data\" data-id = $booking_id id = \"modal_toggle\"> $start_day ($dom) $start_time - $end_time </a> </td>";
 			
 			//상태
 			mybooking_db_conversion($row['booking_state'], $row['booking_id']);
@@ -65,5 +72,99 @@ function mybooking_db_conversion($booking_state, $booking_id) {
 		echo "<td><p class=\"text-muted\">취소</p></td>";
 	}
 }
+
+
+function accountset_load() {
+	global $db;
+	$student_number = $_SESSION['student_number'];
+
+	$query = "SELECT * FROM member WHERE student_number = $student_number";
+		
+	if($result = $db->query($query)) {
+		$row = $result->fetch_assoc();
+	}
+}
+
+
+function notice() {
+	global $db;
+	$student_number = $_SESSION['student_number'];
+
+	$query = "SELECT * FROM notice ORDER BY notice_id DESC";
+
+	if($result = $db->query($query)) {
+		$num = mysqli_num_rows ($result);
+		while($row = $result->fetch_assoc()) {
+			echo "<tr>";
+			
+			//#
+			echo "<td> $num </td>";
+			$num--;
+
+			//제목
+			$title = $row['title'];
+			$notice_id = $row['notice_id'];
+			echo "<td><a href=\"notice2.php?notice_id=$notice_id\"> $title </a></td>";
+
+			//날짜
+			$write_time = $row['write_time'];
+			echo "<td> $write_time </td>";	
+			
+			echo"</tr>";
+			
+		
+		}
+	}
+
+}
+
+
+
+function bookinglist() {
+	global $db;
+	//관리자만 사용 가능
+	if($_SESSION['admin_code'] == 1) {
+	
+		$query = "SELECT * FROM booking ORDER BY booking_id DESC";
+		
+		if($result = $db->query($query)) {
+			$num = mysqli_num_rows ($result);
+			while($row = $result->fetch_assoc()) {
+				echo "<tr>";
+				
+				//#
+				echo "<td> $num </td>";
+				$num--;
+				
+				//날짜
+				$start_day = date("Y-m-d", strtotime($row['start_time']));
+				$dom = dom($row['start_time']);
+				$start_time = date("G:i", strtotime($row['start_time']));
+				$end_time = date("G:i", strtotime($row['end_time']));
+				
+				$booking_id = $row['booking_id'];
+				echo "<td> <a data-toggle=\"modal\" data-target=\"#detail_data\" data-id = $booking_id id = \"modal_toggle\"> $start_day ($dom) $start_time - $end_time </a> </td>";
+				//예약자
+				$name = $row['name'];
+				$student_number = $row['student_number'];
+				echo "<td> $name($student_number) </td>";
+				//상태
+				mybooking_db_conversion($row['booking_state'], $row['booking_id']);
+				
+				echo"</tr>";
+				
+			
+			}
+		}		
+
+	}
+	else {
+		echo"<script>alert('관리자가 아닙니다.')</script>";
+	}
+
+
+
+}
+
 
 ?>
