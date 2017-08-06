@@ -23,6 +23,7 @@ CREATE TABLE fail_check (
 CREATE TABLE booking (
 	booking_id int UNSIGNED NOT NULL AUTO_INCREMENT,
 	booking_state tinyint(1),
+	message text,
 	student_number int(9),
 	name char(20),
 	start_time datetime,

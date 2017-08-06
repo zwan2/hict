@@ -1,7 +1,7 @@
 <?php
-    include 'main.html';
-    include 'calendar2.php';
-    echo $_SESSION['name'];
+include 'main.html';
+include 'calendar2.php';
+echo $_SESSION['name'];
 
 ?>
 
@@ -15,7 +15,7 @@
       </div>
 
 
-      <form method="post" action="booking.php" onSubmit="booking_check();" name="booking" class="form-horizontal">
+      <form method="post" action="booking.php" onsubmit="return booking_check();" name="booking" class="form-horizontal">
         <div class="modal-body">
           <!--이름, 학번 data-->
           <input type="hidden" name="name" value="<?=$_SESSION['name']?>">
@@ -39,8 +39,10 @@
   
             <div class="col-xs-4">
               <select name="start_time" class="form-control">
+                <option>09:00</option>
+                <option>09:30</option>
                 <? 
-                for ($i=9;$i<22;$i++) {
+                for ($i=10;$i<22;$i++) {
                   ?><option><?echo "$i:00"?></option><?
                   ?><option><?echo "$i:30"?></option><?
                 }?>              
@@ -49,7 +51,7 @@
   
             <div class="col-xs-4">
               <select name="end_time" class="form-control" >
-                <option>9:30</option>
+                <option>09:30</option>
                 <? 
                   for ($i=10;$i<22;$i++) {
                     ?><option><?echo "$i:00"?></option><?
@@ -64,9 +66,9 @@
 
           <h4 class="modal-title">총 인원</h4>
           <div class="col-xs-3">
-            <input type="number" class="form-control" name="total_number" value="1" min=1 max="100">
+            <input type="number" class="form-control" name="total_number" value="1">
           </div>
-          <br/><br/>
+          <br/><br/><br/>
 
           <h4 class="modal-title">용도</h4>
           <div class="radio">
@@ -93,7 +95,7 @@
             기타
             </label>
           </div>
-
+          <br/>
          
           <h4 class="modal-title">장비</h4>
           <div class="checkbox">
@@ -127,7 +129,7 @@
               삼성 360
             </label>
           </div>
-          <br/>
+          <br/><br/>
 
           <h4 class="modal-title">기타 사항</h4>
           <input type="text" name="extra" class="form-control" placeholder="활동 목적, 내용 등 기입이 필요하다면 이곳을 활용하세요." maxlength="50">
@@ -239,12 +241,31 @@
 
 
 <script type="text/javascript">
+
 function booking_check(){
   var form = document.booking;
-  var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
-
-
- 
   
+  
+  //날짜 제한
+  if(form.booking_date.value <= moment().format("YYYY-MM-DD")) {
+    alert("예약일을 올바르게 입력하세요.");
+    form.booking_date.focus();
+    return false;
+  }
+
+  //시간 제한
+  else if(form.start_time.value >= form.end_time.value) {
+    alert("시간을 올바르게 입력하세요.");
+    form.end_time.focus();
+    return false;
+  }
+
+  //인원 제한
+  else if(form.total_number.value < 1 || form.total_number.value > 100) {
+    alert("인원을 올바르게 입력하세요.");
+    form.total_number.focus();
+    return false;
+  }
+ 
 }
 </script>
