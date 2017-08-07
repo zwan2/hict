@@ -16,61 +16,28 @@ function ensure_logged_in() {
     }
 }
 
-function mybooking() {
-	global $db;
-	$student_number = $_SESSION['student_number'];
-
-	$query = "SELECT * FROM booking WHERE student_number = $student_number ORDER BY booking_id DESC";
-	
-	if($result = $db->query($query)) {
-		$num = mysqli_num_rows ($result);
-		while($row = $result->fetch_assoc()) {
-			echo "<tr>";
-			
-			//#
-			echo "<td> $num </td>";
-			$num--;
-			
-			//날짜
-			$start_day = date("Y-m-d", strtotime($row['start_time']));
-			$dom = dom($row['start_time']);
-			$start_time = date("G:i", strtotime($row['start_time']));
-			$end_time = date("G:i", strtotime($row['end_time']));
-			
-			$booking_id = $row['booking_id'];
-			echo "<td> <a data-toggle=\"modal\" data-target=\"#detail_data\" data-id = $booking_id id = \"modal_toggle\"> $start_day ($dom) $start_time - $end_time </a> </td>";
-			
-			//상태
-			mybooking_db_conversion($row['booking_state'], $row['booking_id']);
-			
-			echo"</tr>";
-			
-		
-		}
+function admin_hidden($admin_code) {
+	if($admin_code == 0) {
+		echo "hidden";
 	}
-
+	else
+		echo "show";
 }
 
-//booking state 변환 함수
-function mybooking_db_conversion($booking_state, $booking_id) {
-	//승인 대기
-	if($booking_state == 0) {
-		echo "<td><p class=\"text-muted\">승인 대기</p> 
-		<a href=\"mybooking_cancel.php?booking_id=$booking_id\">
-		<u onclick=\"return confirm('정말 예약을 취소하시겠습니까?');\">취소</u></td>";
+function admin_link($admin_code, $link) {
+	if($admin_code == 0) {
+		return "#";
 	}
-	//승인
-	else if($booking_state == 1) {
-		echo "<td><u data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\">승인</p></td>";
+	else {
+		return $link;
 	}
-	//거절
-	else if($booking_state == 2) {
-		echo"<td><u data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\">거절</p></td>";
+}
+
+function admin_back($admin_code) {
+	if($admin_code == 0) {
+		echo "<script>window.history.back()</script>";
 	}
-	//취소
-	else if($booking_state ==3) {
-		echo "<td><p class=\"text-muted\">취소</p></td>";
-	}
+
 }
 
 
@@ -120,51 +87,281 @@ function notice() {
 
 
 
+function mybooking() {
+	global $db;
+	$student_number = $_SESSION['student_number'];
+	
+
+	//페이지네이션 쿼리
+	$query = "SELECT booking_id FROM booking WHERE student_number = $student_number";
+	if($result = $db->query($query)) {
+		$total_num = mysqli_num_rows($result);
+		if($total_num == 0) {
+			$total_num = 1;
+		}
+		//현재 위치한 페이지
+		$page = (isset($_GET['page'])?$_GET['page']:1);
+		$list = 10;
+		$block = 5;
+		//총 페이지 수
+		$page_num = ceil($total_num/$list);
+		//총 블록 수
+		$block_num = ceil($page_num/$block);
+		//현재 위치한 페이지 블록
+		$now_block = ceil($page/$block);
+
+		//블록의 시작
+		$start_page = ($now_block*$block) - ($block - 1);
+		if($start_page <= 1) {
+			$start_page = 1;
+		}
+		//블록의 끝
+		$end_page = $now_block*$block;
+		if($page_num <= $end_page) {
+			$end_page = $page_num;
+		}
+
+		$start_point = ($page-1) * $list;
+		$prev_page = max($start_page - $block - 1, 1);
+		$next_page = min($end_page + $block + 1, $page_num);
+
+		$page = (isset($_GET['page'])?$_GET['page']:1);
+		$list = 10;
+		$start_point = ($page-1) * $list;	
+		$num = ($page_num-$page)*10+($total_num%10);
+	}
+
+	//리스트 출력
+	$query = "SELECT * FROM booking WHERE student_number = $student_number ORDER BY booking_id DESC LIMIT $start_point, $list";
+	if($result = $db->query($query)) {
+		while($row = $result->fetch_assoc()) {
+			echo "<tr>";
+			
+			//#
+			echo "<td> $num </td>";
+			$num--;
+			
+			//날짜
+			$start_day = date("Y-m-d", strtotime($row['start_time']));
+			$dom = dom($row['start_time']);
+			$start_time = date("G:i", strtotime($row['start_time']));
+			$end_time = date("G:i", strtotime($row['end_time']));
+			
+			$booking_id = $row['booking_id'];
+			echo "<td> <a data-toggle=\"modal\" data-target=\"#detail_data\" data-id = $booking_id id = \"modal_toggle\"> $start_day ($dom) $start_time - $end_time </a> </td>";
+			
+			//상태
+			mybooking_db_conversion($row['booking_state'], $row['booking_id']);
+			
+			echo"</tr>";
+			
+		
+		}
+		echo "</table></div>";
+	}
+
+
+
+	//페이지네이션 출력
+	$php_self = $_SERVER['SCRIPT_NAME'];
+	
+	//이전
+	echo"
+	<nav>
+		<ul class=\"pagination\">
+
+		<li>
+			<a href=\"$php_self?page=$prev_page\" aria-label=\"Previous\">
+			<span aria-hidden=\"true\">&laquo;</span>
+			</a>
+		</li>";
+
+	//블록
+	for ($p=$start_page; $p<=$end_page; $p++) {
+		echo"<li><a href=\"$php_self?page=$p\">$p</a></li>";
+	}
+
+	//다음
+	echo"
+		<li>
+			<a href=\"$php_self?page=$next_page\" aria-label=\"Next\">
+			<span aria-hidden=\"true\">&raquo;</span>
+			</a>
+		</li>
+
+		</ul>
+	</nav>";
+
+}
+
+
+//mybooking - booking state 변환 함수
+function mybooking_db_conversion($booking_state, $booking_id) {
+	//승인 대기
+	if($booking_state == 0) {
+		echo "<td><p class=\"text-muted\">대기</p> 
+		<a href=\"mybooking_cancel.php?booking_id=$booking_id\">
+		<u onclick=\"return confirm('정말 예약을 취소하시겠습니까?');\">취소</u></td>";
+	}
+	//승인
+	else if($booking_state == 1) {
+		echo "<td><u data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\">승인</p></td>";
+	}
+	//거절
+	else if($booking_state == 2) {
+		echo"<td><u data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\">거절</p></td>";
+	}
+	//취소
+	else if($booking_state == 3) {
+		echo "<td><p class=\"text-muted\">취소</p></td>";
+	}
+}
+
+
+
+//예약 리스트 테이블 & 페이지네이션 & 검색
 function bookinglist() {
 	global $db;
-	//관리자만 사용 가능
-	if($_SESSION['admin_code'] == 1) {
 	
-		$query = "SELECT * FROM booking ORDER BY booking_id DESC";
-		
+	$query = "SELECT booking_id FROM booking";
+
+	if($result = $db->query($query)) {
+		$num = mysqli_num_rows($result);
+
+		//현재 위치한 페이지
+		$page = (isset($_GET['page'])?$_GET['page']:1);
+		$list = 10;
+		$block = 5;
+		//총 페이지 수
+		$page_num = ceil($num/$list);
+		//총 블록 수
+		$block_num = ceil($page_num/$block);
+		//현재 위치한 페이지 블록
+		$now_block = ceil($page/$block);
+
+		//블록의 시작
+		$start_page = ($now_block*$block) - ($block - 1);
+		if($start_page <= 1) {
+			$start_page = 1;
+		}
+		//블록의 끝
+		$end_page = $now_block*$block;
+		if($page_num <= $end_page) {
+			$end_page = $page_num;
+		}
+
+		$start_point = ($page-1) * $list;
+		$prev_page = max($start_page - $block - 1, 1);
+		$next_page = min($end_page + $block + 1, $page_num);
+
+	}
+	
+	$page = (isset($_GET['page'])?$_GET['page']:1);
+	$list = 10;
+	$start_point = ($page-1) * $list;
+
+	//관리자만 사용
+	if($_SESSION['admin_code'] == 1) {
+
+		//검색 값이 있을 경우
+		if(isset($_GET['search'])) {
+			$search = "%".$_GET['search']."%";
+
+			$query = "SELECT * FROM booking WHERE name LIKE '$search' OR admin_name LIKE '$search' ORDER BY booking_id DESC";
+		}
+	
+		//default
+		else 	
+		{
+			$query = "SELECT * FROM booking ORDER BY booking_id DESC LIMIT $start_point, $list";
+		}
+	
+
+
 		if($result = $db->query($query)) {
-			$num = mysqli_num_rows ($result);
 			while($row = $result->fetch_assoc()) {
 				echo "<tr>";
 				
 				//#
-				echo "<td> $num </td>";
-				$num--;
+				$booking_id = $row['booking_id'];
+				echo "<td> $booking_id </td>";
+				
 				
 				//날짜
 				$start_day = date("Y-m-d", strtotime($row['start_time']));
 				$dom = dom($row['start_time']);
 				$start_time = date("G:i", strtotime($row['start_time']));
-				$end_time = date("G:i", strtotime($row['end_time']));
-				
-				$booking_id = $row['booking_id'];
+				$end_time = date("G:i", strtotime($row['end_time']));			
 				echo "<td> <a data-toggle=\"modal\" data-target=\"#detail_data\" data-id = $booking_id id = \"modal_toggle\"> $start_day ($dom) $start_time - $end_time </a> </td>";
+
 				//예약자
 				$name = $row['name'];
 				$student_number = $row['student_number'];
 				echo "<td> $name($student_number) </td>";
+				
 				//상태
-				mybooking_db_conversion($row['booking_state'], $row['booking_id']);
+				bookinglist_db_conversion($row['booking_state'], $row['booking_id']);
 				
 				echo"</tr>";
-				
-			
+
 			}
-		}		
+			echo "</table></div>";
+		}
 
 	}
-	else {
-		echo"<script>alert('관리자가 아닙니다.')</script>";
+
+
+
+	//페이지네이션
+	$php_self = $_SERVER['SCRIPT_NAME'];
+	
+	//이전
+	echo"
+	<nav>
+		<ul class=\"pagination\">
+
+		<li>
+			<a href=\"$php_self?page=$prev_page\" aria-label=\"Previous\">
+			<span aria-hidden=\"true\">&laquo;</span>
+			</a>
+		</li>";
+
+	//블록
+	for ($p=$start_page; $p<=$end_page; $p++) {
+		echo"<li><a href=\"$php_self?page=$p\">$p</a></li>";
 	}
 
+	//다음
+	echo"
+		<li>
+			<a href=\"$php_self?page=$next_page\" aria-label=\"Next\">
+			<span aria-hidden=\"true\">&raquo;</span>
+			</a>
+		</li>
 
-
+		</ul>
+	</nav>";
+	
 }
 
+//bookinglist - booking state 변환 함수
+function bookinglist_db_conversion($booking_state, $booking_id) {
+	//승인 대기
+	if($booking_state == 0) {
+		echo "<td><u class=\"text-muted\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\">대기</u></td>";
+	}
+	//승인
+	else if($booking_state == 1) {
+		echo "<td><u data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\">승인</p></td>";
+	}
+	//거절
+	else if($booking_state == 2) {
+		echo"<td><u data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\">거절</p></td>";
+	}
+	//취소
+	else if($booking_state == 3) {
+		echo "<td><p class=\"text-muted\">취소</p></td>";
+	}
+}
 
 ?>

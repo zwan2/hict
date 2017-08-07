@@ -102,8 +102,13 @@ function member_check(){
 	else if(form.password.value != form.password2.value) {
 		alert("비밀번호가 일치하지 않습니다.");
 		window.history.back();
-	}
 
+	}
+	else if (!/^[A-Za-z0-9]*.{8,16}$/.test(form.password.value)) {
+		alert('비밀번호는 숫자와 영문자 조합으로 8~20자리를 사용해야 합니다.');
+		form.password.focus();
+		return false; 
+    }
 
 	
 }

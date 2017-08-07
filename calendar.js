@@ -46,9 +46,33 @@ $(document).ready(function() {
 		minTime: '09:00:00',
 		maxTime: '22:00:00',
 
+	    eventSources: [
+
+	        //대기
+	        {
+	            url: '/events_load.php',                
+	            color: 'grey',   
+	            textColor: 'white' 
+	        },
+
+	        //승인
+	        {
+	            url: '/events_load2.php',                   
+	            color: 'green',
+	            textColor: 'white' 
+	        },
 
 
-		events: '/events_load.php',
+	        //거절
+	        {
+	            url: '/events_load3.php',                   
+	            color: 'red',   
+	            textColor: 'white' 
+	        }
+
+  		],
+	  	
+	
 
 		eventClick: function(event, jsEvent, view) {
 			$('#start').html(moment(event.start).format('MMM Do H:mm'));

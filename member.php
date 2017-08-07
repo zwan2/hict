@@ -21,6 +21,7 @@ if($result = $db->query($query)) {
 		echo"<script>alert('학번 중복입니다.'); window.history.back();</script>";
 	}
 	else {
+		$password = crypt('hict', $password);	
 		//DB에 정보 입력
 		$query = "INSERT INTO member(student_number, password, name, email, tel) VALUES ('$student_number', '$password', '$name', '$email', '$tel');";
 		if($result = $db->query($query)) {

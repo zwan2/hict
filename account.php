@@ -11,7 +11,7 @@ if($result = $db->query($query)) {
 }
 
 
-echo $row['password'];
+//echo $row['password'];
 ?>
 <div class="container">
   <div class="page-header">

@@ -1,5 +1,6 @@
 <?php
-    include 'main.html';
+  include 'main.html';
+  admin_back($_SESSION['admin_code']);
 ?>
 
 
@@ -55,112 +56,44 @@
 
 
 
-
-
 <div class="container">
  <div class="panel panel-default">
-    <div class="panel-heading">예약 리스트</div>
+  <div class="panel-heading">예약 리스트</div>
 
-    <table class="table">
-      <tr> 
-        <th>#</th>
-        <th>날짜</th>
-        <th>예약자</th>
-        
-        <th>상태</th>
-      </tr>
-      <?=bookinglist()?>
-    </table>
-  </div>  
-
-
-
+  <table class="table">
+    <tr> 
+      <th>#</th>
+      <th>날짜</th>
+      <th>예약자</th>
+      
+      <th>상태</th>
+    </tr>
+    <?=bookinglist()?>
   
 
-  <nav>
-    <ul class="pagination">
-      <li>
-        <a href="#" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-        </a>
-      </li>
-      <li><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
-      <li>
-        <a href="#" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  
+
+  <div class="row">
+    <div class="col-lg-6">
+      <form method="get" action="<?=$_SERVER['SCRIPT_NAME']?>" name="booking_search" class="form-horizontal">
+        <div class="input-group">    
+          <input type="text" name="search" class="form-control" placeholder="예약자명, 관리자명으로 검색">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">검색</button>
+          </span>
+        </div><!-- /input-group -->
+      </form>
+    </div><!-- /.col-lg-6 -->
+  </div><!-- /.row -->
+
+
+
+
+
+
 </div>
-
-
 
 </body>
 </html>
 
 
-
-<script>$(document).ready(function(){
-$(document).ready(function(){
-    //날짜 modal
-    $(document).on('click', '#modal_toggle', function(e){
-  
-     e.preventDefault();
-  
-     var booking_id = $(this).data('id'); // get id of clicked row
-  
-     $('#dynamic-content').html(''); // leave this div blank
-  
-     $.ajax({
-          url: 'getmybooking.php',
-          type: 'POST',
-          data: 'id='+booking_id,
-          dataType: 'html'
-     })
-     .done(function(data){
-          console.log(data); 
-          $('#dynamic-content').html(''); // blank before load.
-          $('#dynamic-content').html(data); // load here
-     })
-     .fail(function(){
-          $('#dynamic-content').html('Something went wrong, Please try again...');
-     });
-
-    });
-
-
-    //승인, 거절 message modal
-    $(document).on('click', '#smodal_toggle', function(e){
-  
-     e.preventDefault();
-  
-     var booking_id = $(this).data('id'); // get id of clicked row
-  
-     $('#sdynamic-content').html(''); // leave this div blank
-  
-     $.ajax({
-          url: 'bookinglist_message.php',
-          type: 'POST',
-          data: 'id='+booking_id,
-          dataType: 'html'
-     })
-     .done(function(data){
-          console.log(data); 
-          $('#sdynamic-content').html(''); // blank before load.
-          $('#sdynamic-content').html(data); // load here
-     })
-     .fail(function(){
-          $('#sdynamic-content').html('Something went wrong, Please try again...');
-     });
-
-    });
-
-
-})});
-</script>
+<script type="text/javascript" src="bookinglist.js"></script>

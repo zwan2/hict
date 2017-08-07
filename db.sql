@@ -3,7 +3,7 @@ USE hict;
 
 CREATE TABLE member (
 	student_number int(9),
-	password char(20),
+	password char(32),
 	name char(20),
 	email char(30),
 	tel char(15),

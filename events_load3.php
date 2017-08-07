@@ -5,7 +5,7 @@
 $events = array();
 
 $db = new mysqli("localhost", "root", "autoset", "hict");
-$query = "SELECT * FROM booking WHERE booking_state = 0";
+$query = "SELECT * FROM booking WHERE booking_state = 2";
 
 if($result = $db->query($query)) {
 	while($row = $result->fetch_assoc()) {

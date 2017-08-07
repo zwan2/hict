@@ -185,7 +185,7 @@ echo $_SESSION['name'];
 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">뒤로</button>
-        <button type="button" class="btn btn-primary">바로 예약</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking" data-dismiss="modal">바로 예약</button>
       </div>
     </div>
   </div>

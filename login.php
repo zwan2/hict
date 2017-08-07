@@ -34,22 +34,32 @@ function login() {
 
 	$student_number = $_POST['student_number'];
 	$password = $_POST['password'];
+	$password = crypt('hict', $password);
+
+	$query = "SELECT password FROM member WHERE student_number = $student_number";
+
+	if($result = $db->query($query)) 
+		$row = $result->fetch_assoc();
+
+	if($password == $row['password']) {
 	
-	$query = "SELECT admin_code, student_number, name FROM member WHERE student_number = $student_number AND password = $password";
-		
-	if($result = $db->query($query)) {
+		$query = "SELECT admin_code, student_number, name FROM member WHERE student_number = $student_number";
+		if($result = $db->query($query)) {
 		//로그인 성공
-		if($row = $result->fetch_assoc()) {
+			$row = $result->fetch_assoc();
 			$_SESSION['admin_code'] = $row['admin_code'];
 			$_SESSION['student_number'] = $row['student_number'];
 			$_SESSION['name'] = $row['name'];
 			return TRUE;
 		}
-		//로그인 실패
-		else
-			return FALSE;
-	}		
+	}
+		
 }
+
+
+
+
+
 
 
 //로그인 실패 카운트 함수
