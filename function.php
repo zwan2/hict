@@ -36,15 +36,10 @@ function admin_back($admin_code) {
 function main_hidden() {
 	$admin_code = $_SESSION['admin_code'];
 	if($admin_code!=0) {
-		?> 
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">관리자 페이지<span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="bookinglist.php">예약 리스트</a></li>
-              <li><a href="#">관리자 스케쥴</a></li>
-              <li><a href="adminboard.php">관리자 게시판</a></li>
-            </ul>
-          </li>
+		?>
+		<li>
+			<li><a href="bookinglist.php">관리자 페이지</a></li>
+		</li>
         <?
 	}
 }
@@ -61,6 +56,17 @@ function accountset_load() {
 	}
 }
 
+//캘린더 페이지 상단 공지사항
+function calendar_notice() {
+	global $db;
+	$query = "SELECT notice_id, title FROM notice ORDER BY notice_id DESC LIMIT 1";
+	if($result = $db->query($query)) {
+		$row = $result->fetch_assoc();
+		$notice_id = $row['notice_id'];
+		$title = $row['title'];
+		echo"<a href=\"notice2.php?notice_id=$notice_id\">$title</a>";
+	}
+}
 
 function notice() {
 	global $db;
@@ -96,10 +102,6 @@ function notice() {
 			
 			echo"</tr>";
 		}
-	}
-
-	if($admin_code != 0) {
-		echo"<br/><a class=\"btn btn-default\" href=\"notice_write.php\" role=\"button\">공지 작성</a>";
 	}
 
 
@@ -281,7 +283,9 @@ function bookinglist() {
 	$start_point = ($page-1) * $list;
 
 	//관리자만 사용
-	if($_SESSION['admin_code'] == 1) {
+	if($_SESSION['admin_code'] != 0) {
+		
+		
 
 		//검색 값이 있을 경우
 		if(isset($_GET['search'])) {
@@ -315,9 +319,11 @@ function bookinglist() {
 				echo "<td> <a data-toggle=\"modal\" data-target=\"#detail_data\" data-id = $booking_id id = \"modal_toggle\"> $start_day ($dom) $start_time - $end_time </a> </td>";
 
 				//예약자
+				$tel = $row['tel'];
 				$name = $row['name'];
 				$student_number = $row['student_number'];
-				echo "<td> $name($student_number) </td>";
+				//alert(연락처)
+				echo"<td> <u onclick=\"alert('연락처: $tel')\"> $name($student_number)</u> </td> ";
 				
 				//상태
 				bookinglist_db_conversion($row['booking_state'], $row['booking_id']);
@@ -383,5 +389,163 @@ function bookinglist_db_conversion($booking_state, $booking_id) {
 		echo "<td><p class=\"text-muted\">취소</p></td>";
 	}
 }
+
+//su member table 관리
+function su_member() {
+	global $db;
+	$student_number = $_SESSION['student_number'];
+	$admin_code = $_SESSION['admin_code'];
+	
+
+	//페이지네이션 쿼리
+	$query = "SELECT student_number FROM member";
+	if($result = $db->query($query)) {
+		$total_num = mysqli_num_rows($result);
+		if($total_num == 0) {
+			$total_num = 1;
+		}
+		//현재 위치한 페이지
+		$page = (isset($_GET['page'])?$_GET['page']:1);
+		$list = 10;
+		$block = 5;
+		//총 페이지 수
+		$page_num = ceil($total_num/$list);
+		//총 블록 수
+		$block_num = ceil($page_num/$block);
+		//현재 위치한 페이지 블록
+		$now_block = ceil($page/$block);
+
+		//블록의 시작
+		$start_page = ($now_block*$block) - ($block - 1);
+		if($start_page <= 1) {
+			$start_page = 1;
+		}
+		//블록의 끝
+		$end_page = $now_block*$block;
+		if($page_num <= $end_page) {
+			$end_page = $page_num;
+		}
+
+		$start_point = ($page-1) * $list;
+		$prev_page = max($start_page - $block - 1, 1);
+		$next_page = min($end_page + $block + 1, $page_num);
+
+		$page = (isset($_GET['page'])?$_GET['page']:1);
+		$list = 10;
+		$start_point = ($page-1) * $list;	
+		$num = ($page_num-$page)*10+($total_num%10);
+	}
+
+
+	if($_SESSION['admin_code'] == 2) {
+		
+		//검색 값이 있을 경우
+		if(isset($_GET['search'])) {
+			$search = "%".$_GET['search']."%";
+
+			$query = "SELECT * FROM member WHERE name LIKE '$search'";
+		}
+	
+		//default
+		else 	
+		{
+			$query = "SELECT * FROM member LIMIT $start_point, $list";
+		}
+	}
+	else
+		admin_back();
+
+	//리스트 출력
+//	$query = "SELECT * FROM member LIMIT $start_point, $list";
+
+	if($result = $db->query($query)) {
+		while($row = $result->fetch_assoc()) {
+			echo "<tr>";
+			
+			//#
+			echo "<td> $num </td>";
+			$num--;
+			
+			//학번
+			$student_number = $row['student_number'];
+			echo "<td> $student_number </td>";
+			
+			//이름
+			$name = $row['name'];
+			echo "<td> $name </td>";
+
+			//이름
+			$email = $row['email'];
+			echo "<td> $email </td>";
+
+			//전화번호
+			$tel = $row['tel'];
+			echo "<td> $tel </td>";
+
+			//상태
+			$admin_code = $row['admin_code'];
+			su_member_conversion($admin_code, $student_number);
+			
+			echo"</tr>";
+			
+		
+		}
+		echo "</table></div>";
+	}
+
+
+
+	//페이지네이션 출력
+	$php_self = $_SERVER['SCRIPT_NAME'];
+	
+	//이전
+	echo"
+	<nav>
+		<ul class=\"pagination\">
+
+		<li>
+			<a href=\"$php_self?page=$prev_page\" aria-label=\"Previous\">
+			<span aria-hidden=\"true\">&laquo;</span>
+			</a>
+		</li>";
+
+	//블록
+	for ($p=$start_page; $p<=$end_page; $p++) {
+		echo"<li><a href=\"$php_self?page=$p\">$p</a></li>";
+	}
+
+	//다음
+	echo"
+		<li>
+			<a href=\"$php_self?page=$next_page\" aria-label=\"Next\">
+			<span aria-hidden=\"true\">&raquo;</span>
+			</a>
+		</li>
+
+		</ul>
+	</nav>";
+
+}
+
+
+//su_member - admin_code 변환 함수
+function su_member_conversion($admin_code, $student_number) {
+
+	//예약자 상태
+	if($admin_code == 0) {
+		echo "<td><a href=\"su_member_set.php?student_number=$student_number&admin_code=$admin_code\"><u onclick=\"return confirm('관리자로 설정하시겠습니까?');\">예약자</u></td>";
+	}
+	//관리자 상태
+	else if($admin_code == 1) {
+	
+		echo "<td><a href=\"su_member_set.php?student_number=$student_number&admin_code=$admin_code\"><u onclick=\"return confirm('관리자를 해지하시겠습니까?');\">관리자</u></td>";
+	
+
+	}
+
+}
+
+
+
 
 ?>

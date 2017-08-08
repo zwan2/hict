@@ -1,7 +1,7 @@
 <?php
 include 'main.html';
 include 'calendar2.php';
-echo $_SESSION['name'];
+
 
 ?>
 
@@ -20,6 +20,7 @@ echo $_SESSION['name'];
           <!--이름, 학번 data-->
           <input type="hidden" name="name" value="<?=$_SESSION['name']?>">
           <input type="hidden" name="student_number" value="<?=$_SESSION['student_number']?>">
+
 
           <h4 class="modal-title">시간</h4>
           <div class="row">  
@@ -132,7 +133,7 @@ echo $_SESSION['name'];
           <br/><br/>
 
           <h4 class="modal-title">기타 사항</h4>
-          <input type="text" name="extra" class="form-control" placeholder="활동 목적, 내용 등 기입이 필요하다면 이곳을 활용하세요." maxlength="50">
+          <input type="text" id="extra" name="extra" class="form-control" placeholder="활동 목적, 내용 등 기입이 필요하다면 이곳을 활용하세요." maxlength="50">
         </div><!--modal-body-->
 
         <div class="modal-footer">
@@ -200,7 +201,7 @@ echo $_SESSION['name'];
     <div class="panel-body">
         <div id="panel-body-notice">
           <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-          <a href="notice2.php">공지사항</a>
+          <?=calendar_notice()?>
         </div>
         <div id="panel-body-more">
         <a href="notice.php"><span class="glyphicon glyphicon-menu-right" aria-hidden="true">
@@ -243,8 +244,7 @@ echo $_SESSION['name'];
 <script type="text/javascript">
 
 function booking_check(){
-  var form = document.booking;
-  
+  var form = document.booking;  
   
   //날짜 제한
   if(form.booking_date.value <= moment().format("YYYY-MM-DD")) {
@@ -266,6 +266,16 @@ function booking_check(){
     form.total_number.focus();
     return false;
   }
- 
-}
+  
+  //특수문자 처리
+  $("#extra").bind("keyup",function(){
+    re = /[~!@\#$%^&*\()\-=+_']/gi; 
+    var temp=$("#extra").val();
+    if(re.test(temp)){ //특수문자가 포함되면 삭제하여 값으로 다시셋팅
+      $("#extra").val(temp.replace(re,"")); 
+    } 
+  });
+
+
+
 </script>

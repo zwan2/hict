@@ -10,6 +10,13 @@ $end_time = $_POST['end_time'];
 $total_number = $_POST['total_number'];
 $purpose = $_POST['purpose'];
 
+//전화번호 DB에서 추출
+$query = "SELECT tel FROM member WHERE student_number = $student_number";
+if($result = $db->query($query)) {
+	$row = $result->fetch_assoc();
+	$tel = $row['tel'];
+}
+
 if(!empty($_POST['tool'])) {
 	$tool = implode(", ", $_POST['tool']);
 }
@@ -29,7 +36,7 @@ $start_time = $booking_date." $start_time".":00";
 $end_time = $booking_date." $end_time".":00";
 
 
-$query = "INSERT INTO booking(booking_state, student_number, name, start_time, end_time, total_number, purpose, tool, extra) VALUES ('$booking_state', '$student_number', '$name', '$start_time', '$end_time', '$total_number', '$purpose', '$tool', '$extra');";
+$query = "INSERT INTO booking(booking_state, student_number, name, tel, start_time, end_time, total_number, purpose, tool, extra) VALUES ('$booking_state', '$student_number', '$name', '$tel', '$start_time', '$end_time', '$total_number', '$purpose', '$tool', '$extra');";
 
 if($result = $db->query($query)) {
 	

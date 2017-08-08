@@ -19,7 +19,7 @@
 		<br/>
 	</div>
 
-	<a class="btn btn-default" href="adminboard.php" role="button">뒤로</a>
+	<a class="btn btn-default" href="notice.php" role="button">뒤로</a>
 	<button type="submit" onclick="return confirm('공지를 작성하시겠습니까?');" class="btn btn-primary">작성</button>
 
 </form>
