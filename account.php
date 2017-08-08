@@ -67,7 +67,7 @@ if($result = $db->query($query)) {
 
       <div class="form-group">
         <div class="col-xs-10">
-          <label for="password">비밀번호</label>
+          <label for="password">비밀번호(필수)</label>
           <input type="password" class="form-control" name="password" placeholder="기존 비밀번호 입력" maxlength="20">
         </div>
       </div>
@@ -83,6 +83,8 @@ if($result = $db->query($query)) {
       </div>
       
     </form>   
+
+    <a href="#"><button class="btn btn-default" type="button" onclick="location.href='account_delete.php'">회원탈퇴</button>
 </div>
 
 </body>

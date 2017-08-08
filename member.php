@@ -23,7 +23,7 @@ if($result = $db->query($query)) {
 	else {
 		$password = crypt('hict', $password);	
 		//DB에 정보 입력
-		$query = "INSERT INTO member(student_number, password, name, email, tel) VALUES ('$student_number', '$password', '$name', '$email', '$tel');";
+		$query = "INSERT INTO member(student_number, password, name, email, tel, admin_code) VALUES ('$student_number', '$password', '$name', '$email', '$tel', 0);";
 		if($result = $db->query($query)) {
 			echo"<script>alert('회원가입이 완료되었습니다.'); location.href='login.html';</script>";
 		}

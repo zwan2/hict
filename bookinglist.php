@@ -1,6 +1,7 @@
 <?php
   include 'main.html';
   admin_back($_SESSION['admin_code']);
+
 ?>
 
 
@@ -58,6 +59,10 @@
 
 <div class="container">
  <div class="panel panel-default">
+  <?  
+  if($_SESSION['admin_code']==2) {
+      ?><a class="btn btn-default" href="#" onclick="location.href='su_member.php'" role="button">SU</a><?
+  }?>
   <div class="panel-heading">예약 리스트</div>
 
   <table class="table">
@@ -74,7 +79,7 @@
 
   <div class="row">
     <div class="col-lg-6">
-      <form method="get" action="<?=$_SERVER['SCRIPT_NAME']?>" name="booking_search" class="form-horizontal">
+      <form method="get" action="<?=$_SERVER['SCRIPT_NAME']?>" onsubmit="return search_check();" name="booking_search" class="form-horizontal">
         <div class="input-group">    
           <input type="text" name="search" class="form-control" placeholder="예약자명, 관리자명으로 검색">
           <span class="input-group-btn">
@@ -89,7 +94,6 @@
 
 
 
-
 </div>
 
 </body>
@@ -97,3 +101,18 @@
 
 
 <script type="text/javascript" src="bookinglist.js"></script>
+
+
+<script>
+function search_check(){
+  var form = document.booking_search;
+
+  //이메일 필수 입력
+  if(form.search.value == "") {
+      alert("검색어를 입력하세요.");
+      form.search.focus();
+      return false;
+    }
+
+}
+</script>

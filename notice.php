@@ -20,6 +20,12 @@
 		    <?=notice()?>
 		</table>
 	</div>
+
+	<?	if($_SESSION['admin_code'] != 0) {
+		echo"<br/><a class=\"btn btn-default\" href=\"notice_write.php\" role=\"button\">공지 작성</a>";
+	}?>
+
+
 </div>
 
 </body>

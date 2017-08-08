@@ -35,6 +35,7 @@ CREATE TABLE booking (
 	message text,
 	student_number int(9),
 	name char(20),
+	tel char(15),
 	start_time datetime,
 	end_time datetime,
 	total_number tinyint,

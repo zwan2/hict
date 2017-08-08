@@ -9,8 +9,12 @@ if (isset($_GET['notice_id'])) {
   if($result = $db->query($query)) {
   	if($row = $result->fetch_assoc()) {
   		?>
+  		
 
 		<div class="container">
+			<div class="page-header">
+		    <h1><a href="notice.php">공지사항</a></h1>
+		</div>
 
 			<div class="panel panel-default">
 			  <div class="panel-heading">
@@ -19,9 +23,13 @@ if (isset($_GET['notice_id'])) {
 			  <div class="panel-body">
 			    <?=$row['content']?>
 			  </div>
+				<ul class="list-group">
+					<li class="list-group-item"><?=$row['write_time']?></li>
+				</ul>
+
 			</div>
 			<br/>
-
+			
 			<a class="btn btn-default" onclick="window.history.back();" role="button">뒤로</a>
 		</div>
 
