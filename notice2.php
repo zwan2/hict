@@ -22,7 +22,7 @@ if (isset($_GET['notice_id'])) {
 			</div>
 			<br/>
 
-			<a class="btn btn-default" href="notice.php" role="button">뒤로</a>
+			<a class="btn btn-default" onclick="window.history.back();" role="button">뒤로</a>
 		</div>
 
  		<?

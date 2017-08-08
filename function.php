@@ -16,13 +16,6 @@ function ensure_logged_in() {
     }
 }
 
-function admin_hidden($admin_code) {
-	if($admin_code == 0) {
-		echo "hidden";
-	}
-	else
-		echo "show";
-}
 
 function admin_link($admin_code, $link) {
 	if($admin_code == 0) {
@@ -38,6 +31,22 @@ function admin_back($admin_code) {
 		echo "<script>window.history.back()</script>";
 	}
 
+}
+
+function main_hidden() {
+	$admin_code = $_SESSION['admin_code'];
+	if($admin_code!=0) {
+		?> 
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">관리자 페이지<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="bookinglist.php">예약 리스트</a></li>
+              <li><a href="#">관리자 스케쥴</a></li>
+              <li><a href="adminboard.php">관리자 게시판</a></li>
+            </ul>
+          </li>
+        <?
+	}
 }
 
 
@@ -56,6 +65,7 @@ function accountset_load() {
 function notice() {
 	global $db;
 	$student_number = $_SESSION['student_number'];
+	$admin_code = $_SESSION['admin_code'];
 
 	$query = "SELECT * FROM notice ORDER BY notice_id DESC";
 
@@ -77,11 +87,21 @@ function notice() {
 			$write_time = $row['write_time'];
 			echo "<td> $write_time </td>";	
 			
-			echo"</tr>";
+					
+			//관리자: 삭제 권한
+			if($admin_code != 0) {
+				echo"<td><a href=\"notice_delete.php?notice_id=$notice_id\" onclick=\"return confirm('정말 공지를 삭제하시겠습니까?');\">삭제</a></td>";
+			}
+						
 			
-		
+			echo"</tr>";
 		}
 	}
+
+	if($admin_code != 0) {
+		echo"<br/><a class=\"btn btn-default\" href=\"notice_write.php\" role=\"button\">공지 작성</a>";
+	}
+
 
 }
 
