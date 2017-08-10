@@ -1,6 +1,8 @@
 <?php
 //db 연결
-$db = mysqli_connect("13.124.48.36", "zwan", "1233zz", "hict");
+
+//$db = mysqli_connect("13.124.48.36", "zwan", "1233zz", "hict");
+$db = mysqli_connect("218.155.155.113", "root", "autoset", "hict");
 //$db = mysqli_connect("localhost", "root", "autoset", "hict");
 if(mysqli_connect_errno()) {
 	mysqli_connect_error();
