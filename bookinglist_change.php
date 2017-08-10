@@ -8,7 +8,7 @@ ensure_logged_in();
 
 //관리자 정보 수집	
 $student_number = $_SESSION['student_number'];
-$query = "SELECT * FROM member WHERE student_number = $student_number AND admin_code = 1";
+$query = "SELECT * FROM member WHERE student_number = $student_number AND admin_code = 1 OR admin_code = 2";
 if($result = $db->query($query)) {
 	if($row = $result->fetch_assoc()) {
 		$admin_name = $row['name'];

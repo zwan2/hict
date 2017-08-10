@@ -277,5 +277,5 @@ function booking_check(){
   });
 
 
-
+}
 </script>

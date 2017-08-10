@@ -50,14 +50,14 @@ $(document).ready(function() {
 
 	        //대기
 	        {
-	            url: '/events_load.php',                
+	            url: './events_load.php',                
 	            color: 'grey',   
 	            textColor: 'white' 
 	        },
 
 	        //승인
 	        {
-	            url: '/events_load2.php',                   
+	            url: './events_load2.php',                   
 	            color: 'green',
 	            textColor: 'white' 
 	        },
@@ -65,7 +65,7 @@ $(document).ready(function() {
 
 	        //거절
 	        {
-	            url: '/events_load3.php',                   
+	            url: './events_load3.php',                   
 	            color: 'red',   
 	            textColor: 'white' 
 	        }
