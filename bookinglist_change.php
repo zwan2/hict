@@ -6,9 +6,6 @@ include 'function.php';
 ensure_logged_in();
 
 
-$db = new mysqli("localhost", "root", "autoset", "hict");
-
-
 //관리자 정보 수집	
 $student_number = $_SESSION['student_number'];
 $query = "SELECT * FROM member WHERE student_number = $student_number AND admin_code = 1";

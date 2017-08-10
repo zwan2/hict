@@ -1,5 +1,5 @@
 <?php
-$db = new mysqli("localhost", "root", "autoset", "hict");
+include 'function.php';
 
 $booking_state = "0";
 $student_number = $_POST['student_number'];

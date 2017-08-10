@@ -1,7 +1,5 @@
 <?php
-
-
-$db = new mysqli("localhost", "root", "autoset", "hict");
+include 'function.php';
 
 //랜덤 패스워드 생성
 $ipassword="0123456789"; 

@@ -1,7 +1,7 @@
 <?php
 include 'main.html';
 
-global $db;
+
 $student_number = $_SESSION['student_number'];
 
 $query = "SELECT * FROM member WHERE student_number = $student_number";

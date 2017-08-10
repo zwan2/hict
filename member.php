@@ -1,6 +1,5 @@
 <?php
-$db = new mysqli("localhost", "root", "autoset", "hict");
-
+include 'function.php';
 
 $student_number = $_POST['student_number'];
 $password = $_POST['password'];

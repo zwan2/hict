@@ -1,5 +1,5 @@
 <?php
-$db = mysqli_connect("localhost", "root", "autoset", "hict");
+include 'function.php';
 
 $student_number = $_POST['student_number'];
 $email = $_POST['email'];

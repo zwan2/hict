@@ -1,5 +1,5 @@
 <?php
-$db = new mysqli("localhost", "root", "autoset", "hict");
+include 'function.php';
 
 $title = $_POST['title'];
 $content = $_POST['content'];

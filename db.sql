@@ -45,4 +45,4 @@ CREATE TABLE booking (
 	PRIMARY KEY (booking_id)
 );
 
-INSERT INTO member (student_number, password, name, email, tel, admin_code) VALUES ('111111111', '11','11','11', '11','11');
+INSERT INTO member (student_number, password, name, email, tel, admin_code) VALUES ('999999999', '99999999','su','1@1.1', '11','0', 2);

@@ -2,9 +2,7 @@
 if(!isset($_SESSION)) { 
 	session_start(); 
 }
-
-$db = new mysqli("localhost", "root", "autoset", "hict");
-
+include 'function.php';
 $fail_ip = $_SERVER['REMOTE_ADDR'];
 $fail_time = time();
 
