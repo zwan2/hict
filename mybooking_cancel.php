@@ -5,7 +5,6 @@ if(!isset($_SESSION)) {
 include 'function.php';
 ensure_logged_in();
 
-$db = new mysqli("localhost", "root", "autoset", "hict");
 $student_number = $_SESSION['student_number'];
 $booking_id = $_GET['booking_id'];
 $query = "UPDATE booking SET booking_state = 3 WHERE booking_id = 

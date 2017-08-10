@@ -1,10 +1,10 @@
 <?php
+include 'function.php';
 
 //이벤트 렌더링
 //calendar.js 에서 json 호출
 $events = array();
 
-$db = new mysqli("localhost", "root", "autoset", "hict");
 $query = "SELECT * FROM booking WHERE booking_state = 2";
 
 if($result = $db->query($query)) {

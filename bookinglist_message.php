@@ -1,6 +1,5 @@
 <?php
-
-$db = mysqli_connect("localhost", "root", "autoset", "hict");
+include 'function.php';
 
 if (isset($_REQUEST['id'])) {
   $id = $_REQUEST['id'];

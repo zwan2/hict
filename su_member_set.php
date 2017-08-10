@@ -5,8 +5,6 @@ if(!isset($_SESSION)) {
 include 'function.php';
 ensure_logged_in();
 
-$db = new mysqli("localhost", "root", "autoset", "hict");
-
 $student_number = $_GET['student_number'];
 $admin_code = $_GET['admin_code'];
 if($admin_code == 0) {

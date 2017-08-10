@@ -5,9 +5,6 @@ if(!isset($_SESSION)) {
 include 'function.php';
 ensure_logged_in();
 
-$db = new mysqli("localhost", "root", "autoset", "hict");
-
-
 $admin_code = $_SESSION['admin_code'];
 $student_number = $_SESSION['student_number'];
 $notice_id = $_GET['notice_id'];
