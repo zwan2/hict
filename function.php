@@ -1,10 +1,14 @@
 <?php
 //db 연결
 
-//$db = mysqli_connect("13.124.48.36", "zwan", "1233zz", "hict");
-$db = mysqli_connect("218.155.155.113", "root", "autoset", "hict");
+ini_set('display_errors', 1); 
+ini_set('error_reporting', E_ALL);
+
+$db = mysqli_connect("13.124.48.36", "root", "autoset", "hict", "3306");
+//$db = mysqli_connect("192.169", "root", "autoset", "hict");
 //$db = mysqli_connect("localhost", "root", "autoset", "hict");
-if(mysqli_connect_errno()) {
+if(!$db) {
+	echo" aa";
 	mysqli_connect_error();
 }
 
