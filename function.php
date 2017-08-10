@@ -1,8 +1,6 @@
 <?php
 //db 연결
-$db = mysqli_connect("13.124.207.149", "zwan", "1233zz", "hict");
-
-include 'function.php';
+$db = mysqli_connect("localhost", "zwan", "1233zz", "hict");
 if(mysqli_connect_errno()) {
 	mysqli_connect_error();
 }
