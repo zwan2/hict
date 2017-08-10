@@ -4,9 +4,9 @@
 ini_set('display_errors', 1); 
 ini_set('error_reporting', E_ALL);
 
-$db = mysqli_connect("13.124.48.36", "root", "autoset", "hict", "3306");
+//$db = mysqli_connect("13.124.48.36", "root", "autoset", "hict", "3306");
 //$db = mysqli_connect("192.169", "root", "autoset", "hict");
-//$db = mysqli_connect("localhost", "root", "autoset", "hict");
+$db = mysqli_connect("localhost", "root", "autoset", "hict");
 if(!$db) {
 	echo" aa";
 	mysqli_connect_error();
