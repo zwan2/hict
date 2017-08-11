@@ -1,8 +1,6 @@
 <?php
 include 'main.html';
 include 'calendar2.php';
-
-
 ?>
 
 <!-- 예약하기 modal -->
@@ -222,9 +220,9 @@ include 'calendar2.php';
   <!-- full calendar 호출 -->
   <!-- jquery는 main.html에 삽입 -->
   <div id="calendar">
-	  <link rel='stylesheet' href='fullcalendar-3.4.0/fullcalendar.css'/>
+	  <link rel='stylesheet' href='fullcalendar-3.4.0/fullcalendar.min.css'/>
 	  <script src='fullcalendar-3.4.0/lib/moment.min.js'></script>
-	  <script src='fullcalendar-3.4.0/fullcalendar.js'></script>
+	  <script src='fullcalendar-3.4.0/fullcalendar.min.js'></script>
 	  <script src='fullcalendar-3.4.0/locale/ko.js'></script>
 	  <script type="text/javascript" src="calendar.js"></script>
 	  <div id='calendar'></div>

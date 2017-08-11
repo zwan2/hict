@@ -20,7 +20,6 @@
     <?=su_member()?>
   
 
-
   <div class="row">
     <div class="col-lg-6">
       <form method="get" action="<?=$_SERVER['SCRIPT_NAME']?>" name="booking_search" class="form-horizontal">

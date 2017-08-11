@@ -32,7 +32,7 @@
 		</div>
 		
 		<div id="input">
-			<form method="post" action="member.php" onSubmit="member_check();" name="member" class="form-horizontal">
+			<form method="post" action="member.php" onsubmit="return member_check();" name="member" class="form-horizontal">
 				<div class="form-group">
 					<div class="col-xs-10">
 					<button class="btn btn-default" type="button" onclick="location.href='login.html'">뒤로</button>
@@ -86,7 +86,6 @@
 
 				<div class="form-group">
 					<div class="col-xs-10">
-
 						<button class="btn btn-default" type="submit">회원가입 요청</button>
 					</div>
 				</div>
@@ -108,12 +107,13 @@ function member_check(){
 	//전부 입력했는지 검사
 	if(form.student_number.value=="" || form.password.value=="" || form.password2.value=="" || form.name.value=="") {
 		alert("필수 사항을 입력하지 않았습니다.");
-		window.history.back();
+		return false;
 	}
 	//비밀번호, 비밀번호 확인 일치
 	else if(form.password.value != form.password2.value) {
 		alert("비밀번호가 일치하지 않습니다.");
-		window.history.back();
+		form.password.focus();
+		return false;
 
 	}
 	else if (!/^[A-Za-z0-9]*.{8,16}$/.test(form.password.value)) {
