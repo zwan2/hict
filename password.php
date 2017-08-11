@@ -17,7 +17,7 @@ $query = "UPDATE member SET password = '$crypt_password' WHERE email = '$email'"
 //비밀번호 변경 성공
 if($result = $db->query($query)) {
 
-  require_once('/class.phpmailer.php');
+  require_once('./class.phpmailer.php');
 
   $mail             = new PHPMailer();
 
