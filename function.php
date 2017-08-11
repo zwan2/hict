@@ -178,7 +178,7 @@ function mybooking() {
 			$end_time = date("G:i", strtotime($row['end_time']));
 			
 			$booking_id = $row['booking_id'];
-			echo "<td> <a data-toggle=\"modal\" data-target=\"#detail_data\" data-id = $booking_id id = \"modal_toggle\"> $start_day ($dom) $start_time - $end_time </a> </td>";
+			echo "<td> <a href=\"#\" data-toggle=\"modal\" data-target=\"#detail_data\" data-id = $booking_id id = \"modal_toggle\"> $start_day ($dom) $start_time - $end_time </a> </td>";
 			
 			//상태
 			mybooking_db_conversion($row['booking_state'], $row['booking_id']);
@@ -231,15 +231,15 @@ function mybooking_db_conversion($booking_state, $booking_id) {
 	if($booking_state == 0) {
 		echo "<td><p class=\"text-muted\">대기</p> 
 		<a href=\"mybooking_cancel.php?booking_id=$booking_id\">
-		<u onclick=\"return confirm('정말 예약을 취소하시겠습니까?');\">취소</u></td>";
+		<u onclick=\"return confirm('정말 예약을 취소하시겠습니까?');\">취소</u></a></td>";
 	}
 	//승인
 	else if($booking_state == 1) {
-		echo "<td><u data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\">승인</p></td>";
+		echo "<td><a href=\"#\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\"><u>승인</u></a></td>";
 	}
 	//거절
 	else if($booking_state == 2) {
-		echo"<td><u data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\">거절</p></td>";
+		echo"<td><a href=\"#\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\"><u>거절</u></a></td>";
 	}
 	//취소
 	else if($booking_state == 3) {
@@ -324,7 +324,7 @@ function bookinglist() {
 				$dom = dom($row['start_time']);
 				$start_time = date("G:i", strtotime($row['start_time']));
 				$end_time = date("G:i", strtotime($row['end_time']));			
-				echo "<td> <a data-toggle=\"modal\" data-target=\"#detail_data\" data-id = $booking_id id = \"modal_toggle\"> $start_day ($dom) $start_time - $end_time </a> </td>";
+				echo "<td> <a href=\"#\" data-toggle=\"modal\" data-target=\"#detail_data\" data-id = $booking_id id = \"modal_toggle\"> $start_day ($dom) $start_time - $end_time </a> </td>";
 
 				//예약자
 				$tel = $row['tel'];
@@ -382,15 +382,15 @@ function bookinglist() {
 function bookinglist_db_conversion($booking_state, $booking_id) {
 	//승인 대기
 	if($booking_state == 0) {
-		echo "<td><u class=\"text-muted\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\">대기</u></td>";
+		echo "<td><a href=\"#\" class=\"text-muted\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\"><u>대기</u></a></td>";
 	}
 	//승인
 	else if($booking_state == 1) {
-		echo "<td><u data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\">승인</p></td>";
+		echo "<td><a href=\"#\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\"><u>승인</u></a></td>";
 	}
 	//거절
 	else if($booking_state == 2) {
-		echo"<td><u data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\">거절</p></td>";
+		echo"<td><a href=\"#\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\"><u>거절</u></a></td>";
 	}
 	//취소
 	else if($booking_state == 3) {
@@ -552,7 +552,6 @@ function su_member_conversion($admin_code, $student_number) {
 	}
 
 }
-
 
 
 

@@ -19,8 +19,7 @@
 		</div>
 		
 		<div class="container">
-
-			<form method="post" action="login.php" class="form-horizontal">
+			<form method="post" action="login.php" onsubmit="return login_check();" name="login" class="form-horizontal">
 				<div class="form-group">
 					<div class="col-xs-10">
 						<label for="student_number">학번</label>
@@ -49,3 +48,34 @@
 
 	</div>
 </body>
+
+
+
+<script type="text/javascript">
+
+function login_check(){
+  var form = document.login;  
+  
+  //필수 입력
+  if(form.student_number.value == "") {
+    alert("학번을 입력하세요.");
+    form.student_number.focus();
+    return false;
+  }
+  else if(form.password.value == "") {
+    alert("비밀번호를 입력하세요.");
+    form.password.focus();
+    return false;
+  }
+  //특수문자 처리
+  $("#extra").bind("keyup",function(){
+    re = /[~!@\#$%^&*\()\-=+_']/gi; 
+    var temp=$("#extra").val();
+    if(re.test(temp)){ //특수문자가 포함되면 삭제하여 값으로 다시셋팅
+      $("#extra").val(temp.replace(re,"")); 
+    } 
+  });
+
+
+}
+</script>
