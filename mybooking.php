@@ -70,9 +70,8 @@ include 'main.html';
   </div>
 </div>
 
-
-
-</body>
-</html>
-
 <script type="text/javascript" src="mybooking.js"></script>
+
+<?php
+include 'footer.html';
+?>

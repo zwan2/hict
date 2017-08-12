@@ -40,7 +40,7 @@ if($result = $db->query($query)) {
   </div>
 </form>
 
- </div>
+</div>
 
 <script type="text/javascript">
 
@@ -62,3 +62,7 @@ function password_check(){
   }
 }
 </script>
+
+<?php
+include 'footer.html';
+?>

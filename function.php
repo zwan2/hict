@@ -331,7 +331,7 @@ function bookinglist() {
 				$name = $row['name'];
 				$student_number = $row['student_number'];
 				//alert(연락처)
-				echo"<td> <u onclick=\"alert('연락처: $tel')\"> $name($student_number)</u> </td> ";
+				echo"<td> <u onclick=\"alert('이름: $name\\n학번: $student_number \\n연락처: $tel')\"> $name</u> </td> ";
 				
 				//상태
 				bookinglist_db_conversion($row['booking_state'], $row['booking_id']);

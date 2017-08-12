@@ -1,5 +1,5 @@
 <?php
-    include 'main.html';
+include 'main.html';
 ?>
 <div class="container">
   <div class="page-header">
@@ -46,6 +46,7 @@
 
 </div>
 
-</body>
-</html>
+<?php
+include 'footer.html';
+?>
 

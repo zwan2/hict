@@ -46,4 +46,3 @@ if (isset($_REQUEST['id'])) {
   }
 
 }
-?>

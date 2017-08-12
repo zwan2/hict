@@ -229,16 +229,6 @@ include 'calendar2.php';
   </div>
 </div>
 
-
-
-
-
-
-</body>
-</html>
-
-
-
 <script type="text/javascript">
 
 function booking_check(){
@@ -277,3 +267,7 @@ function booking_check(){
 
 }
 </script>
+
+<?php
+include 'footer.html';
+?>

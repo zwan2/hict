@@ -37,11 +37,9 @@ if (isset($_GET['notice_id'])) {
  	}
   }
 }
+
+
+
+
+include 'footer.html';
 ?>
-
-
-
-
-
-</body>
-</html>
