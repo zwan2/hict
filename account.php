@@ -9,9 +9,6 @@ $query = "SELECT * FROM member WHERE student_number = $student_number";
 if($result = $db->query($query)) {
   $row = $result->fetch_assoc();  
 }
-
-
-//echo $row['password'];
 ?>
 <div class="container">
   <div class="page-header">
@@ -87,8 +84,6 @@ if($result = $db->query($query)) {
     <a href="#"><button class="btn btn-default" type="button" onclick="location.href='account_delete.php'">회원탈퇴</button>
 </div>
 
-</body>
-</html>
 
 <script type="text/javascript">
 
@@ -115,3 +110,7 @@ function account_check(){
   }
 }
 </script>
+
+<?php
+include 'footer.html';
+?>

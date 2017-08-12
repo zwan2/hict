@@ -1,7 +1,6 @@
 <?php
   include 'main.html';
   admin_back($_SESSION['admin_code']);
-
 ?>
 
 
@@ -90,18 +89,14 @@
     </div><!-- /.col-lg-6 -->
   </div><!-- /.row -->
 
-
-
-
-
+  </div>
 </div>
 
-</body>
-</html>
-
+<?php
+include 'footer.html';
+?>
 
 <script type="text/javascript" src="bookinglist.js"></script>
-
 
 <script>
 function search_check(){

@@ -1,5 +1,5 @@
 <?php
-	include 'main.html';
+include 'main.html';
 ?>
 
 
@@ -28,5 +28,6 @@
 
 </div>
 
-</body>
-</html>
+<?php
+include 'footer.html';
+?>

@@ -51,5 +51,6 @@ include 'function.php';
   </div>
 </div>
    
- <?php    
-}
+ <?php
+include 'footer.html';
+?>
