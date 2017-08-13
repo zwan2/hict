@@ -20,7 +20,7 @@ function dom($day) {
 
 function ensure_logged_in() {
     if(!isset($_SESSION['student_number'])) {
-        echo"<script>alert('로그인하세요.'); location.href='login.html';</script>";
+        echo"<script>alert('로그인하세요.'); location.href='login_page.php';</script>";
     }
 }
 

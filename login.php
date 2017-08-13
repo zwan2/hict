@@ -17,7 +17,7 @@ if(login()) {
 else {
 	fail_lock();
 	fail_count();
-	echo"<script>alert('로그인에 실패하였습니다. 다시 입력하세요.'); location.href='login.html';</script>";
+	echo"<script>alert('로그인에 실패하였습니다. 다시 입력하세요.'); location.href='login_page.php';</script>";
 }
 
 
@@ -105,7 +105,7 @@ function fail_lock() {
 		//잠금 작동
 		if($row = $result->fetch_assoc()) {
 
-			echo"<script>alert('비밀번호를 5회 이상 잘못 입력하면 30초 동안 로그인이 불가능합니다.'); location.href='login.html';</script>";
+			echo"<script>alert('비밀번호를 5회 이상 잘못 입력하면 30초 동안 로그인이 불가능합니다.'); location.href='login_page.php';</script>";
 			return TRUE;
 		}
 		//잠금 해제

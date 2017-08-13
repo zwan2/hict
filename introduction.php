@@ -39,7 +39,7 @@
   </div>
    
 
-  <a href="login.html"><p class="text-center">휴먼ICT 실습실 예약하기</p></a>
+  <a href="login_page.php"><p class="text-center">휴먼ICT 실습실 예약하기</p></a>
 
 </div>
 
