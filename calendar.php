@@ -22,7 +22,7 @@ include 'calendar2.php';
 
           <h4 class="modal-title">시간</h4>
           <div class="row">  
-            <div class="col-xs-2">
+            <div class="col-xs-4">
               <p>예약일</p> 
             </div>
             <div class="col-xs-8">
@@ -32,7 +32,7 @@ include 'calendar2.php';
 
           <br/>
           <div class="row">
-            <div class="col-xs-2">
+            <div class="col-xs-4">
               <p>시작 / 종료</p> 
             </div>  
   
@@ -64,10 +64,10 @@ include 'calendar2.php';
 
 
           <h4 class="modal-title">총 인원</h4>
-          <div class="col-xs-3">
-            <input type="number" class="form-control" name="total_number" value="1">
-          </div>
-          <br/><br/><br/>
+         
+          <input type="number" class="form-control" name="total_number" value="1">
+         
+          <br/><br/>
 
           <h4 class="modal-title">용도</h4>
           <div class="radio">
@@ -131,7 +131,7 @@ include 'calendar2.php';
           <br/><br/>
 
           <h4 class="modal-title">기타 사항</h4>
-          <input type="text" id="extra" name="extra" class="form-control" placeholder="활동 목적, 내용 등 기입이 필요하다면 이곳을 활용하세요." maxlength="50">
+          <input type="text" id="extra" name="extra" class="form-control" placeholder="활동 목적, 내용 등 기입이 필요한 경우 입력하세요." maxlength="50">
         </div><!--modal-body-->
 
         <div class="modal-footer">
@@ -221,6 +221,7 @@ include 'calendar2.php';
   <!-- jquery는 main.html에 삽입 -->
   <div id="calendar">
 	  <link rel='stylesheet' href='fullcalendar-3.4.0/fullcalendar.min.css'/>
+    <link rel='stylesheet' href='calendar.css'/>
 	  <script src='fullcalendar-3.4.0/lib/moment.min.js'></script>
 	  <script src='fullcalendar-3.4.0/fullcalendar.min.js'></script>
 	  <script src='fullcalendar-3.4.0/locale/ko.js'></script>

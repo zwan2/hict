@@ -5,28 +5,30 @@ $(document).ready(function() {
 
 		schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
 		
+		editable: false,
+
+
+		displayEventEnd: false,
 		header: {
 			left: 'prev,next today',
 			center: 'title',
 			right: 'agendaWeek, listWeek'
 		},
+		noEventsMessage: "예약 없음",			
+
+		defaultView: 'agendaWeek',
 		
 		views: {
 			listWeek: {
 				buttonText: '목록'
 			}
 		},
-		noEventsMessage: "예약 없음",			
-
-		defaultView: 'agendaWeek',
 		
+		
+  
 		//가로줄
 		allDaySlot: false,
 		columnFormat: 'D ddd',
-
-
-
-		editable: false,
 		
 		
 		//세로줄 
