@@ -12,7 +12,7 @@ include 'login_main.html';
 		  </div>
 
 		  <button type="submit" onclick="return confirm('제출하시겠습니까?');" class="btn btn-primary">제출</button>
-		  <button class="btn btn-default" type="button" onclick="location.href='login.html'">뒤로</button>
+		  <button class="btn btn-default" type="button" onclick="location.href='login_page.php'">뒤로</button>
 		</form>
 	</div>
 </div> <!--login_main.html 상의 div-->

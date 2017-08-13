@@ -20,8 +20,8 @@ include 'login_main.html';
 			<div class="form-group">
 				<div class="col-xs-12">
 					<button type="submit" class="btn btn-default">로그인</button>
-					<a href="member.html">회원가입</a>	
-					<a href="password.html">비밀번호 찾기</a>
+					<a href="member_page.php">회원가입</a>	
+					<a href="password_page.php">비밀번호 찾기</a>
 				</div>
 			</div>
 		</form>			

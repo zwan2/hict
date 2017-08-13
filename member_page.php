@@ -6,7 +6,7 @@ include 'login_main.html';
 		<form method="post" action="member.php" onsubmit="return member_check();" name="member" class="form-horizontal">
 			<div class="form-group">
 				<div class="col-xs-12">
-				<button class="btn btn-default" type="button" onclick="location.href='login.html'">뒤로</button>
+				<button class="btn btn-default" type="button" onclick="location.href='login_page.php'">뒤로</button>
 				</div>
 			</div>
 

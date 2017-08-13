@@ -48,7 +48,7 @@ if($result = $db->query($query)) {
   if(!$mail->Send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
   } else {
-    echo"<script>alert('새 비밀번호가 이메일로 전송되었습니다. 다시 로그인해주세요.'); location.href='login.html';</script>";
+    echo"<script>alert('새 비밀번호가 이메일로 전송되었습니다. 다시 로그인해주세요.'); location.href='login_page.php';</script>";
   }
 
 

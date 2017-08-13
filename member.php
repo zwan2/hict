@@ -24,10 +24,10 @@ if($result = $db->query($query)) {
 		//DB에 정보 입력
 		$query = "INSERT INTO member(student_number, password, name, email, tel, admin_code) VALUES ('$student_number', '$password', '$name', '$email', '$tel', 0);";
 		if($result = $db->query($query)) {
-			echo"<script>alert('회원가입이 완료되었습니다.'); location.href='login.html';</script>";
+			echo"<script>alert('회원가입이 완료되었습니다.'); location.href='login_page.php';</script>";
 		}
 		else {
-			echo"<script>alert('회원가입 실패'); location.href='member.html';</script>";
+			echo"<script>alert('회원가입 실패'); location.href='member_page.php';</script>";
 		}
 
 	}
