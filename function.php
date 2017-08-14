@@ -1,13 +1,8 @@
 <?php
 //db 연결
-
-ini_set('display_errors', 1); 
-ini_set('error_reporting', E_ALL);
-
 //aws ec2 db
 $db = mysqli_connect("13.124.48.36", "zwan", "1233zz", "hict", "3306");
-//$db = mysqli_connect("192.169", "root", "autoset", "hict");
-//$db = mysqli_connect("localhost", "root", "autoset", "hict");
+
 if(!$db) {
 	echo" aa";
 	mysqli_connect_error();
@@ -172,7 +167,7 @@ function mybooking() {
 			$num--;
 			
 			//날짜
-			$start_day = date("Y-m-d", strtotime($row['start_time']));
+			$start_day = date("y.m-d", strtotime($row['start_time']));
 			$dom = dom($row['start_time']);
 			$start_time = date("G:i", strtotime($row['start_time']));
 			$end_time = date("G:i", strtotime($row['end_time']));
@@ -229,7 +224,7 @@ function mybooking() {
 function mybooking_db_conversion($booking_state, $booking_id) {
 	//승인 대기
 	if($booking_state == 0) {
-		echo "<td><p class=\"text-muted\">대기</p> 
+		echo "<td><inline class=\"text-muted\">대기</inline> 
 		<a href=\"mybooking_cancel.php?booking_id=$booking_id\">
 		<u onclick=\"return confirm('정말 예약을 취소하시겠습니까?');\">취소</u></a></td>";
 	}
@@ -243,7 +238,7 @@ function mybooking_db_conversion($booking_state, $booking_id) {
 	}
 	//취소
 	else if($booking_state == 3) {
-		echo "<td><p class=\"text-muted\">취소</p></td>";
+		echo "<td><inline class=\"text-muted\">취소</inline></td>";
 	}
 }
 
@@ -320,7 +315,7 @@ function bookinglist() {
 				
 				
 				//날짜
-				$start_day = date("Y-m-d", strtotime($row['start_time']));
+				$start_day = date("y.m-d", strtotime($row['start_time']));
 				$dom = dom($row['start_time']);
 				$start_time = date("G:i", strtotime($row['start_time']));
 				$end_time = date("G:i", strtotime($row['end_time']));			
@@ -331,7 +326,7 @@ function bookinglist() {
 				$name = $row['name'];
 				$student_number = $row['student_number'];
 				//alert(연락처)
-				echo"<td> <u onclick=\"alert('이름: $name\\n학번: $student_number \\n연락처: $tel')\"> $name</u> </td> ";
+				echo"<td> <inline onclick=\"alert('이름: $name\\n학번: $student_number \\n연락처: $tel')\"> $name</inline> </td> ";
 				
 				//상태
 				bookinglist_db_conversion($row['booking_state'], $row['booking_id']);
@@ -441,7 +436,8 @@ function su_member() {
 		$page = (isset($_GET['page'])?$_GET['page']:1);
 		$list = 10;
 		$start_point = ($page-1) * $list;	
-		$num = ($page_num-$page)*10+($total_num%10);
+		$num = ($page_num-$page+1)*10+($total_num%10);
+
 	}
 
 
@@ -464,7 +460,7 @@ function su_member() {
 		admin_back();
 
 	//리스트 출력
-//	$query = "SELECT * FROM member LIMIT $start_point, $list";
+	//$query = "SELECT * FROM member LIMIT $start_point, $list";
 
 	if($result = $db->query($query)) {
 		while($row = $result->fetch_assoc()) {

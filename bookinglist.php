@@ -57,11 +57,12 @@
 
 
 <div class="container">
- <div class="panel panel-default">
   <?  
   if($_SESSION['admin_code']==2) {
-      ?><a class="btn btn-default" href="#" onclick="location.href='su_member.php'" role="button">SU</a><?
-  }?>
+      ?><a class="btn btn-default" href="#" onclick="location.href='su_member.php'" role="button">회원관리</a><?}
+  ?>
+ <div class="panel panel-default">
+ 
   <div class="panel-heading">예약 리스트</div>
 
   <table class="table">

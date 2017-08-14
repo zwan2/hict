@@ -17,5 +17,7 @@ if($password == $crypt_password) {
 	}
 	
 }
-
+else {
+	echo"<script>alert('비밀번호가 잘못되었습니다.'); location.href='account_delete.php';</script>";
+}
 ?>

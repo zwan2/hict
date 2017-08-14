@@ -20,7 +20,7 @@ if($result = $db->query($query)) {
 		$event['purpose'] = $row['purpose'];
 		$event['tool'] = $row['tool'];
 		$event['extra'] = $row['extra'];
-
+		
 
 		$event['allDay'] = false;
 

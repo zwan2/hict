@@ -3,67 +3,66 @@ include 'main.html';
 
 
 $student_number = $_SESSION['student_number'];
-
-$query = "SELECT * FROM member WHERE student_number = $student_number";
-  
+$query = "SELECT * FROM member WHERE student_number = $student_number"; 
 if($result = $db->query($query)) {
   $row = $result->fetch_assoc();  
 }
 ?>
+
+
 <div class="container">
-  <div class="page-header">
+  <div class="page-header col-xs-12 col-sm-4 col-sm-offset-4">
       <h1>계정 설정</h1>
   </div>
 
     <form method="post" action="account_set.php" onsubmit="return account_check();" name="account" class="form-horizontal">
      
       <div class="form-group">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
           <label for="student_number"> 학번</label>
-          <input type="hidden" name="student_number" value="<?=$row['student_number']?>">
-          <p class="form-control-static"><?=$row['student_number']?></p>
+          <input class="form-control" name="student_number" value="<?=$row['student_number']?>" type="text" readonly>
         </div>
       </div>
 
       <div class="form-group">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
           <label for="name">이름</label>
-          <p class="form-control-static"><?=$row['name']?></p>
+          <input class="form-control" name="name" type="text" value="<?=$row['name']?>" readonly>
         </div>
       </div>
 
      
 
       <div class="form-group">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
           <label for="email">E-mail</label>
           <input class="form-control" name="email" type="email" value="<?=$row['email']?>">
         </div>
       </div>
 
       <div class="form-group">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
           <label for="tel">연락처</label>
           <input class="form-control" name="tel" type="tel" value="<?=$row['tel']?>">
         </div>
       </div>
 
       <div class="form-group">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
           <label for="password">새 비밀번호</label>
           <input type="password" class="form-control" name="new_password" placeholder="영문, 숫자 혼용 8-20자리" maxlength="20">
         </div>
       </div>
 
       <div class="form-group">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
           <label for="password2">새 비밀번호 확인</label>
           <input type="password" class="form-control" name="new_password2" maxlength="20">
         </div>
       </div>
 
       <div class="form-group">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
           <label for="password">비밀번호(필수)</label>
           <input type="password" class="form-control" name="password" placeholder="기존 비밀번호 입력" maxlength="20">
         </div>
@@ -74,7 +73,7 @@ if($result = $db->query($query)) {
 
 
       <div class="form-group">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
           <input class="btn btn-default" type="submit" onclick="return confirm('이대로 계정을 저장하시겠습니까?');" value="저장">
 
           <a href="account_delete.php">회원탈퇴</a>
