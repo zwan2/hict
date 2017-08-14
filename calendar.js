@@ -82,9 +82,10 @@ $(document).ready(function() {
 
             $('#detail_data').modal();
 		}	
-	});
 
-	
+
+
+	});
 	
 });
 

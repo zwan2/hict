@@ -13,29 +13,29 @@ if($result = $db->query($query)) {
 
 ?>
 <div class="container">
-  <div class="page-header">
+  <div class="page-header col-xs-12 col-sm-4 col-sm-offset-4">
     <h1>계정 설정</h1>
   </div>
-<a class="btn btn-default" onclick="window.history.back();" role="button">뒤로</a><br/><br/>
 <form method="post" action="account_delete2.php" onsubmit="return password_check();" name="account" class="form-horizontal">
 	<input type="hidden" name="crypt_password" value="<?=$password?>">
 	<div class="form-group">
-		<div class="col-xs-12">
+		<div class="col-xs-12 col-sm-4 col-sm-offset-4">
 			<label for="password">비밀번호</label>
 			<input type="password" class="form-control" name="password" placeholder="영문, 숫자 혼용 8-20자리" maxlength="20">
 		</div>
 	</div>
 
 	<div class="form-group">
-		<div class="col-xs-12">
+		<div class="col-xs-12 col-sm-4 col-sm-offset-4">
 			<label for="password2">비밀번호 확인</label>
 			<input type="password" class="form-control" name="password2" maxlength="20">
 		</div>
 	</div>
 
 	<div class="form-group">
-    <div class="col-xs-12">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
       <input class="btn btn-default" type="submit" onclick="return confirm('정말 탈퇴하시겠습니까?');" value="탈퇴">
+      <a class="btn btn-default" onclick="window.history.back();" role="button">뒤로</a>
     </div>
   </div>
 </form>

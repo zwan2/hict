@@ -17,8 +17,8 @@ if($result = $db->query($query))
 
 if($password == $row['password']) {
 	
-	//비밀번호 변경
-	if(isset($new_password)) {
+	//비밀번호 변경 (isset, empty 작동 안됨)
+	if($new_password !="") {
 		$new_password = crypt('hict', $new_password);
 		$query = "UPDATE member SET password = '$new_password' WHERE student_number = '$student_number'";
 		$result = $db->query($query);

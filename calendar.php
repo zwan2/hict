@@ -131,7 +131,7 @@ include 'calendar2.php';
           <br/><br/>
 
           <h4 class="modal-title">기타 사항</h4>
-          <input type="text" id="extra" name="extra" class="form-control" placeholder="활동 목적, 내용 등 기입이 필요한 경우 입력하세요." maxlength="50">
+          <input type="text" id="input_extra" name="extra" class="form-control" placeholder="활동 목적, 내용 등 기입이 필요한 경우 입력하세요." maxlength="50">
         </div><!--modal-body-->
 
         <div class="modal-footer">
@@ -165,7 +165,7 @@ include 'calendar2.php';
         <br/><br/>
 
         <h4 class="modal-title" id="modalEnd">총 인원</h4>
-        <span id="name"></span> 포함 <span id="total_number"></span>명
+        <mark id="name"></mark> 포함 <span id="total_number"></span>명
         <br/><br/>
 
         <h4 class="modal-title">용도</h4>
@@ -178,7 +178,7 @@ include 'calendar2.php';
         <br/>
 
         <h4 class="modal-title">기타 사항</h4>
-        <sapn id="extra"></sapn>
+        <p id="extra"></p>
 
       </div>
 
@@ -255,15 +255,16 @@ function booking_check(){
     form.total_number.focus();
     return false;
   }
-  
   //특수문자 처리
-  $("#extra").bind("keyup",function(){
+  $("#input_extra").bind("keyup",function(){
     re = /[~!@\#$%^&*\()\-=+_']/gi; 
-    var temp=$("#extra").val();
+    var temp=$("#input_extra").val();
     if(re.test(temp)){ //특수문자가 포함되면 삭제하여 값으로 다시셋팅
-      $("#extra").val(temp.replace(re,"")); 
+      $("#input_extra").val(temp.replace(re,"")); 
     } 
   });
+
+
 
 
 }
