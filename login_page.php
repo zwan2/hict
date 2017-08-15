@@ -23,19 +23,26 @@ include 'login_main.html';
 				</div>
 			</div>
 
+			<div class="form-group">
+				<div class="col-xs-12 col-sm-4 col-sm-offset-4">
+				<input class="btn btn-default btn-lg btn-block form-control" id="login_box2" type="button" onclick="location.href='introduction.php'" value="더 알아보기">
+				</div>
+			</div>
 		</form>
+		
 	
+		<br/>
 		<div class="col-xs-12 col-sm-12">
 			<div id="login_link_center" class="text-center">
 				<a href="password_page.php"  id="login_link">비밀번호 찾기</a> 　·　 
 				<a href="member_page.php" id="login_link">회원가입</a>
 			</div>
 		</div>
-		<br/><br/><br/>
 
-		<div class="col-xs-12 col-sm-4 col-sm-offset-4">
-			<input class="btn btn-default btn-lg btn-block form-control " id="login_box2" type="button" onclick="location.href='introduction.php'" value="더 알아보기">
-		</div>
+		
+
+		
+
 	</div>
 
 
@@ -47,33 +54,37 @@ include 'login_main.html';
 
 <script type="text/javascript">
 
-function login_check(){
-  var form = document.login;  
-  
-  //필수 입력
-  if(form.student_number.value == "") {
-    form.student_number.focus();
-    return false;
-  }
-  else if (strlen(form.student_number.value) !=9) {
-  	form.student_number.focus();
-    return false;
-  }
-  else if(form.password.value == "") {
-    form.password.focus();
-    return false;
-  }
-  //특수문자 처리
-  $("#password").bind("keyup",function(){
-    re = /[~!@\#$%^&*\()\-=+_']/gi; 
-    var temp=$("#password").val();
-    if(re.test(temp)){ //특수문자가 포함되면 삭제하여 값으로 다시셋팅
-      $("#password").val(temp.replace(re,"")); 
-    } 
-  });
 
+function login_check(){
+	var form = document.login;  
+
+	//필수 입력
+	if(form.student_number.value == "") {
+		form.student_number.focus();
+		return false;
+	}
+	else if (strlen(form.student_number.value) !=9) {
+		form.student_number.focus();
+	return false;
+	}
+	else if(form.password.value == "") {
+		form.password.focus();
+	return false;
+	}
+	//특수문자 처리
+	$("#password").bind("keyup",function(){
+		re = /[~!@\#$%^&*\()\-=+_']/gi; 
+		var temp=$("#password").val();
+		if(re.test(temp)){ //특수문자가 포함되면 삭제하여 값으로 다시셋팅
+		  $("#password").val(temp.replace(re,"")); 
+		} 
+	});
 
 }
+
+
+
+
 </script>
 
 <?php

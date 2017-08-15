@@ -1,10 +1,13 @@
+* {
+	font-family: 'Noto Sans', sans-serif;
+}
+body { padding-top: 70px; }
 a { 
+	font-family: 'Noto Sans', sans-serif;
+	color: black;
+}
 
-  color: black;
-}
-body { 
-	padding-top: 70px; 
-}
+
 
 
 .navbar {
@@ -19,4 +22,11 @@ body {
 }
 #panel-body-more {
   float: right;
+}
+
+input[type=date]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
