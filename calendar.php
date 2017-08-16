@@ -194,27 +194,17 @@ include 'calendar2.php';
 
 <div class="container">
 
-  <!-- 공지사항 패널 -->  
-  <div class="panel panel-default"> 
-    <div class="panel-body">
-        <div id="panel-body-notice">
-          <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-          <?=calendar_notice()?>
-        </div>
-        <div id="panel-body-more">
-        <a href="notice.php"><span class="glyphicon glyphicon-menu-right" aria-hidden="true">
-        </span></a>
-        </div>
-    </div>
-  </div><!--panel-->
-  <br/>
-
+  <!-- 공지사항 버튼 -->  
+ <?=calendar_notice()?>
+ <br/><br/><br/>
 
   <!-- 예약하기 버튼-->
-  <button type="button" class="btn btn-primary btn-lg btn-block" id="booking_button" data-toggle="modal" data-target="#booking">
-    예약하기
-  </button>
-  <br/>
+  <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+    <button type="button" class="btn btn-primary btn-lg btn-block" id="booking_button" data-toggle="modal" data-target="#booking">
+      <inline id="booking_text">예약하기</inline> <img id="booking_icon" src="calendar_white.svg">
+    </button>
+  </div>
+  <br/> <br/> <br/>
 
 
   <!-- full calendar 호출 -->

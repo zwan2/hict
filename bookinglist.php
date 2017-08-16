@@ -37,7 +37,7 @@
         <h4 class="modal-title" id="modalTitle">승인 여부</h4>
       </div>
 
-      <form method="post" action="bookinglist_change.php" name="bookinglist_message" class="form-horizontal">
+      <form method="post" onsubmit="return message_check();" action="bookinglist_change.php" name="bookinglist_message" class="form-horizontal">
         <!--ajax 기반 비동기 호출-->
         <div id="sdynamic-content" class="modal-body">
         </div>
@@ -100,12 +100,17 @@ include 'footer.html';
 <script type="text/javascript" src="bookinglist.js"></script>
 
 <script>
-function search_check(){
+function message_check() {
+  var form = document.bookinglist_message;
+  if(form.booking_state.value == "") {
+    return false;
+  }
+}
+function search_check() {
   var form = document.booking_search;
 
-  //이메일 필수 입력
+  //검색어
   if(form.search.value == "") {
-      alert("검색어를 입력하세요.");
       form.search.focus();
       return false;
     }

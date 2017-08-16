@@ -21,7 +21,7 @@ CREATE TABLE fail_check (
 
 CREATE TABLE notice (
 	notice_id int UNSIGNED NOT NULL AUTO_INCREMENT,
-	title char(30),
+	title text,
 	content text,
 	write_time date,
 	PRIMARY KEY (notice_id)

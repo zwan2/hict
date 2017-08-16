@@ -9,7 +9,7 @@ if (isset($_GET['notice_id'])) {
   if($result = $db->query($query)) {
   	if($row = $result->fetch_assoc()) {
   		?>
-  		
+  			
 
 		<div class="container">
 			<div class="page-header">

@@ -65,7 +65,11 @@ function calendar_notice() {
 		$row = $result->fetch_assoc();
 		$notice_id = $row['notice_id'];
 		$title = $row['title'];
-		echo"<a href=\"notice2.php?notice_id=$notice_id\">$title</a>";
+		?>
+		<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+			<a class="btn btn-default btn-block" id="notice_button" href="notice2.php?notice_id=<?=$notice_id?>" role="button"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> <?=$row['title']?></a>
+		</div>
+		<?
 	}
 }
 
@@ -82,7 +86,7 @@ function notice() {
 		
 			?>
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
-				<a class="btn btn-default btn-block" id="notice_button" href="notice2.php?notice_id=<?=$row['notice_id']?>" role="button"><?=$row['title']?></a>
+				<a class="btn btn-default btn-block" id="notice_button" href="notice2.php?notice_id=<?=$row['notice_id']?>" role="button"><p><?=$row['title']?></p></a>
 			</div>
 			<?
 		}
@@ -135,8 +139,8 @@ function mybooking() {
 		$list = 10;
 		$start_point = ($page-1) * $list;	
 		$num = ($page_num-$page)*10+($total_num%10);
-	}
 
+		
 	//리스트 출력
 	$query = "SELECT * FROM booking WHERE student_number = $student_number ORDER BY booking_id DESC LIMIT $start_point, $list";
 	if($result = $db->query($query)) {
@@ -177,29 +181,36 @@ function mybooking() {
 		<ul class=\"pagination\">
 
 		<li>
-			<a href=\"$php_self?page=$prev_page\" aria-label=\"Previous\">
-			<span aria-hidden=\"true\">&laquo;</span>
+			<a class=\"pager\" href=\"$php_self?page=$prev_page\" aria-label=\"Previous\">
+			<span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>
 			</a>
 		</li>";
 
-	//블록
+	//블록 (액티브)
 	for ($p=$start_page; $p<=$end_page; $p++) {
-		echo"<li><a href=\"$php_self?page=$p\">$p</a></li>";
+		 if($page==$p) {
+	        $c="active";
+	    }
+	    else {
+	        $c="";
+	    }
+		echo"<li class=\"$c\"><a href=\"$php_self?page=$p\">$p</a></li>";
 	}
+
 
 	//다음
 	echo"
 		<li>
-			<a href=\"$php_self?page=$next_page\" aria-label=\"Next\">
-			<span aria-hidden=\"true\">&raquo;</span>
+			<a class=\"pager\" href=\"$php_self?page=$next_page\" aria-label=\"Next\">
+			<span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>
 			</a>
 		</li>
 
 		</ul>
 	</nav>";
 
+	}
 }
-
 
 //mybooking - booking state 변환 함수
 function mybooking_db_conversion($booking_state, $booking_id) {
@@ -331,20 +342,26 @@ function bookinglist() {
 		<ul class=\"pagination\">
 
 		<li>
-			<a href=\"$php_self?page=$prev_page\" aria-label=\"Previous\">
+			<a class=\"pager\" href=\"$php_self?page=$prev_page\" aria-label=\"Previous\">
 			<span aria-hidden=\"true\">&laquo;</span>
 			</a>
 		</li>";
 
-	//블록
+	//블록 
 	for ($p=$start_page; $p<=$end_page; $p++) {
-		echo"<li><a href=\"$php_self?page=$p\">$p</a></li>";
+		 if($page==$p) {
+	        $c="active";
+	    }
+	    else {
+	        $c="";
+	    }
+		echo"<li class=\"$c\"><a href=\"$php_self?page=$p\">$p</a></li>";
 	}
 
 	//다음
 	echo"
 		<li>
-			<a href=\"$php_self?page=$next_page\" aria-label=\"Next\">
+			<a class=\"pager\" href=\"$php_self?page=$next_page\" aria-label=\"Next\">
 			<span aria-hidden=\"true\">&raquo;</span>
 			</a>
 		</li>
@@ -489,20 +506,26 @@ function su_member() {
 		<ul class=\"pagination\">
 
 		<li>
-			<a href=\"$php_self?page=$prev_page\" aria-label=\"Previous\">
+			<a class=\"pager\" href=\"$php_self?page=$prev_page\" aria-label=\"Previous\">
 			<span aria-hidden=\"true\">&laquo;</span>
 			</a>
 		</li>";
 
-	//블록
+	//블록 
 	for ($p=$start_page; $p<=$end_page; $p++) {
-		echo"<li><a href=\"$php_self?page=$p\">$p</a></li>";
+		 if($page==$p) {
+	        $c="active";
+	    }
+	    else {
+	        $c="";
+	    }
+		echo"<li class=\"$c\"><a href=\"$php_self?page=$p\">$p</a></li>";
 	}
 
 	//다음
 	echo"
 		<li>
-			<a href=\"$php_self?page=$next_page\" aria-label=\"Next\">
+			<a class=\"pager\" href=\"$php_self?page=$next_page\" aria-label=\"Next\">
 			<span aria-hidden=\"true\">&raquo;</span>
 			</a>
 		</li>

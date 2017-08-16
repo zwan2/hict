@@ -11,7 +11,7 @@ include 'main.html';
 			echo"<a id=\"notice_write\" href=\"notice_write.php\" role=\"button\"><strong>글쓰기</strong></a>";
 		}?>
 	</div>
-	<br/><br/><br/>
+	<br/><br/>
 	<?=notice()?>
 </div>
 
