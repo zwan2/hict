@@ -211,7 +211,7 @@ include 'calendar2.php';
 
 
   <!-- 예약하기 버튼-->
-  <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#booking">
+  <button type="button" class="btn btn-primary btn-lg btn-block" id="booking_button" data-toggle="modal" data-target="#booking">
     예약하기
   </button>
   <br/>

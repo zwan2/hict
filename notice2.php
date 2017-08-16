@@ -4,8 +4,8 @@ include 'main.html';
 
 
 if (isset($_GET['notice_id'])) {
-  $id = $_GET['notice_id'];
-  $query = "SELECT * FROM notice WHERE notice_id = $id";
+  $notice_id = $_GET['notice_id'];
+  $query = "SELECT * FROM notice WHERE notice_id = $notice_id";
   if($result = $db->query($query)) {
   	if($row = $result->fetch_assoc()) {
   		?>
@@ -29,8 +29,13 @@ if (isset($_GET['notice_id'])) {
 
 			</div>
 			<br/>
-			
+
 			<a class="btn btn-default" onclick="window.history.back();" role="button">뒤로</a>
+			<?
+				if($_SESSION['admin_code']!= 0) {
+					echo"<td><a href=\"notice_delete.php?notice_id=$notice_id\" onclick=\"return confirm('정말 공지를 삭제하시겠습니까?');\">삭제</a></td>";
+				}
+			?>
 		</div>
 
  		<?

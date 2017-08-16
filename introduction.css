@@ -1,0 +1,26 @@
+*, input {
+	margin: 0 auto;
+	color: white;
+	font-family: 'Noto Sans', sans-serif;
+}
+body {
+	background-color: black;
+}
+h1 {
+	font-weight: 700;
+}
+
+.masthead {
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 200px 0;
+  text-align: center;
+  color: white;
+  background: url("intro_bg.jpg") no-repeat bottom center scroll;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
