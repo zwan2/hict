@@ -18,6 +18,7 @@ if (isset($_REQUEST['id'])) {
       <input type="hidden" name="booking_id" value="<?=$booking_id?>">
       <input type="hidden" name="admin_name" value="<?=$admin_name?>">
       <input type="hidden" name="admin_tel" value="<?=$admin_tel?>">
+      
       <label class="radio-inline">
         <input type="radio" name="booking_state" value = "1" <?if($booking_state==1) echo"checked" ?>> 승인
       </label>
