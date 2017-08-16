@@ -40,9 +40,7 @@ function main_hidden() {
 	$admin_code = $_SESSION['admin_code'];
 	if($admin_code!=0) {
 		?>
-		<li>
-			<li><a href="bookinglist.php">관리자 페이지</a></li>
-		</li>
+		<li><a href="bookinglist.php">관리자 페이지</a></li>
         <?
 	}
 }
@@ -81,29 +79,12 @@ function notice() {
 	if($result = $db->query($query)) {
 		$num = mysqli_num_rows ($result);
 		while($row = $result->fetch_assoc()) {
-			echo "<tr>";
-			
-			//#
-			echo "<td> $num </td>";
-			$num--;
-
-			//제목
-			$title = $row['title'];
-			$notice_id = $row['notice_id'];
-			echo "<td><a href=\"notice2.php?notice_id=$notice_id\"> $title </a></td>";
-
-			//날짜
-			$write_time = $row['write_time'];
-			echo "<td> $write_time </td>";	
-			
-					
-			//관리자: 삭제 권한
-			if($admin_code != 0) {
-				echo"<td><a href=\"notice_delete.php?notice_id=$notice_id\" onclick=\"return confirm('정말 공지를 삭제하시겠습니까?');\">삭제</a></td>";
-			}
-						
-			
-			echo"</tr>";
+		
+			?>
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+				<a class="btn btn-default btn-block" id="notice_button" href="notice2.php?notice_id=<?=$row['notice_id']?>" role="button"><?=$row['title']?></a>
+			</div>
+			<?
 		}
 	}
 

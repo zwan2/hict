@@ -1,21 +1,86 @@
+/* PC media query */
+@media (min-width: 768px)  {
+	
+	.navbar-text{
+		font-size: 20px !important;
+	}
+	.table_title {
+		font-size: 30px !important;
+	}
+}
+
+
+
 * {
 	font-family: 'Noto Sans', sans-serif;
 }
-body { padding-top: 70px; }
+body { 
+	padding-top: 70px; 
+	background-color: #FAFAFA;
+}
 a { 
 	font-family: 'Noto Sans', sans-serif;
 	color: black;
 }
+table {
+	border: none;
+}
 
-
+input[type=date]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 
 
 .navbar {
   margin-bottom: 0;
+  border: none;
+  background-color: #FAFAFA;
+
 }
+	.navbar-brand {
+	  padding: 0px;
+	}
+	.navbar-brand>img {
+	  height: 100%;
+	  padding: 10px 15px;
+	  width: auto;
+	}
+
+	.navbar-text{
+
+		position: absolute; 
+		left: 50%; 
+		transform: translateX(-50%);
+		font-weight: 700;
+		font-size: 0.92em;
+		color: #009688 !important; 
+	}
+	.navbar-default .navbar-toggle .icon-bar {
+    	background-color: #009688;
+
+	}
+	#navbar-collapse ul li a {
+		color: #009688 !important;
+	}
+
+
+#booking_button {
+	background-color: #009688;
+	border-radius: 10em;
+	font-weight: 700;
+	box-shadow: 0.1em 0.1em 0.1em 0 lightgray;
+}
+
+
+
 .panel {
   margin: 0;
 }
+
+
 
 #panel-body-notice {
   float: left;
@@ -24,9 +89,26 @@ a {
   float: right;
 }
 
-input[type=date]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+
+
+/*notice*/
+.table_title {
+	display: inline;
+	font-size: 20px;
+	font-weight: 700;
+}
+#notice_write {
+	float: right;
+	font-weight: 700;
+	line-height: 2em;
+}
+#notice_button {
+	border-radius: 1.5em;
+	border: none;
+	box-shadow: 0.1em 0.1em 0.1em 0 lightgray;
+	height: 40px;
+	color: #666666;
+	font-size: 100%;
+	font-weight: 500;
+	text-align: left;
 }

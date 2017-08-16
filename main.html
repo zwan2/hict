@@ -23,27 +23,33 @@ ensure_logged_in();
   <script src="//code.jquery.com/jquery.min.js"></script>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
 
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
 <body>
+
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <div class="navbar-header">  
+        <a class="navbar-brand" href="calendar.php"><img alt="Brand" src="nav_logo.png"></a>
+        <!--모바일 토글버튼-->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="calendar.php">휴먼ICT 실습실</a>
+        <a class="navbar-brand navbar-text" href="calendar.php"><strong>휴먼ICT 실습실 예약 서비스</strong></a>
       </div>
+     
+      <div class="collapse navbar-collapse" id="navbar-collapse">   
+       
+ 
 
-  
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">      
         <ul class="nav navbar-nav navbar-right">
+
           <li><a href="#" onclick="location.href='calendar.php'">예약 현황</a></li>
 
           <li><a href="notice.php">공지사항</a></li>
@@ -59,7 +65,9 @@ ensure_logged_in();
               <li><a href="logout.php">로그아웃</a></li>
             </ul>
           </li>
-          <?=main_hidden()?>         
+
+          <?=main_hidden()?> 
+
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
