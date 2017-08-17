@@ -54,17 +54,26 @@
 </div>
 
 
+<div class="container">
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+    <h1 class="table_title">예약 리스트</h1>
+
+    <div class="float_right">
+     <?  
+      if($_SESSION['admin_code']==2) {
+          ?><a class="grey" href="#" onclick="location.href='su_member.php'" role="button">회원관리</a><?}
+      ?>
+    </div>
+    
+  </div>
+</div>
+
+<br/>
 
 
 <div class="container">
-  <?  
-  if($_SESSION['admin_code']==2) {
-      ?><a class="btn btn-default" href="#" onclick="location.href='su_member.php'" role="button">회원관리</a><?}
-  ?>
- <div class="panel panel-default">
- 
-  <div class="panel-heading">예약 리스트</div>
 
+ 
   <table class="table">
     <tr> 
       <th>#</th>
@@ -90,7 +99,6 @@
     </div><!-- /.col-lg-6 -->
   </div><!-- /.row -->
 
-  </div>
 </div>
 
 <?php

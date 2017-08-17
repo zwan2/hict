@@ -3,27 +3,29 @@ include 'main.html';
 ?>
 
 <div class="container">
-	<div class="page-header">
-	  <h1>공지 작성</h1>
+	<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+		<h1 class="table_title">글쓰기</h1>
 	</div>
+	<br/><br/><br/>
+	<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+		<form method="post" action="notice_write2.php" name="notice" class="form-horizontal">
+			<div class="form-group">
+				<input type="text" class="form-control notice_input" name="title" placeholder="제목">
+			</div>
+			<div class="form-group"> 
+				<textarea class="form-control notice_input" rows="15" name="content" placeholder="내용"></textarea>
+				<br/>
+			</div>
 
-	<form method="post" action="notice_write2.php" name="notice" class="form-horizontal">
-		
-		<div class="form-group">
-			<label for="exampleInputName2">제목</label>
-			<input type="text" class="form-control" name="title" placeholder="제목">
-		</div>
-		<div class="form-group"> 
-			<label for="exampleInputName2">내용</label>
-			<textarea class="form-control" rows="10" name="content" placeholder="내용"></textarea>
-			<br/>
-		</div>
+			<button type="submit" onclick="return confirm('공지를 작성하시겠습니까?');" class="grey">작성</button>
 
-		<a class="btn btn-default" href="notice.php" role="button">뒤로</a>
-		<button type="submit" onclick="return confirm('공지를 작성하시겠습니까?');" class="btn btn-primary">작성</button>
-
-	</form>
+			<div class="float_right">
+				<a href="#" id="notice_back" onclick="window.history.back();" role="button">뒤로</a>
+			</div>
+		</form>
+	</div>
 </div>
+
 
 <?php
 include 'footer.html';

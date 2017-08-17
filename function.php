@@ -145,29 +145,37 @@ function mybooking() {
 	$query = "SELECT * FROM booking WHERE student_number = $student_number ORDER BY booking_id DESC LIMIT $start_point, $list";
 	if($result = $db->query($query)) {
 		while($row = $result->fetch_assoc()) {
-			echo "<tr>";
-			
-			//#
-			echo "<td> $num </td>";
-			$num--;
-			
-			//날짜
+		
+
+			//날짜-상세정보 호출용 data
 			$start_day = date("y.m-d", strtotime($row['start_time']));
 			$dom = dom($row['start_time']);
 			$start_time = date("G:i", strtotime($row['start_time']));
 			$end_time = date("G:i", strtotime($row['end_time']));
-			
+			$booking_date =$start_day." (".$dom.") ". $start_time." - ".$end_time;
+
 			$booking_id = $row['booking_id'];
-			echo "<td> <a href=\"#\" data-toggle=\"modal\" data-target=\"#detail_data\" data-id = $booking_id id = \"modal_toggle\"> $start_day ($dom) $start_time - $end_time </a> </td>";
+	
+			?>
+			<div class="col-xs-10 col-sm-8 col-sm-offset-2 no_padding">
+				<div class="panel panel-default" id="mybooking_panel">
+				  <div class="panel-body">
+				    <?=$num?>:
+					<a href="#" data-toggle="modal" data-target="#detail_data" data-id = <?=$booking_id?> id = "modal_toggle"><?=$booking_date?></a> 이재완
+				  </div>
+				</div>
+			</div>
+			<div class="col-xs-2 col-sm-2 no_padding">
+				<div class="panel panel-default" id="mybooking_button">
+				  <div class="panel-body">
+				    <?mybooking_db_conversion($row['booking_state'], $row['booking_id'])?>
+				  </div>
+				</div>
+			</div>
 			
-			//상태
-			mybooking_db_conversion($row['booking_state'], $row['booking_id']);
-			
-			echo"</tr>";
-			
-		
-		}
-		echo "</table></div>";
+			<?
+			$num--;
+		};
 	}
 
 
@@ -177,14 +185,15 @@ function mybooking() {
 	
 	//이전
 	echo"
-	<nav>
-		<ul class=\"pagination\">
+	<div class=\"col-xs-12 col-sm-8 col-sm-offset-2\">
+		<nav>
+			<ul class=\"pagination\">
 
-		<li>
-			<a class=\"pager\" href=\"$php_self?page=$prev_page\" aria-label=\"Previous\">
-			<span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>
-			</a>
-		</li>";
+			<li>
+				<a class=\"pager\" href=\"$php_self?page=$prev_page\" aria-label=\"Previous\">
+				<span class=\"glyphicon glyphicon-menu-left\" aria-hidden=\"true\"></span>
+				</a>
+			</li>";
 
 	//블록 (액티브)
 	for ($p=$start_page; $p<=$end_page; $p++) {
@@ -194,20 +203,21 @@ function mybooking() {
 	    else {
 	        $c="";
 	    }
-		echo"<li class=\"$c\"><a href=\"$php_self?page=$p\">$p</a></li>";
+		echo"<li class=\"$c block\"><a href=\"$php_self?page=$p\">$p</a></li>";
 	}
 
 
 	//다음
 	echo"
-		<li>
-			<a class=\"pager\" href=\"$php_self?page=$next_page\" aria-label=\"Next\">
-			<span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>
-			</a>
-		</li>
+			<li>
+				<a class=\"pager\" href=\"$php_self?page=$next_page\" aria-label=\"Next\">
+				<span class=\"glyphicon glyphicon-menu-right\" aria-hidden=\"true\"></span>
+				</a>
+			</li>
 
-		</ul>
-	</nav>";
+			</ul>
+		</nav>
+	</div>";
 
 	}
 }
@@ -216,21 +226,21 @@ function mybooking() {
 function mybooking_db_conversion($booking_state, $booking_id) {
 	//승인 대기
 	if($booking_state == 0) {
-		echo "<td><inline class=\"text-muted\">대기</inline> 
-		<a href=\"mybooking_cancel.php?booking_id=$booking_id\">
-		<u onclick=\"return confirm('정말 예약을 취소하시겠습니까?');\">취소</u></a></td>";
+		echo "
+		<a href=\"mybooking_cancel.php?booking_id=$booking_id\" >
+		<inline class=\"grey\" onclick=\"return confirm('정말 예약을 취소하시겠습니까?');\">●</inline></a>";
 	}
 	//승인
 	else if($booking_state == 1) {
-		echo "<td><a href=\"#\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\"><u>승인</u></a></td>";
+		echo "<a href=\"#\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\"><inline class=\"blue\">●</inline></a>";
 	}
 	//거절
 	else if($booking_state == 2) {
-		echo"<td><a href=\"#\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\"><u>거절</u></a></td>";
+		echo"<a href=\"#\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\"><inline class=\"red\">●</inline></a>";
 	}
 	//취소
 	else if($booking_state == 3) {
-		echo "<td><inline class=\"text-muted\">취소</inline></td>";
+		echo "<inline class=\"text-muted\">-</inline>";
 	}
 }
 

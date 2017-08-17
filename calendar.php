@@ -65,7 +65,7 @@ include 'calendar2.php';
 
           <h4 class="modal-title">총 인원</h4>
          
-          <input type="number" class="form-control" name="total_number" value="1">
+          <input type="number" class="form-control" name="total_number" value="1" min="1" max="99">
          
           <br/><br/>
 
@@ -239,12 +239,6 @@ function booking_check(){
     return false;
   }
 
-  //인원 제한
-  else if(form.total_number.value < 1 || form.total_number.value > 100) {
-    alert("인원을 올바르게 입력하세요.");
-    form.total_number.focus();
-    return false;
-  }
   //특수문자 처리
   $("#input_extra").bind("keyup",function(){
     re = /[~!@\#$%^&*\()\-=+_']/gi; 
@@ -253,8 +247,6 @@ function booking_check(){
       $("#input_extra").val(temp.replace(re,"")); 
     } 
   });
-
-
 
 
 }
