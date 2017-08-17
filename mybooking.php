@@ -49,26 +49,33 @@ include 'main.html';
 </div>
 
 
-
-
 <div class="container">
-  <div class="panel panel-default">
-    <div class="panel-heading">내 예약</div>
-    <table class="table">
-      <tr>
-        <th>#</th>
-        <th>날짜</th>
-        <th>상태</th>
-      </tr>
-      <?=mybooking()?>
-      
-    </table>
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+    <h1 class="table_title">내 예약</h1>
+
+    <div class="float_right">
+      <inline class="grey">
+      <strong>●대기</strong>
+      </inline>
+      <inline class="blue">
+      <strong>　●승인</strong> 
+      </inline>
+      <inline class="red">
+      <strong>　●거절</strong>
+      </inline>
     </div>
-
-
-
+    
   </div>
 </div>
+
+<br/>
+ 
+
+<div class="container">
+ <?=mybooking()?>
+</div>
+
+
 
 <script type="text/javascript" src="mybooking.js"></script>
 
