@@ -21,7 +21,7 @@ if (isset($_GET['notice_id'])) {
 				<inline class="grey"><?=$row['write_time']?></inline>
 				
 				<div class="float_right">
-					<a href="#" id="notice_back" onclick="window.history.back();" role="button">뒤로</a>
+					<a href="#" onclick="window.history.back();" role="button"><strong>뒤로</strong></a>
 					<?
 					if($_SESSION['admin_code']!= 0) {
 						echo"<td><a id=\"notice_delete\" href=\"notice_delete.php?notice_id=$notice_id\" onclick=\"return confirm('정말 공지를 삭제하시겠습니까?');\">삭제</a></td>";

@@ -60,13 +60,13 @@
 
     <div class="float_right">
       <inline class="grey">
-      <strong>●대기</strong>
+      <strong>● 대기</strong>
       </inline>
       <inline class="blue">
-      <strong>　●승인</strong> 
+      <strong>　● 승인</strong> 
       </inline>
       <inline class="red">
-      <strong>　●거절</strong>
+      <strong>　● 거절</strong>
       </inline>
      <? 
       if($_SESSION['admin_code']==2) {

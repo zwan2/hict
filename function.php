@@ -160,8 +160,8 @@ function mybooking() {
 			<div class="col-xs-10 col-sm-8 col-sm-offset-2 no_padding">
 				<div class="panel panel-default" id="mybooking_panel">
 				  <div class="panel-body">
-				    <?=$num?>:
-					<a href="#" data-toggle="modal" data-target="#detail_data" data-id = <?=$booking_id?> class="ellipsis" id = "modal_toggle"><?=$booking_date?></a>
+				    
+					<a href="#" data-toggle="modal" data-target="#detail_data" data-id = <?=$booking_id?> class="ellipsis" id = "modal_toggle"><?=$num?>: <?=$booking_date?></a>
 				  </div>
 				</div>
 			</div>
@@ -311,8 +311,6 @@ function bookinglist() {
 			while($row = $result->fetch_assoc()) {
 				
 				
-				
-				
 				//날짜-상세정보 호출용 data
 				$start_day = date("y.m-d", strtotime($row['start_time']));
 				$dom = dom($row['start_time']);
@@ -323,21 +321,11 @@ function bookinglist() {
 				$booking_id = $row['booking_id'];			
 				
 
-				//예약자
-				$tel = $row['tel'];
-				$name = $row['name'];
-				$student_number = $row['student_number'];
-				//alert(연락처)
-				//echo"<td> <inline onclick=\"alert('이름: $name\\n학번: $student_number \\n연락처: $tel')\"> $name</inline> </td> ";
-				
-				//상태
-				//bookinglist_db_conversion($row['booking_state'], $row['booking_id']);
 				?>
 				<div class="col-xs-10 col-sm-8 col-sm-offset-2 no_padding">
 					<div class="panel panel-default" id="mybooking_panel">
 					  <div class="panel-body">
-					    <?=$booking_id?>:
-						<a href="#" data-toggle="modal" data-target="#detail_data" data-id = <?=$booking_id?> class="ellipsis" id = "modal_toggle"><?=$booking_date?></a>
+						<a href="#" data-toggle="modal" data-target="#detail_data" data-id = <?=$booking_id?> class="ellipsis" id = "modal_toggle"><?=$booking_id?>: <?=$booking_date?></a>
 					  </div>
 					</div>
 				</div>
@@ -370,7 +358,7 @@ function bookinglist() {
 
 		<li>
 			<a class=\"pager\" href=\"$php_self?page=$prev_page\" aria-label=\"Previous\">
-			<span aria-hidden=\"true\">&laquo;</span>
+			<span class=\"glyphicon glyphicon-menu-left\" aria-hidden=\"true\"></span>
 			</a>
 		</li>";
 
@@ -389,7 +377,7 @@ function bookinglist() {
 	echo"
 		<li>
 			<a class=\"pager\" href=\"$php_self?page=$next_page\" aria-label=\"Next\">
-			<span aria-hidden=\"true\">&raquo;</span>
+			<span class=\"glyphicon glyphicon-menu-right\" aria-hidden=\"true\"></span>
 			</a>
 		</li>
 
