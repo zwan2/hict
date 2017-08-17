@@ -21,6 +21,9 @@ body {
 a { 
 	font-family: 'Noto Sans', sans-serif;
 	text-decoration: none !important;
+	color: #222222;
+}
+a:hover {
 	color: #666666;
 }
 
@@ -36,7 +39,10 @@ textarea{
 	resize: none;
 }
 
-
+.ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
 .no_padding {
 	padding: 0;
 }
@@ -52,6 +58,9 @@ textarea{
 .red {
 	color: #E57373;
 }
+.font_700 {
+	font-weight: 700;
+}
 .float_right {
 	float: right;
 }
@@ -59,7 +68,10 @@ textarea{
 
 
 
-
+.btn-primary {
+	background-color: #009688 !important;
+	border-color: #00796B !important;
+}
 .glyphicon {
 	vertical-align: middle;
 }
@@ -144,7 +156,7 @@ textarea{
 	float: right;
 	font-weight: 700;
 	line-height: 2em;
-	color: #222222;
+
 }
 
 #notice_button {
@@ -159,8 +171,13 @@ textarea{
 	font-size: 100%;
 	font-weight: 500;
 	text-align: left;
+
 	
-}
+}	
+	#notice_button_text{
+		text-overflow: ellipsis;
+
+	}
 
 .tab_title {
 	font-size: 1.1em;
@@ -172,10 +189,6 @@ textarea{
 	font-size: 1em;
 }
 
-	#notice_back {
-		font-weight: 700;
-		color: #666666;
-	}
 	#notice_delete {
 		font-weight: 700;
 		color: #222222;

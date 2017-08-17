@@ -20,7 +20,7 @@ include 'main.html';
 			<button type="submit" onclick="return confirm('공지를 작성하시겠습니까?');" class="grey">작성</button>
 
 			<div class="float_right">
-				<a href="#" id="notice_back" onclick="window.history.back();" role="button">뒤로</a>
+				<a href="#" class="font_700" onclick="window.history.back();" role="button">뒤로</a>
 			</div>
 		</form>
 	</div>

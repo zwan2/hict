@@ -13,12 +13,14 @@ if (isset($_REQUEST['id'])) {
       $admin_tel = $row['admin_tel'];
       $booking_state = $row['booking_state'];
       $message = $row['message'];
-      
+     
+
+
+
+      if ($admin_name!="") {
+        echo"<p>담당자: $admin_name</p>";
+      }
       ?>
-      <input type="hidden" name="booking_id" value="<?=$booking_id?>">
-      <input type="hidden" name="admin_name" value="<?=$admin_name?>">
-      <input type="hidden" name="admin_tel" value="<?=$admin_tel?>">
-      
       <label class="radio-inline">
         <input type="radio" name="booking_state" value = "1" <?if($booking_state==1) echo"checked" ?>> 승인
       </label>
@@ -29,6 +31,10 @@ if (isset($_REQUEST['id'])) {
 
       <h4 class="modal-title">전달 사항(선택)</h4>
       <input type="text" class="form-control" name="message" value="<?=$message?>">
+
+      <input type="hidden" name="booking_id" value="<?=$booking_id?>">
+      <input type="hidden" name="admin_tel" value="<?=$admin_tel?>">
+      <input type="hidden" name="admin_name" value="<?=$admin_name?>">
 
       <?
     }
