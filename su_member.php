@@ -7,18 +7,18 @@
 <div class="container">
  <div class="panel panel-default">
   <div class="panel-heading">회원 관리</div>
-
-  <table class="table">
-    <tr> 
-      <th>#</th>
-      <th>학번</th>
-      <th>이름</th>
-      <th>이메일</th>
-      <th>전화번호</th>
-      <th>상태</th>
-    </tr>
-    <?=su_member()?>
-  
+  <div class="table-responsive">
+	  <table class="table">
+	    <tr> 
+	      <th>#</th>
+	      <th>학번</th>
+	      <th>이름</th>
+	      <th>이메일</th>
+	      <th>전화번호</th>
+	      <th>상태</th>
+	    </tr>
+	    <?=su_member()?>
+  </div>
 
   <div class="row">
     <div class="col-lg-6">

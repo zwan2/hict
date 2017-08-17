@@ -51,7 +51,7 @@ include 'main.html';
 
 <div class="container">
   <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-    <h1 class="table_title">내 예약</h1>
+    <h1 class="table_title"><a href="mybooking.php">내 예약</a></h1>
 
     <div class="float_right">
       <inline class="grey">

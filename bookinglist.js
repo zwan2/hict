@@ -10,7 +10,7 @@ $(document).ready(function(){
      $('#dynamic-content').html(''); // leave this div blank
   
      $.ajax({
-          url: 'getmybooking.php',
+          url: 'getbookinglist.php',
           type: 'POST',
           data: 'id='+booking_id,
           dataType: 'html'

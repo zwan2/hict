@@ -199,7 +199,7 @@ include 'calendar2.php';
  <br/><br/><br/>
 
   <!-- 예약하기 버튼-->
-  <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2">
     <button type="button" class="btn btn-primary btn-lg btn-block" id="booking_button" data-toggle="modal" data-target="#booking">
       <inline id="booking_text">예약하기</inline> <img id="booking_icon" src="calendar_white.svg">
     </button>

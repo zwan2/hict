@@ -56,10 +56,19 @@
 
 <div class="container">
   <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-    <h1 class="table_title">예약 리스트</h1>
+    <h1 class="table_title"><a href="bookinglist.php">예약 리스트</a></h1>
 
     <div class="float_right">
-     <?  
+      <inline class="grey">
+      <strong>●대기</strong>
+      </inline>
+      <inline class="blue">
+      <strong>　●승인</strong> 
+      </inline>
+      <inline class="red">
+      <strong>　●거절</strong>
+      </inline>
+     <? 
       if($_SESSION['admin_code']==2) {
           ?><a class="grey" href="#" onclick="location.href='su_member.php'" role="button">회원관리</a><?}
       ?>
@@ -72,22 +81,11 @@
 
 
 <div class="container">
-
- 
-  <table class="table">
-    <tr> 
-      <th>#</th>
-      <th>날짜</th>
-      <th>예약자</th>
-      
-      <th>상태</th>
-    </tr>
-    <?=bookinglist()?>
-  
+  <?=bookinglist()?>
 
 
   <div class="row">
-    <div class="col-lg-6">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
       <form method="get" action="<?=$_SERVER['SCRIPT_NAME']?>" onsubmit="return search_check();" name="booking_search" class="form-horizontal">
         <div class="input-group">    
           <input type="text" name="search" class="form-control" placeholder="예약자명, 관리자명으로 검색">
@@ -100,6 +98,8 @@
   </div><!-- /.row -->
 
 </div>
+
+
 
 <?php
 include 'footer.html';
