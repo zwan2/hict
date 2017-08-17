@@ -37,7 +37,7 @@ include 'login_main.html';
 		<div class="col-xs-12 col-sm-12 center-block">
 			<div class="text-center">
 				<a href="password_page.php"  id="login_link">비밀번호 찾기</a> 　·　 
-				<a href="member_page.php" id="login_link">회원가입</a>
+				<a href="member_page.php" id="login_link">회원가입</a>　　
 			</div>
 		</div>
 
@@ -90,5 +90,5 @@ function login_check(){
 </script>
 
 <?php
-//include 'footer.html';
+include 'footer.html';
 ?>
