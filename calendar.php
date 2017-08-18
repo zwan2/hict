@@ -210,14 +210,17 @@ include 'calendar2.php';
   <!-- full calendar 호출 -->
   <!-- jquery는 main.html에 삽입 -->
   <div id="calendar">
-	  <link rel='stylesheet' href='fullcalendar-3.4.0/fullcalendar.min.css'/>
-    <link rel='stylesheet' href='calendar.css'/>
-	  <script src='fullcalendar-3.4.0/lib/moment.min.js'></script>
-	  <script src='fullcalendar-3.4.0/fullcalendar.min.js'></script>
-	  <script src='fullcalendar-3.4.0/locale/ko.js'></script>
-	  <script type="text/javascript" src="calendar.js"></script>
+	 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
+    <script src='lib/jquery-ui.custom-datepicker.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale/ko.js'></script>
+    
+    <script type="text/javascript" src="calendar.js"></script>
 	  <div id='calendar'></div>
   </div>
+
 </div>
 
 <script type="text/javascript">
