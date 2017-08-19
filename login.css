@@ -2,7 +2,7 @@
 
 *, input {
 	margin: 0 auto;
-	color: white;
+	color: white !important;
 	font-family: 'Noto Sans KR', sans-serif;
 }
 body {
@@ -10,14 +10,20 @@ body {
 }
 footer {
   color: #FFFFFF;
+  
 }
-
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
   margin: 0; 
 }
+
+.weight_100 {
+	font-weight: 100;
+}
+
+
 .container {
 	margin: 0 auto;
 }
@@ -62,10 +68,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
-#login_link {
-	color: white;
-
-}
 
 
 #login_box {

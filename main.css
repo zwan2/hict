@@ -1,12 +1,13 @@
 
 /* PC media query */
-@media (min-width: 768px)  {
+@media (min-width: 992px)  {
 	
 	.navbar-text{
-		font-size: 20px !important;
+		font-size: 1.4em !important;
+		margin: 0.55em 0 0 0 !important;
 	}
 	.table_title {
-		font-size: 30px !important;
+		font-size: 2em !important;
 	}
 }
 
@@ -46,8 +47,8 @@ textarea{
 }
 
 .ellipsis {
-	overflow: hidden;
-	text-overflow: ellipsis;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
 }
 .no_padding {
 	padding: 0;
@@ -70,6 +71,9 @@ textarea{
 .float_right {
 	float: right;
 }
+.weight_100 {
+	font-weight: 100;
+}
 
 
 
@@ -81,10 +85,10 @@ textarea{
 .glyphicon {
 	vertical-align: middle;
 }
-.navbar {
-  margin-bottom: 0;
-  border: none;
-  background-color: #FAFAFA;
+.navbar {	
+  	margin-bottom: 0;
+ 	border: none;
+  	background-color: #FAFAFA;
 
 }
 	.navbar-brand {
@@ -97,14 +101,16 @@ textarea{
 	}
 
 	.navbar-text {
-		width: 250px;
+		width: 50em;
 		position: absolute; 
 		left: 50%; 
 		transform: translateX(-50%);
+
 		font-weight: 700;
 		font-size: 1.2em;
 		text-align: center;
 		color: #009688 !important;
+
 		
 	}
 
@@ -121,6 +127,7 @@ textarea{
 		margin: 10px;
 	}
 	#nav_icon {
+	color: #00796B;
 	width: 20px;
 	height: auto;
 	padding: 5px 0;
@@ -139,8 +146,8 @@ textarea{
 #booking_icon {
 	display: inline;
 	width: 18px;
+	margin-right: 0.5em;
 	height: auto;
-	padding: 2px 0 0 0;
 	float: right;
 }
 #booking_text {

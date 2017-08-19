@@ -219,8 +219,8 @@ function mybooking_db_conversion($booking_state, $booking_id) {
 	//승인 대기
 	if($booking_state == 0) {
 		echo "
-		<a href=\"mybooking_cancel.php?booking_id=$booking_id\" class=\"btn btn-default btn-block ellipsis mybooking_button2\">
-		<inline class=\"grey\" onclick=\"return confirm('정말 예약을 취소하시겠습니까?');\">●</inline></a>";
+		<a href=\"mybooking_cancel.php?booking_id=$booking_id\" class=\"btn btn-default btn-block ellipsis mybooking_button2\" onclick=\"return confirm('정말 예약을 취소하시겠습니까?');\">
+		<inline class=\"grey\">●</inline></a>";
 	}
 	//승인
 	else if($booking_state == 1) {

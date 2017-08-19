@@ -36,8 +36,8 @@ include 'login_main.html';
 		<br/>
 		<div class="col-xs-12 col-sm-12 center-block">
 			<div class="text-center">
-				<a href="password_page.php"  id="login_link">비밀번호 찾기</a> 　·　 
-				<a href="member_page.php" id="login_link">회원가입</a>　　
+				<a href="password_page.php" class="weight_100">비밀번호 찾기</a> 　·　 
+				<a href="member_page.php" class="weight_100">회원가입</a>　　
 			</div>
 		</div>
 

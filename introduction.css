@@ -9,7 +9,7 @@ body {
 }
 
 
-
+.
 
 
 .ellipsis {
@@ -52,29 +52,8 @@ body {
   font-weight: 700;
 }
 
-.button {
-  position: relative;
-  bottom: -78vh;
-  margin: 0.2em 0;
 
-  border-radius: 1.5em;
-  border: none;
-  box-shadow: 0.1em 0.1em 0.1em 0 lightgray;
-  height: 3em;
-  line-height: 2em;
 
-  background-color: rgba( 255, 255, 255, 0.5 );
-  font-size: 1.2em;
-  font-weight: 900;
-  text-align: center;
-} 
-  .button strong {
-    color: #222222 !important;
-
-  }
-  .button .glyphicon {
-    color: #222222 !important;
-  }
 
 
 
@@ -83,7 +62,7 @@ body {
 .intro_bg {
   background-repeat: none;
   background-size:cover;
-  height: 100vh;
+  height: 110vh;
 }
 
 #intro1 {
@@ -99,3 +78,49 @@ body {
   background-image: url('intro_bg3.jpg');
 }
 
+
+#intro1_text {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.panel {
+  border-radius: 1.5em;
+  background-color: rgba( 255, 255, 255, 0.8 ) !important;
+
+
+}
+.panel-body {
+  font-size: 1em;
+  font-weight: 900;
+  text-align: center;
+  color: #222222 !important;
+}
+
+.button {
+  position: relative;
+  bottom: -78vh;
+  margin: 0.2em 0;
+  height: 2.5em;
+  border-radius: 1.5em;
+  border: none;
+  box-shadow: 0.1em 0.1em 0.1em 0 lightgray;
+
+
+  background-color: rgba( 255, 255, 255, 0.8 );
+  font-size: 1.2em;
+  font-weight: 900;
+  text-align: center;
+} 
+  .button strong {
+    vertical-align: middle;
+    color: #222222 !important;
+
+  }
+  .button .material-icons {
+    vertical-align: middle;
+    color: #222222 !important;
+  }

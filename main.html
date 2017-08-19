@@ -9,6 +9,8 @@ include 'function.php';
 <html> 
 <head>
   <link href="//fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
 
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
@@ -21,11 +23,11 @@ include 'function.php';
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <!-- Chrome, Firefox OS and Opera -->
-  <meta name="theme-color" content="#E0F2F1">
+  <meta name="theme-color" content="#009688">
   <!-- Windows Phone -->
-  <meta name="msapplication-navbutton-color" content="#E0F2F1">
+  <meta name="msapplication-navbutton-color" content="#009688">
   <!-- iOS Safari -->
-  <meta name="apple-mobile-web-app-status-bar-style" content="#E0F2F1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#009688">
 
   <title>휴먼ICT 실습실</title>
 
@@ -40,7 +42,7 @@ include 'function.php';
         <a class="navbar-brand" href="calendar.php"><img alt="Brand" src="nav_logo.png"></a>
         <!--모바일 토글버튼-->
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-          <img id="nav_icon" src="menu_teal.svg">
+          <i class="material-icons" id="nav_icon">menu</i>
         </button>
         <a class="navbar-text" href="calendar.php"><strong>휴먼ICT 실습실 예약 서비스</strong></a>
       </div>
@@ -74,18 +76,6 @@ include 'function.php';
     </div><!-- /.container-fluid -->
   </nav>
 
-<script type="text/javascript">
-$(document).ready(function(){
- $(window).scroll(function(){
-  var y = $(window).scrollTop();
-  if( y > 0 ){ 
-      $(".navbar").css({'box-shadow':'0.1em 0.1em 0.1em 0 lightgray'});
-  } else {
-      $(".navbar").css({'box-shadow':'none'});
-  }
- });
-})
-</script>
 
 <!-- 이상 main.html -->
 <!-- 이후 php 파일 include -->
