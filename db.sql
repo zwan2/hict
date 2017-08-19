@@ -33,6 +33,7 @@ CREATE TABLE booking (
 	admin_name char(10),
 	admin_tel char(15),
 	message text,
+	receive_time datetime,
 	student_number int(9),
 	name char(20),
 	tel char(15),

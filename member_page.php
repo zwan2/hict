@@ -66,17 +66,17 @@ include 'login_main.html';
 
 			<div class="form-group">
 				<div class="col-xs-12 col-sm-4 col-sm-offset-4">
-					<label for="email">(선택) E-mail</label>
-					<input type="email" class="form-control" name="email" placeholder="E-mail을 입력하세요" maxlength="30">
-					<span id="helpBlock" class="help-block">비밀번호 찾기에 사용됩니다.</span>
+					<label for="tel">연락처</label>
+					<input type="tel" class="form-control" name="tel" maxlength="20" placeholder="연락처">
+					<span id="helpBlock" class="help-block">관리자와의 비상 연락에 사용됩니다.</span>
 				</div>
 			</div>
 
 			<div class="form-group">
 				<div class="col-xs-12 col-sm-4 col-sm-offset-4">
-					<label for="tel">(선택) 연락처</label>
-					<input type="tel" class="form-control" name="tel" maxlength="20" placeholder="연락처">
-					<span id="helpBlock" class="help-block">관리자와의 비상 연락에 사용됩니다.</span>
+					<label for="email">(선택) E-mail</label>
+					<input type="email" class="form-control" name="email" placeholder="E-mail을 입력하세요" maxlength="30">
+					<span id="helpBlock" class="help-block">비밀번호 찾기에 사용됩니다.</span>
 				</div>
 			</div>
 
@@ -101,7 +101,7 @@ function member_check(){
 
 
 	//전부 입력했는지 검사
-	if(form.student_number.value=="" || form.password.value=="" || form.password2.value=="" || form.name.value=="") {
+	if(form.student_number.value=="" || form.password.value=="" || form.password2.value=="" || form.name.value=="" || form.tel.value=="") {
 		alert("필수 사항을 입력하지 않았습니다.");
 		return false;
 	}

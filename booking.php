@@ -30,13 +30,12 @@ else {
 	$extra = "없음";	
 }
 
-
-
+$receive_time = date("Y-m-d H:i:s",time());
 $start_time = $booking_date." $start_time".":00";
 $end_time = $booking_date." $end_time".":00";
 
 
-$query = "INSERT INTO booking(booking_state, student_number, name, tel, start_time, end_time, total_number, purpose, tool, extra) VALUES ('$booking_state', '$student_number', '$name', '$tel', '$start_time', '$end_time', '$total_number', '$purpose', '$tool', '$extra');";
+$query = "INSERT INTO booking(booking_state, receive_time, student_number, name, tel, start_time, end_time, total_number, purpose, tool, extra) VALUES ('$booking_state', '$receive_time', '$student_number', '$name', '$tel', '$start_time', '$end_time', '$total_number', '$purpose', '$tool', '$extra');";
 
 if($result = $db->query($query)) {
 	

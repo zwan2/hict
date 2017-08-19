@@ -17,14 +17,19 @@ if (isset($_REQUEST['id'])) {
       $end_time = date("G:i", strtotime($row['end_time']));
       ?>
 
-      <h4 class="modal-title">시간</h4>
+      <h4 class="modal-title">접수 시간</h4>
+      <p id="receive_time"><?=$row['receive_time']?></p>
+      <br/>
+
+
+      <h4 class="modal-title">예약 시간</h4>
       <span id="start"><?=$start_time?></span> -  
       <span id="end"><?=$end_time?></span>
       <br/><br/>
 
 
       <h4 class="modal-title">총 인원</h4>
-      <span id="name"><?=$row['name']?></span> 포함 <span id="total_number"><?=$row['total_number']?></span>명
+      <span id="total_number"><?=$row['total_number']?></span>명
       <br/><br/>
 
       <h4 class="modal-title">용도</h4>
