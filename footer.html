@@ -2,11 +2,24 @@
 
 <footer class="container">
 	<hr/>
-	<h6 class="text-center" id="footer">기획 조화원 임현경 이성빈 박수민</h6>
-	<h6 class="text-center" id="footer">개발 이재완</h6>
-	<h6 class="text-center" id="footer">Designed by 1C1</h6>
+	<h6 class="text-center weight_100">기획 조화원 임현경 이성빈 박수민</h6>
+	<h6 class="text-center weight_100">개발 이재완</h6>
+	<h6 class="text-center weight_100">Designed by 1C1</h6>
 </footer>
 
+<!--main nav 스크롤 그림자-->
+<script type="text/javascript">
+$(document).ready(function(){
+ $(window).scroll(function(){
+  var y = $(window).scrollTop();
+  if( y > 0 ){ 
+      $(".navbar").css({'box-shadow':'0.1em 0.1em 0.1em 0 lightgray'});
+  } else {
+      $(".navbar").css({'box-shadow':'none'});
+  }
+ });
+})
+</script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
 </body>
 </html>
