@@ -1,3 +1,14 @@
+/* PC media query */
+@media (min-width: 992px)  {
+  
+  .button{
+    font-size: 2em !important;
+  }
+  .button .material-icons {
+    font-size: 1.2em !important;
+
+  }
+}
 
 *, input {
 	margin: 0 auto;
@@ -62,7 +73,7 @@ body {
 .intro_bg {
   background-repeat: none;
   background-size:cover;
-  height: 110vh;
+  height: 100vh;
 }
 
 #intro1 {
@@ -88,6 +99,9 @@ body {
 }
 
 .panel {
+  position: absolute;
+  top: 50%;
+  left: 20%;
   border-radius: 1.5em;
   background-color: rgba( 255, 255, 255, 0.8 ) !important;
 
@@ -102,7 +116,7 @@ body {
 
 .button {
   position: relative;
-  bottom: -78vh;
+  top: 75vh;
   margin: 0.2em 0;
   height: 2.5em;
   border-radius: 1.5em;

@@ -47,7 +47,7 @@
       <h1 class="table_title">휴먼 ICT 연계 전공</h1>
       
       <div class="col-xs-12 col-sm-8 col-sm-offset-2" >
-        <a class="btn btn-default btn-block ellipsis button" href="#intro3" role="button">어떤 장비가 있나요?</a>
+        <a class="btn btn-default btn-block ellipsis button" href="#intro3" role="button"><strong>어떤 장비가 있나요?</strong> <i class="material-icons">arrow_downward</i> </a>
       </div>
     </div>
 
@@ -62,7 +62,7 @@
         </div>
       </div>
 
-        <a class="btn btn-default btn-block ellipsis button" href="#" onclick="location.href='login_page.php'" role="button">예약하러 가기</a>
+        <a class="btn btn-default btn-block ellipsis button" href="#" onclick="location.href='login_page.php'" role="button"><strong>예약하러 가기</strong> <i class="material-icons">arrow_downward</i></a>
       </div>
     </div>
 
