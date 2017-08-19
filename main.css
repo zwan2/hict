@@ -1,3 +1,5 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 /* PC media query */
 @media (min-width: 768px)  {
 	
@@ -12,7 +14,7 @@
 
 
 * {
-	font-family: 'Noto Sans', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 body { 
 	padding-top: 70px; 
@@ -24,7 +26,7 @@ footer {
 }
 
 a { 
-	font-family: 'Noto Sans', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	text-decoration: none !important;
 	color: #222222;
 }
