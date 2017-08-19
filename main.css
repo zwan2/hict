@@ -104,6 +104,7 @@ textarea{
 		font-weight: 700;
 		font-size: 1.2em;
 		text-align: center;
+		line-height: 1.4em;
 		color: #009688 !important;
 		
 	}
@@ -148,6 +149,20 @@ textarea{
 }
 
 
+/*calendar.css*/
+.fc-center, .fc-day-header, .fc-widget-content {
+	color: #666666;
+}
+
+.fc-event .fc-bg {
+	background: none !important;
+}
+.fc-event {
+	box-shadow: 0.1em 0.1em 0.1em 0 lightgray;
+}
+#calendar {
+	-webkit-overflow-scrolling: touch;
+}
 
 
 
@@ -241,30 +256,28 @@ textarea{
 
 
 
-#mybooking_panel {
+.mybooking_button {
 	margin: 0.2em 0;
 	border-radius: 1.5em;
 	border: none;
 	box-shadow: 0.1em 0.1em 0.1em 0 lightgray;
 	height: 3em;
-	line-height: 0.7em;
+	line-height: 2em;
 	color: #666666;
-	font-size: 100%;
 	font-weight: 500;
 	text-align: left;
 
 
 }
-#mybooking_button {
+.mybooking_button2 {
 	margin: 0.2em 0.3em;
-	-webkit-border-radius: 6em;
-	-moz-border-radius:6em;
+	-webkit-border-radius: 3em;
+	-moz-border-radius: 3em;
 	border: none;
 	box-shadow: 0.1em 0.1em 0.1em 0 lightgray;
 	width: 3em;
 	height: 3em;
-
-	line-height: 0.7em;
+	line-height: 2em;
 	color: #666666;
 	font-size: 100%;
 	font-weight: 500;
