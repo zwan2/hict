@@ -1,6 +1,6 @@
-*, input {
+*, input, a {
 	margin: 0 auto;
-	color: white !important;
+	color: white;
 	font-family: 'Spoqa Han Sans', sans-serif;
 }
 body {
