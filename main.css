@@ -101,11 +101,10 @@ textarea{
 	}
 
 	.navbar-text {
-		width: 50em;
+		width: 12em;
 		position: absolute; 
 		left: 50%; 
 		transform: translateX(-50%);
-
 		font-weight: 700;
 		font-size: 1.2em;
 		text-align: center;
@@ -128,8 +127,7 @@ textarea{
 	}
 	#nav_icon {
 	color: #00796B;
-	width: 20px;
-	height: auto;
+	
 	padding: 5px 0;
 	}
 
