@@ -85,7 +85,7 @@ function notice() {
 		while($row = $result->fetch_assoc()) {
 		
 			?>
-			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2 no_padding">
 				<a class="btn btn-default btn-block" id="notice_button" href="notice2.php?notice_id=<?=$row['notice_id']?>" role="button"><p><?=$row['title']?></p></a>
 			</div>
 			<?
@@ -157,20 +157,12 @@ function mybooking() {
 			$booking_id = $row['booking_id'];
 	
 			?>
-			<div class="col-xs-10 col-sm-8 col-sm-offset-2 no_padding">
-				<div class="panel panel-default" id="mybooking_panel">
-				  <div class="panel-body">
-				    
-					<a href="#" data-toggle="modal" data-target="#detail_data" data-id = <?=$booking_id?> class="ellipsis" id = "modal_toggle"><?=$num?>: <?=$booking_date?></a>
-				  </div>
-				</div>
+			<div class="col-xs-10 col-sm-8 col-sm-offset-2 no_padding">    	
+				<a href="#" data-toggle="modal" data-target="#detail_data" data-id = <?=$booking_id?> class="btn btn-default btn-block ellipsis mybooking_button" id = "modal_toggle"><?=$num?>: <?=$booking_date?></a>
 			</div>
+
 			<div class="col-xs-2 col-sm-2 no_padding">
-				<div class="panel panel-default" id="mybooking_button">
-				  <div class="panel-body">
-				    <?mybooking_db_conversion($row['booking_state'], $row['booking_id'])?>
-				  </div>
-				</div>
+				<?mybooking_db_conversion($row['booking_state'], $row['booking_id'])?>
 			</div>
 			
 			<?
@@ -227,20 +219,20 @@ function mybooking_db_conversion($booking_state, $booking_id) {
 	//승인 대기
 	if($booking_state == 0) {
 		echo "
-		<a href=\"mybooking_cancel.php?booking_id=$booking_id\" >
+		<a href=\"mybooking_cancel.php?booking_id=$booking_id\" class=\"btn btn-default btn-block ellipsis mybooking_button2\">
 		<inline class=\"grey\" onclick=\"return confirm('정말 예약을 취소하시겠습니까?');\">●</inline></a>";
 	}
 	//승인
 	else if($booking_state == 1) {
-		echo "<a href=\"#\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\"><inline class=\"blue\">●</inline></a>";
+		echo "<a href=\"#\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\" class=\"btn btn-default btn-block ellipsis mybooking_button2\"><inline class=\"blue\">●</inline></a>";
 	}
 	//거절
 	else if($booking_state == 2) {
-		echo"<a href=\"#\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\"><inline class=\"red\">●</inline></a>";
+		echo"<a href=\"#\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\" class=\"btn btn-default btn-block ellipsis mybooking_button2\"><inline class=\"red\">●</inline></a>";
 	}
 	//취소
 	else if($booking_state == 3) {
-		echo "<inline class=\"text-muted\">-</inline>";
+		echo "<div class=\"mybooking_button2\"> <inline class=\"text-muted \">_</inline></div>";
 	}
 }
 
@@ -322,19 +314,11 @@ function bookinglist() {
 				
 
 				?>
-				<div class="col-xs-10 col-sm-8 col-sm-offset-2 no_padding">
-					<div class="panel panel-default" id="mybooking_panel">
-					  <div class="panel-body">
-						<a href="#" data-toggle="modal" data-target="#detail_data" data-id = <?=$booking_id?> class="ellipsis" id = "modal_toggle"><?=$booking_id?>: <?=$booking_date?></a>
-					  </div>
-					</div>
+				<div class="col-xs-10 col-sm-8 col-sm-offset-2 no_padding">	
+					<a href="#" data-toggle="modal" data-target="#detail_data" data-id = <?=$booking_id?> class="btn btn-default btn-block ellipsis mybooking_button" id = "modal_toggle"><?=$booking_id?>: <?=$booking_date?></a>
 				</div>
-				<div class="col-xs-2 col-sm-2 no_padding">
-					<div class="panel panel-default" id="mybooking_button">
-					  <div class="panel-body">
-					    <?bookinglist_db_conversion($row['booking_state'], $row['booking_id'])?>
-					  </div>
-					</div>
+				<div class="col-xs-2 col-sm-2 no_padding">		
+					<?bookinglist_db_conversion($row['booking_state'], $row['booking_id'])?>			
 				</div>
 				
 				<?
@@ -390,19 +374,19 @@ function bookinglist() {
 function bookinglist_db_conversion($booking_state, $booking_id) {
 	//승인 대기
 	if($booking_state == 0) {
-		echo "<a href=\"#\" class=\"text-muted\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\"><inline class=\"grey\">●</inline></a>";
+		echo "<a href=\"#\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\" class=\"btn btn-default btn-block ellipsis mybooking_button2\"><inline class=\"grey\">●</inline></a>";
 	}
 	//승인
 	else if($booking_state == 1) {
-		echo "<a href=\"#\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\"><inline  class=\"blue\">●</inline></a>";
+		echo "<a href=\"#\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\" class=\"btn btn-default btn-block ellipsis mybooking_button2\"><inline  class=\"blue\">●</inline></a>";
 	}
 	//거절
 	else if($booking_state == 2) {
-		echo"<a href=\"#\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\"><inline  class=\"red\">●</inline></a>";
+		echo"<a href=\"#\" data-toggle=\"modal\" data-target=\"#message\" data-id = $booking_id id = \"smodal_toggle\" class=\"btn btn-default btn-block ellipsis mybooking_button2\"><inline  class=\"red\">●</inline></a>";
 	}
 	//취소
 	else if($booking_state == 3) {
-		echo "<inline class=\"text-muted\">-</inline>";
+		echo "<div class=\"btn btn-default btn-block ellipsis mybooking_button2\"><inline class=\"text-muted\">-</inline></div>";
 	}
 }
 
