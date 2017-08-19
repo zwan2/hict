@@ -20,9 +20,10 @@ include 'function.php';
 
   <title>휴먼ICT 실습실</title>
 
-  
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="main.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 
@@ -69,7 +70,18 @@ include 'function.php';
     </div><!-- /.container-fluid -->
   </nav>
 
-
+<script type="text/javascript">
+$(document).ready(function(){
+ $(window).scroll(function(){
+  var y = $(window).scrollTop();
+  if( y > 0 ){ 
+      $(".navbar").css({'box-shadow':'0.1em 0.1em 0.1em 0 lightgray'});
+  } else {
+      $(".navbar").css({'box-shadow':'none'});
+  }
+ });
+})
+</script>
 
 <!-- 이상 main.html -->
 <!-- 이후 php 파일 include -->
