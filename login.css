@@ -1,7 +1,9 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 *, input {
 	margin: 0 auto;
 	color: white;
-	font-family: 'Noto Sans', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 body {
 	background-color: #00897B;

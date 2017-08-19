@@ -1,14 +1,15 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+
 *, input {
 	margin: 0 auto;
 	color: white;
-	font-family: 'Noto Sans', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 body {
 	background-color: #222222;
 }
-h1 {
-	font-weight: 700;
-}
+
 
 
 
@@ -42,46 +43,61 @@ h1 {
 
 
 .float_right {
-  position: fixed;
-  top: 2em;
-  right: 3em;
+  position: absolute;
+  top: 3vh;
+  right: 4vh;
   z-index: 1;
 }
 
+.table_title {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
 .button {
+  position: relative;
+  bottom: -78vh;
   margin: 0.2em 0;
-  padding-left: 1.5em;
+
   border-radius: 1.5em;
   border: none;
   box-shadow: 0.1em 0.1em 0.1em 0 lightgray;
   height: 3em;
   line-height: 2em;
-  color: #666666;
-  font-size: 100%;
-  font-weight: 700;
+
+  background-color: rgba( 255, 255, 255, 0.5 );
+  font-size: 1.2em;
+  font-weight: 900;
   text-align: center;
 } 
+  .button strong {
+    color: #222222 !important;
 
+  }
+  .button .glyphicon {
+    color: #222222 !important;
+  }
+
+
+
+
+
+.intro_bg {
+  background-repeat: none;
+  background-size:cover;
+  height: 100vh;
+}
 
 #intro1 {
   background-image: url('intro_bg.jpg');
-  background-repeat: none;
-  background-size:cover;
-  height: 100em;
 }
 
 
 #intro2 {
   background-image: url('intro_bg2.jpg');
-  background-repeat: none;
-  background-size:cover;
-  height: 100em;
 }
 
 #intro3 {
   background-image: url('intro_bg3.jpg');
-  background-repeat: none;
-  background-size:cover;
-  height: 100em;
 }
 
