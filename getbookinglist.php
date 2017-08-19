@@ -22,8 +22,12 @@ if (isset($_REQUEST['id'])) {
       <span id="student_number">(<?=$row['student_number']?>)</span>
       <p id="tel"><?=$row['tel']?></p>
       <br/>
-      
-      <h4 class="modal-title">시간</h4>
+
+      <h4 class="modal-title">접수 시간</h4>
+      <p id="receive_time"><?=$row['receive_time']?></p>
+      <br/>
+
+      <h4 class="modal-title">예약 시간</h4>
       <span id="start"><?=$start_time?></span> -  
       <span id="end"><?=$end_time?></span>
       <br/><br/>

@@ -386,7 +386,7 @@ function bookinglist_db_conversion($booking_state, $booking_id) {
 	}
 	//취소
 	else if($booking_state == 3) {
-		echo "<div class=\"btn btn-default btn-block ellipsis mybooking_button2\"><inline class=\"text-muted\">-</inline></div>";
+		echo "<div class=\"btn btn-default btn-block ellipsis mybooking_button2\"><inline>-</inline></div>";
 	}
 }
 

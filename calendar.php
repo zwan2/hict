@@ -192,7 +192,7 @@ include 'calendar2.php';
 
 
 
-<div class="container">
+<div class="container" id="calendar_container">
 
   <!-- 공지사항 버튼 -->  
  <?=calendar_notice()?>
