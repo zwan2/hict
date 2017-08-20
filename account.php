@@ -9,13 +9,19 @@ if($result = $db->query($query)) {
 }
 ?>
 
+<div class="container">
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+    <h1 class="table_title">계정 설정</h1>
+
+    <div class="float_right">
+       <a href="account_delete.php">회원탈퇴</a>
+    </div>
+  </div>
+</div>
+<br/><br/>
 
 <div class="container">
-  <div class="page-header col-xs-12 col-sm-4 col-sm-offset-4">
-      <h1>계정 설정</h1>
-  </div>
-
-    <form method="post" action="account_set.php" onsubmit="return account_check();" name="account" class="form-horizontal">
+ <form method="post" action="account_set.php" onsubmit="return account_check();" name="account" class="form-horizontal">
      
       <div class="form-group">
         <div class="col-xs-12 col-sm-4 col-sm-offset-4">
@@ -75,13 +81,10 @@ if($result = $db->query($query)) {
       <div class="form-group">
         <div class="col-xs-12 col-sm-4 col-sm-offset-4">
           <input class="btn btn-default" type="submit" onclick="return confirm('이대로 계정을 저장하시겠습니까?');" value="저장">
-
-          <a href="account_delete.php">회원탈퇴</a>
         </div>
       </div>
       
     </form>   
-
 </div>
 
 
