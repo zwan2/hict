@@ -18,7 +18,7 @@ if (isset($_REQUEST['id'])) {
 
 
       if ($admin_name!="") {
-        echo"<p>담당자: $admin_name</p>";
+        echo"<p>담당자: $admin_name ($admin_tel)</p>";
       }
       ?>
       <label class="radio-inline">

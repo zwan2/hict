@@ -11,7 +11,7 @@ $(document).ready(function(){
   
      $.ajax({
           url: 'getmybooking.php',
-          type: 'POST',
+          type: 'GET',
           data: 'id='+booking_id,
           dataType: 'html'
      })
@@ -38,7 +38,7 @@ $(document).ready(function(){
   
      $.ajax({
           url: 'getmybooking_message.php',
-          type: 'POST',
+          type: 'GET',
           data: 'id='+booking_id,
           dataType: 'html'
      })

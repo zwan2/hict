@@ -82,14 +82,11 @@ textarea{
 	background-color: #009688 !important;
 	border-color: #00796B !important;
 }
-.glyphicon {
-	vertical-align: middle;
-}
+
 .navbar {	
   	margin-bottom: 0;
  	border: none;
   	background-color: #FAFAFA;
-
 }
 	.navbar-brand {
 	  padding: 0px;
@@ -164,10 +161,6 @@ textarea{
 .fc-event {
 	box-shadow: 0.1em 0.1em 0.1em 0 lightgray;
 }
-#calendar_container {
-	-webkit-overflow-scrolling: touch;
-}
-
 
 
 /*notice*/
