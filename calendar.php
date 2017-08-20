@@ -184,7 +184,6 @@ include 'calendar2.php';
 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">뒤로</button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking" data-dismiss="modal">바로 예약</button>
       </div>
     </div>
   </div>
@@ -193,33 +192,26 @@ include 'calendar2.php';
 
 
 <div class="container">
-
   <!-- 공지사항 버튼 -->  
  <?=calendar_notice()?>
- <br/><br/><br/>
-
   <!-- 예약하기 버튼-->
-  <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2 no_padding">
     <button type="button" class="btn btn-primary btn-lg btn-block" id="booking_button" data-toggle="modal" data-target="#booking">
       <inline id="booking_text">예약하기</inline><i class="material-icons" id="booking_icon">event_available</i>
     </button>
   </div>
-  <br/> <br/> <br/>
+</div>
 
-
+<div class="container">
   <!-- full calendar 호출 -->
   <!-- jquery는 main.html에 삽입 -->
-  <div id="calendar">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale/ko.js'></script>
   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css">
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale/ko.js'></script>
-    
-    <script type="text/javascript" src="calendar.js"></script>
-	  <div id='calendar'></div>
-  </div>
-
+  <script type="text/javascript" src="calendar.js"></script>
+  <div id='calendar'></div>
 </div>
 
 <script type="text/javascript">

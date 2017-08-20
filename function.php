@@ -66,8 +66,8 @@ function calendar_notice() {
 		$notice_id = $row['notice_id'];
 		$title = $row['title'];
 		?>
-		<div class="col-xs-12 col-sm-8 col-sm-offset-2" >
-			<a class="btn btn-default btn-block ellipsis" id="notice_button" href="notice2.php?notice_id=<?=$notice_id?>" role="button"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> <?=$row['title']?></a>
+		<div class="col-xs-12 col-sm-8 col-sm-offset-2 no_padding" >
+			<a class="btn btn-default btn-block ellipsis" id="notice_button" href="notice2.php?notice_id=<?=$notice_id?>" role="button"> <i class="material-icons">info_outline</i>  <?=$row['title']?></a>
 		</div>
 		<?
 	}
@@ -386,8 +386,10 @@ function bookinglist_db_conversion($booking_state, $booking_id) {
 	}
 	//취소
 	else if($booking_state == 3) {
-		echo "<div class=\"btn btn-default btn-block ellipsis mybooking_button2\"><inline>-</inline></div>";
+		echo "<div class=\"mybooking_button2\"><inline class=\"text-muted \">_</inline></div>";
 	}
+
+	
 }
 
 //su member table 관리

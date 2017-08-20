@@ -3,12 +3,16 @@
 	color: white;
 	font-family: 'Spoqa Han Sans', sans-serif;
 }
+a:hover, a:focus {
+	color: #FAFAFA;
+}
+
 body {
 	background-color: #00897B;
 }
 footer {
   color: #FFFFFF;
-  
+  margin: 0 auto;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -20,16 +24,14 @@ input[type=number]::-webkit-outer-spin-button {
 .weight_100 {
 	font-weight: 100;
 }
-
+.black {
+	color: #222222 !important;
+}
 
 .container {
 	margin: 0 auto;
 }
-.center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 .form-control {
 	border-radius: 1.5em;
 	border: none;
@@ -37,13 +39,15 @@ input[type=number]::-webkit-outer-spin-button {
 	font-size: 120%;
 
 }
+.btn-primary {
+	background-color: #004D40 !important;
+	border-color: #004D40 !important;
+}
 .help-block {
 	color: #EEEEEE;
 }
 
-.black {
-	color: black;
-}
+
 
 #title_box {
 	display: block;
@@ -66,7 +70,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
+#login_input {
 
+}
 
 #login_box {
 	background-color: #004D40;
