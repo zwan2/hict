@@ -30,10 +30,8 @@ function admin_link($admin_code, $link) {
 }
 
 function admin_back($admin_code) {
-	if($admin_code == 0) {
+	if($admin_code == 0) 
 		echo "<script>window.history.back()</script>";
-	}
-
 }
 
 function main_hidden() {
@@ -398,6 +396,8 @@ function su_member() {
 	$student_number = $_SESSION['student_number'];
 	$admin_code = $_SESSION['admin_code'];
 	
+	if($admin_code!=2)
+		return;
 
 	//페이지네이션 쿼리
 	$query = "SELECT student_number FROM member";

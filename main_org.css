@@ -334,7 +334,7 @@ textarea{
 }
 
 /* 계정설정 */
-.form-control {
+.account {
 	border-radius: 1.5em;
 	border: none;
 	height: 45px;
