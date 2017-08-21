@@ -8,7 +8,7 @@ $(document).ready(function() {
 		editable: false,
 
 
-		displayEventEnd: false,
+		displayEventTime: false,
 		header: {
 			left: 'prev,next today',
 			center: 'title',
