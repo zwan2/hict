@@ -1,3 +1,30 @@
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 700;
+    src: local('Spoqa Han Sans Bold'),
+    url('/SpoqaHanSans/SpoqaHanSansBold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 400;
+    src: local('Spoqa Han Sans Regular'),
+    url('/SpoqaHanSans/SpoqaHanSansRegular.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 300;
+    src: local('Spoqa Han Sans Light'),
+    url('/SpoqaHanSans/SpoqaHanSansLight.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 100;
+    src: local('Spoqa Han Sans Thin'),
+    url('/SpoqaHanSans/SpoqaHanSansThin.woff') format('woff');
+}
 
 /* PC media query */
 @media (min-width: 992px)  {
