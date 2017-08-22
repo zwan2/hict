@@ -11,7 +11,7 @@ if (isset($_GET['notice_id'])) {
   		?>
   		<div class="container">
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
-				<h1 class="table_title">공지사항</h1>
+				<h1 class="table_title"><a href="notice.php">공지사항</a></h1>
 				<h3 id="notice_title"><?=$row['title']?></h3>
 				<div class="panel panel-default">
 				  <div class="panel-body">

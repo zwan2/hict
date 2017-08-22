@@ -1,6 +1,8 @@
 <?php
 include 'main.html';
-include 'calendar2.php';
+$today = date("Y-m-d");
+$next_day = strtotime($today."+1 day");
+$default_date = date("Y-m-d", $next_day);
 ?>
 
 <!-- 예약하기 modal -->
@@ -212,6 +214,17 @@ include 'calendar2.php';
   
   <script type="text/javascript" src="calendar.js"></script>
   <div id='calendar'></div>
+  <div class="float_right">
+      <inline class="grey">
+      <strong>● 대기</strong>
+      </inline>
+      <inline class="blue">
+      <strong>　● 승인</strong> 
+      </inline>
+      <inline class="red">
+      <strong>　● 거절</strong>
+      </inline>
+    </div>
 </div>
 
 <script type="text/javascript">

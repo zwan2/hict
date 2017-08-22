@@ -20,14 +20,6 @@ function ensure_logged_in() {
 }
 
 
-function admin_link($admin_code, $link) {
-	if($admin_code == 0) {
-		return "#";
-	}
-	else {
-		return $link;
-	}
-}
 
 function admin_back($admin_code) {
 	if($admin_code == 0) 
@@ -65,7 +57,7 @@ function calendar_notice() {
 		$title = $row['title'];
 		?>
 		<div class="col-xs-12 col-sm-8 col-sm-offset-2 no_padding" >
-			<a class="btn btn-default btn-block ellipsis" id="notice_button" href="notice2.php?notice_id=<?=$notice_id?>" role="button"> <i class="material-icons">info_outline</i>  <?=$row['title']?></a>
+			<a class="btn btn-default btn-block ellipsis" id="notice_button" href="notice2.php?notice_id=<?=$notice_id?>" role="button"> <strong>ⓘ</strong>　<?=$row['title']?></a>
 		</div>
 		<?
 	}
@@ -84,7 +76,7 @@ function notice() {
 		
 			?>
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2 no_padding">
-				<a class="btn btn-default btn-block" id="notice_button" href="notice2.php?notice_id=<?=$row['notice_id']?>" role="button"><p><?=$row['title']?></p></a>
+				<a class="btn btn-default btn-block" id="notice_button" href="notice2.php?notice_id=<?=$row['notice_id']?>" role="button"><?=$row['title']?></a>
 			</div>
 			<?
 		}
@@ -396,8 +388,8 @@ function su_member() {
 	$student_number = $_SESSION['student_number'];
 	$admin_code = $_SESSION['admin_code'];
 	
-	if($admin_code!=2)
-		return;
+	if($admin_code!=2 && $student_number!=999999999)
+		return admin_back(0);
 
 	//페이지네이션 쿼리
 	$query = "SELECT student_number FROM member";

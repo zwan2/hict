@@ -72,6 +72,7 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+
 textarea{
 	resize: none;
 }
@@ -337,7 +338,7 @@ textarea{
 }
 
 /* 계정설정 */
-.account {
+.input_radius {
 	border-radius: 1.5em;
 	border: none;
 	height: 45px;

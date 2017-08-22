@@ -11,7 +11,13 @@ $fail_time = time();
 if(login()) {
 	fail_reset();
 	fail_lock();
-	echo"<script>location.href = 'calendar.php';</script>";
+	//관리자
+	if($_SESSION['admin_code']==1) {
+		echo"<script>location.href = 'bookinglist.php';</script>";
+	}
+	else {
+		echo"<script>location.href = 'calendar.php';</script>";
+	}
 }
 
 else {
