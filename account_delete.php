@@ -26,14 +26,14 @@ if($result = $db->query($query)) {
   	<div class="form-group">
   		<div class="col-xs-12 col-sm-4 col-sm-offset-4">
   			<label for="password">비밀번호</label>
-  			<input type="password" class="form-control" name="password" placeholder="영문, 숫자 혼용 8-20자리" maxlength="20">
+  			<input type="password" class="form-control input_radius" name="password" placeholder="영문, 숫자 혼용 8-20자리" maxlength="20">
   		</div>
   	</div>
 
   	<div class="form-group">
   		<div class="col-xs-12 col-sm-4 col-sm-offset-4">
   			<label for="password2">비밀번호 확인</label>
-  			<input type="password" class="form-control" name="password2" maxlength="20">
+  			<input type="password" class="form-control input_radius" name="password2" maxlength="20">
   		</div>
   	</div>
 

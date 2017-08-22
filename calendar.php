@@ -21,7 +21,7 @@ $default_date = date("Y-m-d", $next_day);
 <p>예약일</p>
 </div>
 <div class="col-xs-8">
-<input type="date" value="<?=$default_date?>" name="booking_date" class="form-control">
+<input type="date" value="<?=$default_date?>" name="booking_date" class="form-control input_radius">
 </div>
 </div>
 <br/>
@@ -30,7 +30,7 @@ $default_date = date("Y-m-d", $next_day);
 <p>시작 / 종료</p>
 </div>
 <div class="col-xs-4">
-<select name="start_time" class="form-control">
+<select name="start_time" class="form-control input_radius">
 <option>09:00</option>
 <option>09:30</option>
 <? 
@@ -41,7 +41,7 @@ $default_date = date("Y-m-d", $next_day);
 </select>
 </div>
 <div class="col-xs-4">
-<select name="end_time" class="form-control">
+<select name="end_time" class="form-control input_radius">
 <option>09:30</option>
 <? 
                   for ($i=10;$i<22;$i++) {
@@ -54,7 +54,7 @@ $default_date = date("Y-m-d", $next_day);
 </div>
 <br/>
 <h4 class="modal-title">총 인원</h4>
-<input type="number" class="form-control" name="total_number" value="1" min="1" max="99">
+<input type="number" class="form-control input_radius" name="total_number" value="1" min="1" max="99">
 <br/><br/>
 <h4 class="modal-title">용도</h4>
 <div class="radio">
@@ -115,7 +115,7 @@ TV
 </div>
 <br/><br/>
 <h4 class="modal-title">기타 사항</h4>
-<input type="text" id="input_extra" name="extra" class="form-control" placeholder="활동 목적, 내용 등 기입이 필요한 경우 입력하세요." maxlength="50">
+<input type="text" id="input_extra" name="extra" class="form-control input_radius" placeholder="활동 목적, 내용 등 기입이 필요한 경우 입력하세요." maxlength="100">
 </div>
 <div class="modal-footer">
 <button type="button" class="btn btn-default" data-dismiss="modal">뒤로</button>
@@ -171,6 +171,18 @@ TV
 <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale/ko.js'></script>
 <script type="text/javascript" src="calendar.js"></script>
 <div id='calendar'></div>
+<br/>
+<div class="float_right">
+<inline class="grey">
+<strong>● 대기</strong>
+</inline>
+<inline class="blue">
+<strong>　● 승인</strong> 
+</inline>
+<inline class="red">
+<strong>　● 거절</strong>
+</inline>
+</div>
 </div>
 <script type="text/javascript">/*<![CDATA[*/function booking_check(){var a=document.booking;if(a.booking_date.value<=moment().format("YYYY-MM-DD")){alert("예약일을 올바르게 입력하세요.");a.booking_date.focus();return false}else{if(a.start_time.value>=a.end_time.value){alert("시간을 올바르게 입력하세요.");a.end_time.focus();return false}}$("#input_extra").bind("keyup",function(){re=/[~!@\#$%^&*\()\-=+_']/gi;var b=$("#input_extra").val();if(re.test(b)){$("#input_extra").val(b.replace(re,""))}})};/*]]>*/</script>
 <?php

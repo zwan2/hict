@@ -42,7 +42,7 @@ if($result = $db->query($query)) {
 	echo"<script>alert('예약 완료! 내 예약을 확인하세요.'); location.href='calendar.php';</script>";
 }
 else {
-	echo"에러가 발생했습니다. 관리자에게 문의하십시오.";
+	echo"<script>alert('에러가 발생했습니다. 관리자에게 문의하십시오.'); location.href='calendar.php';</script>";
 }
 
 

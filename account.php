@@ -26,14 +26,14 @@ if($result = $db->query($query)) {
       <div class="form-group">
         <div class="col-xs-12 col-sm-4 col-sm-offset-4">
           <label for="student_number"> 학번</label>
-          <input class="form-control account" name="student_number" value="<?=$row['student_number']?>" type="text" readonly>
+          <input class="form-control input_radius" name="student_number" value="<?=$row['student_number']?>" type="text" readonly>
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-xs-12 col-sm-4 col-sm-offset-4">
           <label for="name">이름</label>
-          <input class="form-control account" name="name" type="text" value="<?=$row['name']?>" readonly>
+          <input class="form-control input_radius" name="name" type="text" value="<?=$row['name']?>" readonly>
         </div>
       </div>
 
@@ -42,35 +42,35 @@ if($result = $db->query($query)) {
       <div class="form-group">
         <div class="col-xs-12 col-sm-4 col-sm-offset-4">
           <label for="email">E-mail</label>
-          <input class="form-control account" name="email" type="email" value="<?=$row['email']?>">
+          <input class="form-control input_radius" name="email" type="email" value="<?=$row['email']?>">
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-xs-12 col-sm-4 col-sm-offset-4">
           <label for="tel">연락처</label>
-          <input class="form-control account" name="tel" type="tel" value="<?=$row['tel']?>">
+          <input class="form-control input_radius" name="tel" type="tel" value="<?=$row['tel']?>">
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-xs-12 col-sm-4 col-sm-offset-4">
           <label for="password">새 비밀번호</label>
-          <input type="password" class="form-control account" name="new_password" placeholder="영문, 숫자 혼용 8-20자리" maxlength="20">
+          <input type="password" class="form-control input_radius" name="new_password" placeholder="영문, 숫자 혼용 8-20자리" maxlength="20">
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-xs-12 col-sm-4 col-sm-offset-4">
           <label for="password2">새 비밀번호 확인</label>
-          <input type="password" class="form-control account" name="new_password2" maxlength="20">
+          <input type="password" class="form-control input_radius" name="new_password2" maxlength="20">
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-xs-12 col-sm-4 col-sm-offset-4">
           <label for="password">비밀번호(필수)</label>
-          <input type="password" class="form-control account" name="password" placeholder="기존 비밀번호 입력" maxlength="20">
+          <input type="password" class="form-control input_radius" name="password" placeholder="기존 비밀번호 입력" maxlength="20">
         </div>
       </div>
 
