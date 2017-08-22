@@ -1,14 +1,13 @@
 <!DOCTYPE html> 
 <html> 
 <head>
-  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
-  <!--
-  <link href="//fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet" type="text/css">
-  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+  
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="introduction.css">
+  <link rel="icon" href="favicon-152.png" sizes="152x152">
+  
   <script src="//code.jquery.com/jquery.min.js"></script>
 
   <meta charset="UTF-8">
