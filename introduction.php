@@ -30,7 +30,7 @@
 
   
     <div class="float_right">
-      <a href="login_page.php"><i class="material-icons">clear</i></a>
+      <a href="/"><i class="material-icons">clear</i></a>
     </div>
 
     <div class="col-xs-12 col-sm-12 intro_bg" id="intro1">
@@ -61,7 +61,7 @@
         </div>
       </div>
 
-        <a class="btn btn-default btn-block ellipsis button" href="#" onclick="location.href='login_page.php'" role="button"><strong>예약하러 가기</strong> <i class="material-icons">arrow_downward</i></a>
+        <a class="btn btn-default btn-block ellipsis button" href="#" onclick="location.href='/'" role="button"><strong>예약하러 가기</strong> <i class="material-icons">arrow_downward</i></a>
       </div>
     </div>
 

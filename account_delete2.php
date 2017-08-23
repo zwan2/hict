@@ -13,7 +13,7 @@ $crypt_password = $_POST['crypt_password'];
 if($password == $crypt_password) {
 	$query = "DELETE FROM member WHERE password = '$password' ";
 	if($result = $db->query($query)) {
-		echo"<script>alert('탈퇴되었습니다.'); location.href='login_page.php';</script>";
+		echo"<script>alert('탈퇴되었습니다.'); location.href='/';</script>";
 	}
 	
 }

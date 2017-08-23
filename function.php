@@ -15,7 +15,7 @@ function dom($day) {
 
 function ensure_logged_in() {
     if(!isset($_SESSION['student_number'])) {
-        echo"<script>alert('로그인하세요.'); location.href='login_page.php';</script>";
+        echo"<script>alert('로그인하세요.'); location.href='/';</script>";
     }
 }
 
@@ -23,7 +23,7 @@ function ensure_logged_in() {
 
 function admin_back($admin_code) {
 	if($admin_code == 0) 
-		echo "<script>window.history.back()</script>";
+		echo "<script>window.history.back();</script>";
 }
 
 function main_hidden() {
@@ -57,7 +57,7 @@ function calendar_notice() {
 		$title = $row['title'];
 		?>
 		<div class="col-xs-12 col-sm-8 col-sm-offset-2 no_padding" >
-			<a class="btn btn-default btn-block ellipsis" id="notice_button" href="notice2.php?notice_id=<?=$notice_id?>" role="button"> <strong>ⓘ</strong>　<?=$row['title']?></a>
+			<a class="btn btn-default btn-block ellipsis" id="notice_button" href="notice_detail.php?notice_id=<?=$notice_id?>" role="button"> <strong>ⓘ</strong>&nbsp<?=$row['title']?></a>
 		</div>
 		<?
 	}
@@ -76,7 +76,7 @@ function notice() {
 		
 			?>
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2 no_padding">
-				<a class="btn btn-default btn-block" id="notice_button" href="notice2.php?notice_id=<?=$row['notice_id']?>" role="button"><?=$row['title']?></a>
+				<a class="btn btn-default btn-block" id="notice_button" href="notice_detail.php?notice_id=<?=$row['notice_id']?>" role="button"><?=$row['title']?></a>
 			</div>
 			<?
 		}

@@ -17,8 +17,8 @@ include 'main.html';
 				<br/>
 			</div>
 
-			<button type="submit" onclick="return confirm('공지를 작성하시겠습니까?');" class="grey">작성</button>
-
+			<button type="submit" onclick="return confirm('공지를 작성하시겠습니까?');" class="btn btn-default">작성</button>
+			
 			<div class="float_right">
 				<a href="#" class="font_700" onclick="window.history.back();" role="button">뒤로</a>
 			</div>
