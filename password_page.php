@@ -1,4 +1,4 @@
-<?php
+ <?php
 include 'login_main.html';
 ?>
 <div class="container">
@@ -13,7 +13,7 @@ include 'login_main.html';
 	  	<div class="form-group">
 	  		<div class="col-xs-12 col-sm-4 col-sm-offset-4">
 				<button type="submit" onclick="return confirm('제출하시겠습니까?');" class="btn btn-primary">제출</button>
-				<button class="btn btn-default" type="button" onclick="location.href='login_page.php'">뒤로</button>
+				<button class="btn btn-default" type="button" onclick="location.href='/'">뒤로</button>
 			</div>
 		</div>
 	</form>
