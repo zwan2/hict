@@ -27,47 +27,48 @@
 
 
 <body>
+  <div class="layer_fix">
+    <div class="blur"></div>
+    <h1 class="table_title">휴먼 ICT 연계 전공</h1>
+    <a class="float_right" href="/"><i class="material-icons">clear</i></a>
+  </div>
 
-  
-    <div class="float_right">
-      <a href="/"><i class="material-icons">clear</i></a>
+
+  <div class="col-xs-12 col-sm-12 intro_bg" id="intro1">
+    <p id="intro1_text">미디어 콘텐츠에<br/> 실용 가치를 부여하는<br/> 창조인재 육성문화</p>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2" >
+      <a class="btn btn-default btn-block ellipsis button" href="#intro2" role="button"><strong>실습실은 어떤 곳인가요?</strong> <i class="material-icons">arrow_downward</i> </a>
     </div>
 
-    <div class="col-xs-12 col-sm-12 intro_bg" id="intro1">
-      <h1 class="table_title">휴먼 ICT 연계 전공</h1>
-      <p id="intro1_text">미디어 콘텐츠에 실용 가치를 부여하는 창조인재 육성문화</p>
-      <div class="col-xs-12 col-sm-8 col-sm-offset-2" >
-        <a class="btn btn-default btn-block ellipsis button" href="#intro2" role="button"><strong>실습실은 어떤 곳인가요?</strong> <i class="material-icons">arrow_downward</i> </a>
-      </div>
+  </div>
 
+  <div class="col-xs-12 col-sm-12 intro_bg" id="intro2">
+    <p id="intro1_text">무료 장비 이용<br/>공간 대여<br/>해봉 부동산학관 305호</p>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2" >
+      <a class="btn btn-default btn-block ellipsis button" href="#intro3" role="button"><strong>어떤 장비가 있나요?</strong> <i class="material-icons">arrow_downward</i> </a>
     </div>
-
-    <div class="col-xs-12 col-sm-12 intro_bg" id="intro2">
-      <h1 class="table_title">휴먼 ICT 연계 전공</h1>
-      
-      <div class="col-xs-12 col-sm-8 col-sm-offset-2" >
-        <a class="btn btn-default btn-block ellipsis button" href="#intro3" role="button"><strong>어떤 장비가 있나요?</strong> <i class="material-icons">arrow_downward</i> </a>
-      </div>
-    </div>
+  </div>
 
 
-    <div class="col-xs-12 col-sm-12 intro_bg" id="intro3">
-      <h1 class="table_title">휴먼 ICT 연계 전공</h1>
+  <div class="col-xs-12 col-sm-12 intro_bg" id="intro3">
+    <p id="intro3_text">VR<br/>3D Print<br/>PC</p>
+   
 
-      <div class="col-xs-12 col-sm-8 col-sm-offset-2" >
-      <div class="panel panel-default">
-        <div class="panel-body">
-          Basic panel example
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2" >
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <img class="media-object" src="dummy.png">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">HTC VIVE</h4>
         </div>
       </div>
 
-        <a class="btn btn-default btn-block ellipsis button" href="#" onclick="location.href='/'" role="button"><strong>예약하러 가기</strong> <i class="material-icons">arrow_downward</i></a>
-      </div>
+      <a class="btn btn-default btn-block ellipsis button" href="#" onclick="location.href='/'" role="button"><strong>예약하러 가기</strong> <i class="material-icons">arrow_downward</i></a>
     </div>
-
-
-
-
+  </div>
 
 </body>
    
@@ -78,8 +79,8 @@ jQuery(document).ready(function($) {
           $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
   });
 });
-</script>
 
+</script>
 
 
 

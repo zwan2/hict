@@ -157,7 +157,6 @@ TV
 </div>
 </div>
 <div class="container">
-<?=calendar_notice()?>
 <div class="col-xs-12 col-sm-8 col-sm-offset-2 no_padding">
 <button type="button" class="btn btn-primary btn-lg btn-block" id="booking_button" data-toggle="modal" data-target="#booking">
 <inline id="booking_text">예약하기</inline><i class="material-icons" id="booking_icon">event_available</i>

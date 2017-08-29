@@ -1,3 +1,31 @@
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 700;
+    src: local('Spoqa Han Sans Bold'),
+    url('./SpoqaHanSans/SpoqaHanSansBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 400;
+    src: local('Spoqa Han Sans Regular'),
+    url('./SpoqaHanSans/SpoqaHanSansRegular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 300;
+    src: local('Spoqa Han Sans Light'),
+    url('./SpoqaHanSans/SpoqaHanSansLight.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 100;
+    src: local('Spoqa Han Sans Thin'),
+    url('./SpoqaHanSans/SpoqaHanSansThin.woff2') format('woff2');
+}
+
 /* PC media query */
 @media (min-width: 992px)  {
   
@@ -19,8 +47,6 @@ body {
 	background-color: #222222;
 }
 
-
-.
 
 
 .ellipsis {
@@ -45,13 +71,20 @@ body {
 .font_700 {
   font-weight: 700;
 }
-.float_right {
-  float: right;
+
+.layer_fix {
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  background-color: transparent;
+  background-color: rgba( 0, 0, 0, 0.5 );
 }
 
 
 
 .float_right {
+  float: right;
   position: absolute;
   top: 3vh;
   right: 4vh;
@@ -59,8 +92,15 @@ body {
 }
 
 .table_title {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0%;
+  left: 10%;
   font-size: 1.5em;
   font-weight: 700;
+  color: #FFFFFF;
+  z-index: 1;
 }
 
 
@@ -71,36 +111,53 @@ body {
 
 
 .intro_bg {
+
   background-repeat: none;
   background-size:cover;
   height: 100vh;
 }
 
 #intro1 {
-  background-image: url('intro_bg.jpg');
+  background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('intro_bg.jpg');
 }
 
 
 #intro2 {
-  background-image: url('intro_bg2.jpg');
+  background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('intro_bg2.jpg');
 }
 
 #intro3 {
-  background-image: url('intro_bg3.jpg');
+  background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('intro_bg3.jpg');
 }
 
 
 #intro1_text {
   position: absolute;
-  top: 50%;
-  left: 20%;
+  top: 55%;
+  left: 10%;
   font-size: 2em;
-  font-weight: 700;
+  font-weight: bolder;
+}
+
+#intro2_text {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  font-size: 2em;
+  font-weight: bolder;
+}
+
+#intro3_text {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  font-size: 2em;
+  font-weight: bolder;
 }
 
 .panel {
   position: absolute;
-  top: 50%;
+  top: 10%;
   left: 20%;
   border-radius: 1.5em;
   background-color: rgba( 255, 255, 255, 0.8 ) !important;
@@ -114,9 +171,12 @@ body {
   color: #222222 !important;
 }
 
+
+
+
 .button {
   position: relative;
-  top: 70vh;
+  top: 78vh;
   margin: 0.2em 0;
   height: 2.5em;
   border-radius: 1.5em;
@@ -138,3 +198,5 @@ body {
     vertical-align: middle;
     color: #222222 !important;
   }
+
+
