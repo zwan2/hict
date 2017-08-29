@@ -194,8 +194,6 @@ $default_date = date("Y-m-d", $next_day);
 
 
 <div class="container">
-  <!-- 공지사항 버튼 -->  
- <?=calendar_notice()?>
   <!-- 예약하기 버튼-->
   <div class="col-xs-12 col-sm-8 col-sm-offset-2 no_padding">
     <button type="button" class="btn btn-primary btn-lg btn-block" id="booking_button" data-toggle="modal" data-target="#booking">
