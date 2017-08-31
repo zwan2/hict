@@ -41,7 +41,18 @@ $(document).ready(function() {
 
 		minTime: '09:00:00',
 		maxTime: '22:00:00',
-
+		businessHours: [
+		    {
+		        dow: [1],
+		        start: '13:00',
+		        end: '18:00' // 6pm
+		    },
+		    {
+		        dow: [ 4, 5 ], // Thursday, Friday
+		        start: '10:00', // 10am
+		        end: '16:00' // 4pm
+		    }
+		],
 	    eventSources: [
 
 	        //대기

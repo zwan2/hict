@@ -39,12 +39,12 @@
 }
 
 *, input {
-	margin: 0 auto;
-	color: white;
-	font-family: 'Spoqa Han Sans', sans-serif;
+  margin: 0 auto;
+  color: white;
+  font-family: 'Spoqa Han Sans', sans-serif;
 }
 body {
-	background-color: #222222;
+  background-color: #222222;
 }
 
 
@@ -114,26 +114,29 @@ body {
 
   background-repeat: none;
   background-size:cover;
-  height: 100vh;
+
 }
 
 #intro1 {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('intro_bg.jpg');
+  background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('intro_bg1.jpg');
+  height: 100vh;
 }
 
 
 #intro2 {
   background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('intro_bg2.jpg');
+  height: 100vh;
 }
 
 #intro3 {
   background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('intro_bg3.jpg');
+  height: 200vh;
 }
 
 
 #intro1_text {
   position: absolute;
-  top: 55%;
+  top: 50vh;
   left: 10%;
   font-size: 2em;
   font-weight: bolder;
@@ -141,7 +144,7 @@ body {
 
 #intro2_text {
   position: absolute;
-  top: 10%;
+  top: 60vh;
   left: 10%;
   font-size: 2em;
   font-weight: bolder;
@@ -149,7 +152,7 @@ body {
 
 #intro3_text {
   position: absolute;
-  top: 5%;
+  top: 10vh;
   left: 10%;
   font-size: 2em;
   font-weight: bolder;
@@ -188,7 +191,10 @@ body {
   font-size: 1.2em;
   font-weight: 900;
   text-align: center;
-} 
+}
+.button_last {
+  top: 178vh !important;
+}
   .button strong {
     vertical-align: middle;
     color: #222222 !important;
@@ -200,3 +206,7 @@ body {
   }
 
 
+.intro_tool {
+  position: relative;
+  top: 50vh;
+}

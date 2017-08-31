@@ -164,22 +164,32 @@ TV
 </div>
 </div>
 <div class="container">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.5.0/fullcalendar.min.css">
 <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale/ko.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.5.0/fullcalendar.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.5.0/locale/ko.js'></script>
 <script type="text/javascript" src="calendar.js"></script>
+
 <div id='calendar'></div>
 <br/>
 <div class="float_right">
 <inline class="grey">
-<strong>● 대기</strong>
+<strong>　● 대기</strong>
 </inline>
 <inline class="blue">
 <strong>　● 승인</strong> 
 </inline>
 <inline class="red">
 <strong>　● 거절</strong>
+</inline>
+</div>
+<br/>
+<div class="float_right">
+<inline class="blue_opacity">
+<strong>■ 상주</strong>
+</inline>
+<inline class="red_opacity">
+<strong>　■ 수업</strong>
 </inline>
 </div>
 </div>
