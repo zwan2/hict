@@ -26,7 +26,7 @@ include 'login_main.html';
 
 			<div class="form-group">
 				<div class="col-xs-12 col-sm-4 col-sm-offset-4">
-					<input class="btn btn-default btn-lg btn-block form-control" id="login_box2" type="button" onclick="location.href=''" value="더 알아보기">
+					<input class="btn btn-default btn-lg btn-block form-control" id="login_box2" type="button" onclick="location.href='introduction.php'" value="더 알아보기">
 				</div>
 			</div>
 		</form>
