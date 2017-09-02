@@ -82,40 +82,37 @@ $default_date = date("Y-m-d", $next_day);
 </label>
 </div>
 <br/>
-<h4 class="modal-title">장비</h4>
-<div class="checkbox">
-<label>
-<input type="checkbox" name="tool[]" value="VR">
-VR
-</label>
-<label>
-<input type="checkbox" name="tool[]" value="3D 프린터">
-3D 프린터
-</label>
-<label>
-<input type="checkbox" name="tool[]" value="TV">
-TV
-</label>
-<label>
-<input type="checkbox" name="tool[]" value="카메라">
-카메라
-</label>
-<label>
-<input type="checkbox" name="tool[]" value="프린터">
-프린터
-</label>
-<label>
-<input type="checkbox" name="tool[]" value="삼성 기어">
-삼성 기어
-</label>
-<label>
-<input type="checkbox" name="tool[]" value="삼성 360">
-삼성 360
-</label>
+
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          장비 목록
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+ 	    <strong>카메라</strong></br> 
+ 	    <small>Sony DSC-HX400V*2, Canon EOS 5D MARK IV*3, Samsung Gear 360*3, 삼각대*2, 백팩*1</small><br/>
+        <strong>VR</strong><br/> 
+        <small>HTC VIVE*4, DK2 oculus*5, GEAR VR*5</small><br/>
+        <strong>3D PRINTER</strong><br/> 
+        <small>3DISON AEP*1, Infitary*1, CreMaker*1</small><br/>
+        <strong>기타</strong></br>
+        <small>데스크탑 PC*8, LED TV*1, 책상*38, 빔 프로젝터*1, 스피커*1, 미니 냉장고*1</small>
+      </div>
+    </div>
+  </div>
 </div>
+<h4 class="modal-title">장비</h4>
+<input type="text" id="input_text" name="tool" class="form-control input_radius" placeholder="이용할 장비를 모두 기입하세요" maxlength="100">
+
 <br/><br/>
 <h4 class="modal-title">기타 사항</h4>
-<input type="text" id="input_extra" name="extra" class="form-control input_radius" placeholder="활동 목적, 내용 등 기입이 필요한 경우 입력하세요." maxlength="100">
+<input type="text" id="input_text" name="extra" class="form-control input_radius" placeholder="활동 목적, 내용 등 기입이 필요한 경우 입력하세요." maxlength="100">
 </div>
 <div class="modal-footer">
 <button type="button" class="btn btn-default" data-dismiss="modal">뒤로</button>
@@ -193,7 +190,7 @@ TV
 </inline>
 </div>
 </div>
-<script type="text/javascript">/*<![CDATA[*/function booking_check(){var a=document.booking;if(a.booking_date.value<=moment().format("YYYY-MM-DD")){alert("예약일을 올바르게 입력하세요.");a.booking_date.focus();return false}else{if(a.start_time.value>=a.end_time.value){alert("시간을 올바르게 입력하세요.");a.end_time.focus();return false}}$("#input_extra").bind("keyup",function(){re=/[~!@\#$%^&*\()\-=+_']/gi;var b=$("#input_extra").val();if(re.test(b)){$("#input_extra").val(b.replace(re,""))}})};/*]]>*/</script>
+<script type="text/javascript">/*<![CDATA[*/function booking_check(){var a=document.booking;if(a.booking_date.value<=moment().format("YYYY-MM-DD")){alert("예약일을 올바르게 입력하세요.");a.booking_date.focus();return false}else{if(a.start_time.value>=a.end_time.value){alert("시간을 올바르게 입력하세요.");a.end_time.focus();return false}}$("#input_text").bind("keyup",function(){re=/[~!@\#$%^&*\()\-=+_']/gi;var b=$("#input_text").val();if(re.test(b)){$("#input_text").val(b.replace(re,""))}})};/*]]>*/</script>
 <?php
 include 'footer.html';
 ?>

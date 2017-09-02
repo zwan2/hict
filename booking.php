@@ -17,17 +17,17 @@ if($result = $db->query($query)) {
 	$tel = $row['tel'];
 }
 
-if(!empty($_POST['tool'])) {
-	$tool = implode(", ", $_POST['tool']);
-}
-else {
+if(empty($_POST['tool'])) {
 	$tool = "없음";	
 }
-if(!empty($_POST['extra'])) {
-	$extra = $_POST['extra'];
+else {
+	$tool = $_POST['tool'];
+}
+if(empty($_POST['extra'])) {
+	$extra = "없음";	
 }
 else {
-	$extra = "없음";	
+	$extra = $_POST['extra'];
 }
 
 $receive_time = date("Y-m-d H:i:s",time());

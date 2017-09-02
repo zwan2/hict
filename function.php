@@ -47,21 +47,6 @@ function accountset_load() {
 	}
 }
 
-//캘린더 페이지 상단 공지사항
-function calendar_notice() {
-	global $db;
-	$query = "SELECT notice_id, title FROM notice ORDER BY notice_id DESC LIMIT 1";
-	if($result = $db->query($query)) {
-		$row = $result->fetch_assoc();
-		$notice_id = $row['notice_id'];
-		$title = $row['title'];
-		?>
-		<div class="col-xs-12 col-sm-8 col-sm-offset-2 no_padding" >
-			<a class="btn btn-default btn-block ellipsis" id="notice_button" href="notice_detail.php?notice_id=<?=$notice_id?>" role="button"> <strong>ⓘ</strong>&nbsp<?=$row['title']?></a>
-		</div>
-		<?
-	}
-}
 
 function notice() {
 	global $db;
