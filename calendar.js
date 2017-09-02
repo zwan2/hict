@@ -147,7 +147,6 @@ $(document).ready(function() {
 				        start: '11:00',
 				        end: '15:00'
 				    },
-
 		   		],
 		   		rendering: 'background',
 		   		backgroundColor: '#FFCDD2'

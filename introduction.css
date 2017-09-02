@@ -29,12 +29,27 @@
 /* PC media query */
 @media (min-width: 992px)  {
   
+  #intro1 {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('intro_img/intro_bg1.jpg') !important;
+  }
+  #intro2 {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('intro_img/intro_bg2.jpg') !important;
+  }
+  #intro3 {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('intro_img/intro_bg3.jpg') !important;
+  }
   .button{
     font-size: 2em !important;
   }
   .button .material-icons {
     font-size: 1.2em !important;
 
+  }
+  #intro3_text {
+    font-size: 3em !important;
+  }
+  .row strong {
+    font-size: 2.5em !important;
   }
 }
 
@@ -71,6 +86,7 @@ body {
 .font_700 {
   font-weight: 700;
 }
+
 
 .layer_fix {
   height: 10vh;
@@ -118,19 +134,19 @@ body {
 }
 
 #intro1 {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('intro_bg1.jpg');
+  background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('intro_img/intro_bg1m.jpg');
   height: 100vh;
 }
 
 
 #intro2 {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('intro_bg2.jpg');
+  background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('intro_img/intro_bg2m.jpg');
   height: 100vh;
 }
 
 #intro3 {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('intro_bg3.jpg');
-  height: 200vh;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('intro_img/intro_bg3m.jpg');
+
 }
 
 
@@ -151,9 +167,7 @@ body {
 }
 
 #intro3_text {
-  position: absolute;
-  top: 10vh;
-  left: 10%;
+
   font-size: 2em;
   font-weight: bolder;
 }
@@ -182,6 +196,7 @@ body {
   top: 78vh;
   margin: 0.2em 0;
   height: 2.5em;
+  
   border-radius: 1.5em;
   border: none;
   box-shadow: 0.1em 0.1em 0.1em 0 lightgray;
@@ -193,7 +208,8 @@ body {
   text-align: center;
 }
 .button_last {
-  top: 178vh !important;
+  position: static !important;
+  margin: 2em 0 !important;
 }
   .button strong {
     vertical-align: middle;
@@ -205,8 +221,9 @@ body {
     color: #222222 !important;
   }
 
-
-.intro_tool {
-  position: relative;
-  top: 50vh;
+.row strong {
+    font-size: 1.5em;
+  }
+.intro3_block {
+  margin-top: 4em;
 }
