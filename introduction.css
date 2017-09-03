@@ -45,17 +45,17 @@
     font-size: 1.2em !important;
 
   }
-  #intro3_text {
+  #intro1_text, #intro2_text {
     font-size: 3em !important;
   }
-  .row strong {
-    font-size: 2.5em !important;
+  .intro3_box h4 { 
+    font-size: 2.3em !important;
   }
 }
 
 *, input {
   margin: 0 auto;
-  color: white;
+  color: #FAFAFA;
   font-family: 'Spoqa Han Sans', sans-serif;
 }
 body {
@@ -153,7 +153,7 @@ body {
 #intro1_text {
   position: absolute;
   top: 50vh;
-  left: 10%;
+  left: 5%;
   font-size: 2em;
   font-weight: bolder;
 }
@@ -161,7 +161,7 @@ body {
 #intro2_text {
   position: absolute;
   top: 60vh;
-  left: 10%;
+  left: 5%;
   font-size: 2em;
   font-weight: bolder;
 }
@@ -172,31 +172,13 @@ body {
   font-weight: bolder;
 }
 
-.panel {
-  position: absolute;
-  top: 10%;
-  left: 20%;
-  border-radius: 1.5em;
-  background-color: rgba( 255, 255, 255, 0.8 ) !important;
-
-
-}
-.panel-body {
-  font-size: 1em;
-  font-weight: 900;
-  text-align: center;
-  color: #222222 !important;
-}
-
-
-
 
 .button {
   position: relative;
   top: 78vh;
   margin: 0.2em 0;
   height: 2.5em;
-  
+  line-height: 1.5em; 
   border-radius: 1.5em;
   border: none;
   box-shadow: 0.1em 0.1em 0.1em 0 lightgray;
@@ -211,19 +193,39 @@ body {
   position: static !important;
   margin: 2em 0 !important;
 }
+
   .button strong {
     vertical-align: middle;
     color: #222222 !important;
 
   }
   .button .material-icons {
+    margin: 0.1em 0.5em 0 0;
+    float: right;
     vertical-align: middle;
     color: #222222 !important;
   }
 
-.row strong {
-    font-size: 1.5em;
-  }
 .intro3_block {
   margin-top: 4em;
+}
+
+.intro3_box {
+
+  padding: 0 !important;
+  margin-top: 0.5em;
+  background-color: rgba( 255, 255, 255, 0.6 );
+  border-radius: 1.8em;
+
+}
+.intro3_box_image img{
+  display: block;
+  margin: 10px 0;
+
+}
+
+.intro3_box h4 { 
+  margin: 1.6em 0;
+  color: #222222;
+  font-weight: 700;
 }
