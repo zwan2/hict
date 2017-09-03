@@ -108,11 +108,11 @@ $default_date = date("Y-m-d", $next_day);
   </div>
 </div>
 <h4 class="modal-title">장비</h4>
-<input type="text" id="input_text" name="tool" class="form-control input_radius" placeholder="이용할 장비를 모두 기입하세요" maxlength="100">
+<input type="text" id="input_tool" name="tool" class="form-control input_radius" placeholder="이용할 장비를 모두 기입하세요" maxlength="100">
 
 <br/><br/>
 <h4 class="modal-title">기타 사항</h4>
-<input type="text" id="input_text" name="extra" class="form-control input_radius" placeholder="활동 목적, 내용 등 기입이 필요한 경우 입력하세요." maxlength="100">
+<input type="text" id="input_extra" name="extra" class="form-control input_radius" placeholder="활동 목적, 내용 등 기입이 필요한 경우 입력하세요." maxlength="100">
 </div>
 <div class="modal-footer">
 <button type="button" class="btn btn-default" data-dismiss="modal">뒤로</button>
@@ -190,7 +190,46 @@ $default_date = date("Y-m-d", $next_day);
 </inline>
 </div>
 </div>
-<script type="text/javascript">/*<![CDATA[*/function booking_check(){var a=document.booking;if(a.booking_date.value<=moment().format("YYYY-MM-DD")){alert("예약일을 올바르게 입력하세요.");a.booking_date.focus();return false}else{if(a.start_time.value>=a.end_time.value){alert("시간을 올바르게 입력하세요.");a.end_time.focus();return false}}$("#input_text").bind("keyup",function(){re=/[~!@\#$%^&*\()\-=+_']/gi;var b=$("#input_text").val();if(re.test(b)){$("#input_text").val(b.replace(re,""))}})};/*]]>*/</script>
+<script type="text/javascript">
+
+function booking_check(){
+  var form = document.booking;  
+  
+  //날짜 제한
+  if(form.booking_date.value <= moment().format("YYYY-MM-DD")) {
+    alert("예약일을 올바르게 입력하세요.");
+    form.booking_date.focus();
+    return false;
+  }
+
+  //시간 제한
+  else if(form.start_time.value >= form.end_time.value) {
+    alert("시간을 올바르게 입력하세요.");
+    form.end_time.focus();
+    return false;
+  }
+
+  //특수문자 처리
+
+  $("#input_tool").bind("keyup",function(){
+    re = /[~!@\#$%^&*\()\-=+_']/gi; 
+    var temp=$("#input_tool").val();
+    if(re.test(temp)){ //특수문자가 포함되면 삭제하여 값으로 다시셋팅
+      $("#input_tool").val(temp.replace(re,"")); 
+    } 
+  });
+  $("#input_extra").bind("keyup",function(){
+    re = /[~!@\#$%^&*\()\-=+_']/gi; 
+    var temp=$("#input_extra").val();
+    if(re.test(temp)){
+      $("#input_extra").val(temp.replace(re,"")); 
+    } 
+  });
+
+
+}
+</script>
+
 <?php
 include 'footer.html';
 ?>
