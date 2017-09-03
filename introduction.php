@@ -106,7 +106,7 @@
       
       <div class="row panel-body intro3_box">
         <div class="col-xs-3 col-sm-2 intro3_box_image">
-          <img class="img-responsive" src="intro_img/GEAR VR.png">
+          <img class="img-responsive" src="intro_img/Gear VR.png">
         </div>
         <h4>GEAR VR</h4>
       </div>
