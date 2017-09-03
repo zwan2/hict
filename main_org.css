@@ -96,6 +96,14 @@ textarea{
 .red {
 	color: #E57373;
 }
+.blue_opacity {
+	color: #64B5F6;
+	opacity: 0.7;
+}
+.red_opacity {
+	color: #E57373;
+	opacity: 0.7;
+}
 .font_700 {
 	font-weight: 700;
 }
@@ -193,7 +201,7 @@ textarea{
 	background: none !important;
 }
 .fc-event {
-	box-shadow: 0.1em 0.1em 0.1em 0 lightgray;
+	box-shadow: 0.05em 0.08em 0.08em 0.05em #E2E2E2;
 }
 
 .fc-button {
@@ -209,8 +217,12 @@ textarea{
 }
 
 .fc-unthemed .fc-today {
-	background-color: rgba(178, 223, 219, 0.1) !important;
+	background-color: transparent !important;
+}
 
+
+.fc-scroller {
+   overflow-y: hidden !important;
 }
 
 
