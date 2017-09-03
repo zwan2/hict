@@ -23,7 +23,7 @@ if(login()) {
 else {
 	fail_lock();
 	fail_count();
-	echo"<script>alert('로그인에 실패하였습니다. 다시 입력하세요.'); location.href='login_page.php';</script>";
+	echo"<script>alert('로그인에 실패하였습니다. 다시 입력하세요.'); location.href='/';</script>";
 }
 
 
