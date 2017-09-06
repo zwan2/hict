@@ -14,6 +14,9 @@ include 'main.html';
 	<br/><br/>
 	<?=notice()?>
 	<div class="col-xs-12 col-sm-8 col-sm-offset-2 no_padding">
+		<a class="btn btn-default btn-block" id="notice_button" href="notice_main2.php" role="button">2학기 실습실 이용 안내</a>
+	</div>
+	<div class="col-xs-12 col-sm-8 col-sm-offset-2 no_padding">
 		<a class="btn btn-default btn-block" id="notice_button" href="notice_main.php" role="button">실습실 관리 및 이용관련 공지 안내</a>
 	</div>
 </div>
