@@ -111,7 +111,7 @@ function fail_lock() {
 		//잠금 작동
 		if($row = $result->fetch_assoc()) {
 
-			echo"<script>alert('비밀번호를 5회 이상 잘못 입력하면 30초 동안 로그인이 불가능합니다.'); location.href='login_page.php';</script>";
+			echo"<script>alert('비밀번호를 5회 이상 잘못 입력하면 30초 동안 로그인이 불가능합니다.'); location.href='/';</script>";
 			return TRUE;
 		}
 		//잠금 해제

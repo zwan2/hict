@@ -78,7 +78,7 @@ $(document).ready(function() {
 			        {
 				        dow: [1],
 				        start: '13:00',
-				        end: '16:00'
+				        end: '17:00'
 				    },
 				    {
 				        dow: [1],
@@ -87,7 +87,7 @@ $(document).ready(function() {
 				    },
 				    {
 				        dow: [2],		        
-				        start: '09:00',
+				        start: '10:00',
 				        end: '10:30'
 				    },
 				    {
@@ -97,18 +97,18 @@ $(document).ready(function() {
 				    },
 				    {
 				        dow: [3],		        
-				        start: '12:00',
+				        start: '13:00',
 				        end: '15:00'
 				    },
 				    {
 				        dow: [4],		        
-				        start: '12:00',
-				        end: '17:00'
+				        start: '10:00',
+				        end: '10:30'
 				    },
 				    {
 				        dow: [4],		        
-				        start: '17:00',
-				        end: '19:00'
+				        start: '13:00',
+				        end: '20:00'
 				    },
 				    {
 				        dow: [5],		        
