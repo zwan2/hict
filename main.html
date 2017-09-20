@@ -17,6 +17,20 @@ ensure_logged_in();
   <link rel="icon" href="favicon-152.png" sizes="152x152">
   <script src="//code.jquery.com/jquery.min.js"></script>
 
+  <!-- PUSH -->
+  <link rel="manifest" href="/manifest.json">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+  <script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(["init", {
+  appId: "3e6f0b89-edba-412c-89f1-5e86f2a6d776",
+  autoRegister: false,
+  notifyButton: {
+  enable: true /* Set to false to hide */
+  }
+  }]);
+  </script>
+
 
   <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
