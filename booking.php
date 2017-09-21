@@ -53,11 +53,18 @@ else {
 
 function sendMessage(){
 	$content = array(
-		"en" => 'English Message'
+		"en" => 'English Message',
+		"ko" => 'Korean Message'
 	);
-	$heading = "건국대 휴먼ICT 실습실";
-	$subtitle = "새 예약이 접수되었습니다";
-	
+	$heading = array(
+		"en": "KU HICT LAB", 
+		"ko": "건국대 휴먼ICT 실습실"
+	);
+	$subtitle = array(
+		"en": "New booking arrived.", 
+		"ko": "새 예약이 도착하였습니다."
+	);
+
 	$fields = array(
 		'app_id' => "3e6f0b89-edba-412c-89f1-5e86f2a6d776",
 		'included_segments' => array('All'),
@@ -68,7 +75,6 @@ function sendMessage(){
 	);
 	
 	$fields = json_encode($fields);
-	print($fields);
 	
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
