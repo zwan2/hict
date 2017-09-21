@@ -290,14 +290,14 @@ function bookinglist() {
 
 				?>
 				<div class="col-xs-10 col-sm-8 col-sm-offset-2 no_padding">	
-					<a href="#" data-toggle="modal" data-target="#detail_data" data-id = <?=$booking_id?> class="btn btn-default btn-block ellipsis mybooking_button" id = "modal_toggle"><?=$booking_id?>: <?=$booking_date?></a>
+					<a href="#" data-toggle="modal" data-target="#detail_data" data-id = <?=$booking_id?> class="btn btn-default btn-block ellipsis mybooking_button" id = "modal_toggle"><?=$num?>: <?=$booking_date?></a>
 				</div>
 				<div class="col-xs-2 col-sm-2 no_padding">		
 					<?bookinglist_db_conversion($row['booking_state'], $row['booking_id'])?>			
 				</div>
 				
 				<?
-			
+				$num--;
 
 			}
 			

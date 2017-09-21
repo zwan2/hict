@@ -46,4 +46,47 @@ else {
 }
 
 
+
+function sendMessage(){
+	$content = array(
+		"en" => 'English Message'
+	);
+	$heading = "건국대 휴먼ICT 실습실";
+	$subtitle = "새 예약이 접수되었습니다";
+	
+	$fields = array(
+		'app_id' => "3e6f0b89-edba-412c-89f1-5e86f2a6d776",
+		'included_segments' => array('All'),
+  		'data' => array("foo" => "bar"),
+		'contents' => $content,
+		'headings' => $heading,
+		'subtitle' => $subtitle
+	);
+	
+	$fields = json_encode($fields);
+	print($fields);
+	
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8', 'Authorization: Basic NGEwMGZmMjItY2NkNy0xMWUzLTk5ZDUtMDAwYzI5NDBlNjJj'));
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+	curl_setopt($ch, CURLOPT_HEADER, FALSE);
+	curl_setopt($ch, CURLOPT_POST, TRUE);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+
+	$response = curl_exec($ch);
+	curl_close($ch);
+	
+	return $response;
+}
+
+$response = sendMessage();
+$return["allresponses"] = $response;
+$return = json_encode( $return);
+
+print("\n\nJSON received:\n");
+print($return);
+print("\n");
+
 ?>
