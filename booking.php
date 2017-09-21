@@ -42,8 +42,12 @@ if($result = $db->query($query)) {
 	$response = sendMessage();
 	$return["allresponses"] = $response;
 	$return = json_encode( $return);
+ print("\n\nJSON received:\n");
+	print($return);
+  print("\n");
 
-	echo"<script>alert('예약 완료! 내 예약을 확인하세요.'); location.href='calendar.php';</script>";
+
+	//echo"<script>alert('예약 완료! 내 예약을 확인하세요.'); location.href='calendar.php';</script>";
 }
 else {
 	echo"<script>alert('에러가 발생했습니다. 관리자에게 문의하십시오.'); location.href='calendar.php';</script>";
@@ -75,7 +79,10 @@ function sendMessage(){
 	);
 	
 	$fields = json_encode($fields);
-	
+print("\nJSON sent:\n");
+    print($fields);	
+
+
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8', 'Authorization: Basic NGEwMGZmMjItY2NkNy0xMWUzLTk5ZDUtMDAwYzI5NDBlNjJj'));
