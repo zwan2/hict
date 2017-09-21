@@ -98,7 +98,7 @@
   </div><!-- /.row -->
 
   <!-- PUSH -->
-  <a href="#" id="subscribe-link" style="display: none;">Subscribe to Notifications</a>
+  <a href="#" id="subscribe-link" style="display: none;">Testing Notifications</a>
   <script>
       function subscribe() {
           OneSignal.push(["registerForPushNotifications"]);
