@@ -38,7 +38,7 @@ $end_time = $booking_date." $end_time".":00";
 $query = "INSERT INTO booking(booking_state, receive_time, student_number, name, tel, start_time, end_time, total_number, purpose, tool, extra) VALUES ('$booking_state', '$receive_time', '$student_number', '$name', '$tel', '$start_time', '$end_time', '$total_number', '$purpose', '$tool', '$extra');";
 
 if($result = $db->query($query)) {
-	
+	sendMessage();
 	echo"<script>alert('예약 완료! 내 예약을 확인하세요.'); location.href='calendar.php';</script>";
 }
 else {
@@ -78,15 +78,6 @@ function sendMessage(){
 	$response = curl_exec($ch);
 	curl_close($ch);
 	
-	return $response;
 }
-
-$response = sendMessage();
-$return["allresponses"] = $response;
-$return = json_encode( $return);
-
-print("\n\nJSON received:\n");
-print($return);
-print("\n");
 
 ?>
