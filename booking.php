@@ -41,13 +41,8 @@ if($result = $db->query($query)) {
 	
 	$response = sendMessage();
 	$return["allresponses"] = $response;
-	$return = json_encode( $return);
- print("\n\nJSON received:\n");
-	print($return);
-  print("\n");
-
-
-	//echo"<script>alert('예약 완료! 내 예약을 확인하세요.'); location.href='calendar.php';</script>";
+	$return = json_encode($return);
+	echo"<script>alert('예약 완료! 내 예약을 확인하세요.'); location.href='calendar.php';</script>";
 }
 else {
 	echo"<script>alert('에러가 발생했습니다. 관리자에게 문의하십시오.'); location.href='calendar.php';</script>";
@@ -57,16 +52,12 @@ else {
 
 function sendMessage(){
 	$content = array(
-		"en" => 'English Message',
-		"ko" => 'Korean Message'
+		"en" => 'New booking has arrived.',
+		"ko" => '새 예약이 도착하였습니다.'
 	);
 	$heading = array(
 		"en"=> 'KU HICT LAB', 
 		"ko"=> '건국대 휴먼ICT 실습실'
-	);
-	$subtitle = array(
-		"en"=> 'New booking has arrived.', 
-		"ko"=> '새 예약이 도착하였습니다.'
 	);
 
 	$fields = array(
@@ -74,18 +65,15 @@ function sendMessage(){
 		'included_segments' => array('All'),
   		'data' => array("foo" => "bar"),
 		'contents' => $content,
-		'headings' => $heading,
-		'subtitle' => $subtitle
+		'headings' => $heading
 	);
 	
 	$fields = json_encode($fields);
-print("\nJSON sent:\n");
-    print($fields);	
 
 
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8', 'Authorization: Basic NGEwMGZmMjItY2NkNy0xMWUzLTk5ZDUtMDAwYzI5NDBlNjJj'));
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8', 'Authorization: Basic ZTEyZGJlOTAtMmYyMi00YTIwLTkyYjktZTQ5NDcyMGZlYWJm'));
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 	curl_setopt($ch, CURLOPT_HEADER, FALSE);
 	curl_setopt($ch, CURLOPT_POST, TRUE);
