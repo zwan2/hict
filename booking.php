@@ -57,12 +57,12 @@ function sendMessage(){
 		"ko" => 'Korean Message'
 	);
 	$heading = array(
-		"en": "KU HICT LAB", 
-		"ko": "건국대 휴먼ICT 실습실"
+		"en"=> 'KU HICT LAB', 
+		"ko"=> '건국대 휴먼ICT 실습실'
 	);
 	$subtitle = array(
-		"en": "New booking arrived.", 
-		"ko": "새 예약이 도착하였습니다."
+		"en"=> 'New booking has arrived.', 
+		"ko"=> '새 예약이 도착하였습니다.'
 	);
 
 	$fields = array(
