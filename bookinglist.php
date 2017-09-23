@@ -69,8 +69,8 @@
       <strong>　● 거절</strong>
       </inline>
       
-      <a href="#" id="subscribe-link">알림</a>
-     <? 
+      <a href="#" id="subscribe-link" style="display: none;">알림 허용</a>
+      <? 
       if($_SESSION['admin_code']==2) {
           ?><a class="grey" href="#" onclick="location.href='su_member.php'" role="button">회원관리</a><?}
       ?>
