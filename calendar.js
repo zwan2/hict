@@ -81,40 +81,15 @@ $(document).ready(function() {
 				        end: '17:00'
 				    },
 				    {
-				        dow: [1],
-				        start: '18:00',
-				        end: '18:00'
-				    },
-				    {
-				        dow: [2],		        
-				        start: '10:00',
-				        end: '10:30'
-				    },
-				    {
-				        dow: [2],		        
-				        start: '13:00',
-				        end: '15:00'
-				    },
-				    {
 				        dow: [3],		        
 				        start: '13:00',
 				        end: '15:00'
 				    },
 				    {
 				        dow: [4],		        
-				        start: '10:00',
-				        end: '10:30'
-				    },
-				    {
-				        dow: [4],		        
-				        start: '13:00',
-				        end: '20:00'
-				    },
-				    {
-				        dow: [5],		        
 				        start: '15:00',
-				        end: '18:00'
-				    },
+				        end: '16:00'
+				    }
 				],
 				rendering: 'background',
 				backgroundColor: '#BBDEFB'
@@ -155,7 +130,7 @@ $(document).ready(function() {
 				    {
 				        dow: [5],		        
 				        start: '11:00',
-				        end: '15:00'
+				        end: '17:00'
 				    },
 				    {
 				        dow: [5],		        

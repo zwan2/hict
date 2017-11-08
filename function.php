@@ -226,6 +226,7 @@ function bookinglist() {
 		$page = (isset($_GET['page'])?$_GET['page']:1);
 		$list = 10;
 		$block = 5;
+
 		//총 페이지 수
 		$page_num = ceil($num/$list);
 		//총 블록 수

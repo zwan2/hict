@@ -52,29 +52,31 @@ $default_date = date("Y-m-d", $next_day);
 </select>
 </div>
 </div>
-<br/>
+ <small>장비 단순 대여 시 장비 예상 사용 시간을 입력해주세요.<br/> 주말에 사용할 경우, 금요일에 미리 대여해 가시길 바랍니다. (일요일은 실습실을 개방하지 않습니다.)</small>
+<br/><br/>
 <h4 class="modal-title">총 인원</h4>
 <input type="number" class="form-control input_radius" name="total_number" value="1" min="1" max="99">
 <br/><br/>
 <h4 class="modal-title">용도</h4>
 <div class="radio">
 <label>
+<input type="radio" name="purpose" value="팀플">
+팀플
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="purpose" value="장비 대여(실습실 사용X)">장비 대여(실습실 사용X)
+</label>
+</div>
+
+<div class="radio">
+<label>
 <input type="radio" name="purpose" value="스터디" checked>
 스터디
 </label>
 </div>
-<div class="radio">
-<label>
-<input type="radio" name="purpose" value="비교과">
-비교과
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="purpose" value="영화 감상">
-영화 감상
-</label>
-</div>
+
 <div class="radio">
 <label>
 <input type="radio" name="purpose" value="기타">
@@ -100,9 +102,10 @@ $default_date = date("Y-m-d", $next_day);
         <strong>VR</strong><br/> 
         <small>HTC VIVE*4, DK2 oculus*5, GEAR VR*5</small><br/>
         <strong>3D PRINTER</strong><br/> 
-        <small>3DISON AEP*1, Infitary*1, CreMaker*1</small><br/>
+        <small>3DISON AEP*1, Infitary*1, CreMaker*1, 3D SCANNER</small><br/>
         <strong>기타</strong></br>
         <small>데스크탑 PC*8, LED TV*1, 책상*38, 빔 프로젝터*1, 스피커*1, 미니 냉장고*1</small>
+        <br/> 
       </div>
     </div>
   </div>
@@ -161,10 +164,12 @@ $default_date = date("Y-m-d", $next_day);
 </div>
 </div>
 <div class="container">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.5.0/fullcalendar.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.2/fullcalendar.min.css">
 <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.5.0/fullcalendar.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.5.0/locale/ko.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.2/fullcalendar.min.js'></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.2/locale/ko.js'></script>
 <script type="text/javascript" src="calendar.js"></script>
 
 <div id='calendar'></div>
