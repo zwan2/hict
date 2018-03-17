@@ -75,20 +75,36 @@ $(document).ready(function() {
 	        {
 		        events: [
 					//관리자
+			        
 			        {
-				        dow: [1],
-				        start: '13:00',
-				        end: '17:00'
+				        dow: [2],
+				        start: '17:00',
+				        end: '18:00'
 				    },
 				    {
-				        dow: [3],		        
-				        start: '13:00',
+				        dow: [3],
+				        start: '14:00',
 				        end: '15:00'
 				    },
 				    {
-				        dow: [4],		        
+				        dow: [4],
+				        start: '12:00',
+				        end: '13:30'
+				    },
+				    {
+				        dow: [4],
 				        start: '15:00',
-				        end: '16:00'
+				        end: '17:00'
+				    },
+				    {
+				        dow: [5],
+				        start: '10:00',
+				        end: '11:00'
+				    },
+				    {
+				        dow: [5],
+				        start: '14:00',
+				        end: '15:00'
 				    }
 				],
 				rendering: 'background',
@@ -99,18 +115,13 @@ $(document).ready(function() {
 				    //수업
 				    {
 				        dow: [2],		        
-				        start: '10:30',
-				        end: '12:00'
+				        start: '12:00',
+				        end: '13:30'
 				    },
 				    {
 				        dow: [2],		        
 				        start: '15:00',
-				        end: '18:00'
-				    },
-				    {
-				        dow: [2],		        
-				        start: '18:00',
-				        end: '20:00'
+				        end: '17:00'
 				    },
 				    {
 				        dow: [3],		        
@@ -118,24 +129,19 @@ $(document).ready(function() {
 				        end: '17:00'
 				    },
 				    {
-				        dow: [3],		        
-				        start: '18:00',
-				        end: '20:00'
-				    },
-				    {
 				        dow: [4],		        
-				        start: '10:30',
-				        end: '12:00'
+				        start: '13:30',
+				        end: '15:00'
 				    },
 				    {
 				        dow: [5],		        
 				        start: '11:00',
-				        end: '17:00'
+				        end: '13:00'
 				    },
 				    {
 				        dow: [5],		        
-				        start: '18:00',
-				        end: '22:00'
+				        start: '15:00',
+				        end: '18:00'
 				    },
 		   		],
 		   		rendering: 'background',
