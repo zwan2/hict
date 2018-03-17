@@ -4,7 +4,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
   
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">-->    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="introduction.css">
   <link rel="icon" href="favicon-152.png" sizes="152x152">
   
