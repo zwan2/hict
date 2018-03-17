@@ -4,6 +4,9 @@ $today = date("Y-m-d");
 $next_day = strtotime($today."+1 day");
 $default_date = date("Y-m-d", $next_day);
 ?>
+
+
+
 <div class="modal fade" id="booking" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 <div class="modal-dialog">
 <div class="modal-content">
@@ -60,7 +63,7 @@ $default_date = date("Y-m-d", $next_day);
 <h4 class="modal-title">용도</h4>
 <div class="radio">
 <label>
-<input type="radio" name="purpose" value="팀플">
+<input type="radio" name="purpose" value="팀플" checked>
 팀플
 </label>
 </div>
@@ -72,7 +75,7 @@ $default_date = date("Y-m-d", $next_day);
 
 <div class="radio">
 <label>
-<input type="radio" name="purpose" value="스터디" checked>
+<input type="radio" name="purpose" value="스터디">
 스터디
 </label>
 </div>
@@ -165,11 +168,11 @@ $default_date = date("Y-m-d", $next_day);
 </div>
 <div class="container">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.2/fullcalendar.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css">
 <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.2/fullcalendar.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js'></script>
 
-<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.2/locale/ko.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/locale/ko.js'></script>
 <script type="text/javascript" src="calendar.js"></script>
 
 <div id='calendar'></div>
