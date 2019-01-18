@@ -1,7 +1,7 @@
 <?php
 //db 연결
 //aws ec2 db
-$db = mysqli_connect("13.124.48.36", "zwan", "1233zz", "hict", "3306");
+$db = mysqli_connect("#", "#", "#", "hict", "3306");
 
 if(!$db) {
 	echo" aa";
@@ -80,6 +80,8 @@ function mybooking() {
 	//페이지네이션 쿼리
 	$query = "SELECT booking_id FROM booking WHERE student_number = $student_number";
 	if($result = $db->query($query)) {
+		$total_num = mysqli_num_rows($result);
+		if($total_num == 0) {
 		$total_num = mysqli_num_rows($result);
 		if($total_num == 0) {
 			$total_num = 1;
